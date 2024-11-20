@@ -1,28 +1,80 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
- <head>
-  <title>Jose Mendes — Git Repositories — GitHub.Com</title>
-  <link rel="icon" href="git-favicon.png" />
-  <link rel="stylesheet" type="text/css" href="layout.css" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
- </head>
- <body>
-  <div id="container">
-   <div id="banner">
-    <a href="http://jasmendes/"><img src="lh.png" width="600" height="80" border="0" alt="Jose Mendes" /></a><br />
-    <img src="red.png" width="600" height="4" alt="" /><br />
-    <img src="git-repos.png" height="44" border="0" alt="Git Repositories" /><br />
-    <a href="/"><img src="GitHub.png" height="36" border="0" alt="GitHub.Com" /></a>
-   </div>
-   <div id="content">
-    <h4>Current Repositories</h4>
-    <ol>
-     <li>Cf <a href="https://github.com/jasmendes/">https://github.com/jasmendes/</a>.
-     </li>
-    </ol>
-   </div>
-   <div id="footer">· <a href="copyright/">Page Design Copyright © 2014-2023 Jose Mendes</a> ·</div>
-  </div>
- </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+    <title>Quiz App</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Página Inicial - ocultada até o login ser feito -->
+        <div id="home" class="flex-center flex-column hidden">
+            <h1>Quick Quiz</h1>
+            <a class="btn" href="./game-literature.html">Play Portugues 11 Ano</a>
+            <a class="btn" href="./game-philosophy.html">Play Filosofia 11 Ano</a>
+            <a class="btn" href="./highscores.html">High Scores</a>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <!-- Página de Login -->
+        <div id="login" class="flex-center flex-column">
+            <h1>Login</h1>
+            <form id="login-form" onsubmit="login(event)">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Função de login
+        function login(event) {
+            event.preventDefault(); // Previne o envio padrão do formulário
+            
+            // Recupera os dados de login do formulário
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Aqui você pode fazer a verificação de usuário e senha
+            if (username === 'admin' && password === '1234') {
+                showHomePage(); // Se login for bem-sucedido, mostra a página inicial
+            } else {
+                alert("Credenciais inválidas!"); // Se falhar, exibe um alerta
+            }
+        }
+
+        // Função para mostrar a página inicial
+        function showHomePage() {
+            const homeElement = document.getElementById('home');
+            const loginElement = document.getElementById('login');
+
+            if (homeElement && loginElement) {
+                // Esconde a página de login
+                loginElement.classList.add('hidden');
+                // Mostra a página inicial
+                homeElement.classList.remove('hidden');
+            }
+        }
+
+        // Função para fazer logout
+        function logout() {
+            const homeElement = document.getElementById('home');
+            const loginElement = document.getElementById('login');
+
+            if (homeElement && loginElement) {
+                // Esconde a página inicial
+                homeElement.classList.add('hidden');
+                // Mostra a página de login
+                loginElement.classList.remove('hidden');
+            }
+        }
+    </script>
+
+</body>
+
 </html>

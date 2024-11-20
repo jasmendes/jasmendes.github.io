@@ -1,0 +1,125 @@
+{    "response_code":0,
+     "results":[
+        {
+        "question": "Quem é o autor da obra 'Os Maias'?",
+        "choice1": "José Saramago",
+        "choice2": "Fernando Pessoa",
+        "choice3": "Eça de Queirós",
+        "choice4": "Camilo Castelo Branco",
+        "answer": 3
+        },
+        {
+        "question": "A obra 'O Primo Basílio' de José de Alencar pertence a qual movimento literário?",
+        "choice1": "Realismo",
+        "choice2": "Romantismo",
+        "choice3": "Naturalismo",
+        "choice4": "Modernismo",
+        "answer": 3
+    },
+    {
+        "question": "Qual é a principal característica do romantismo em Portugal?",
+        "choice1": "Exaltação da razão e da ciência.",
+        "choice2": "Valorização da emoção, da liberdade e do individualismo.",
+        "choice3": "Busca pela perfeição formal e rigor estético.",
+        "choice4": "Relação direta com a filosofia existencialista.",
+        "answer": 2
+    },
+    {
+        "question": "Quem escreveu 'A Moreninha', um dos primeiros romances românticos portugueses?",
+        "choice1": "José de Alencar",
+        "choice2": "Júlio Dinis",
+        "choice3": "Almeida Garrett",
+        "choice4": "Machado de Assis",
+        "answer": 2
+    },
+    {
+        "question": "Qual é a obra representativa do realismo em Portugal?",
+        "choice1": "'O Primo Basílio'",
+        "choice2": "'Memórias Póstumas de Brás Cubas'",
+        "choice3": "'O Crime do Padre Amaro'",
+        "choice4": "'Os Maias'",
+        "answer": 1
+    },
+    {
+        "question": "O que é uma oração subordinada adjetiva explicativa?",
+        "choice1": "É uma oração que acrescenta uma informação acessória, geralmente entre vírgulas.",
+        "choice2": "É uma oração que expressa uma condição para a ação da principal.",
+        "choice3": "É uma oração que indica causa ou consequência.",
+        "choice4": "É uma oração que funciona como sujeito da oração principal.",
+        "answer": 1
+    },
+    {
+        "question": "No poema 'O Canto de Amor', de Florbela Espanca, qual é o tema principal?",
+        "choice1": "A solidão e o sofrimento existencial.",
+        "choice2": "A busca pela liberdade e pela emancipação feminina.",
+        "choice3": "O amor idealizado e a dor da saudade.",
+        "choice4": "A crítica à sociedade burguesa e seus valores.",
+        "answer": 3
+    },
+    {
+        "question": "Qual é a principal característica da obra de Fernando Pessoa?",
+        "choice1": "A criação de múltiplos heterônimos, com diferentes estilos e visões de mundo.",
+        "choice2": "O foco na exaltação do nacionalismo português.",
+        "choice3": "A crítica aos valores da sociedade burguesa e suas convenções.",
+        "choice4": "A utilização de formas poéticas clássicas, como o soneto.",
+        "answer": 1
+    },
+    {
+        "question": "O que é a anacoluto na gramática portuguesa?",
+        "choice1": "É um erro de concordância verbal.",
+        "choice2": "É uma construção em que há interrupção na sequência da oração, geralmente sem relação com a estrutura principal.",
+        "choice3": "É uma figura de linguagem que envolve a repetição de uma palavra ou expressão.",
+        "choice4": "É uma forma de construção passiva.",
+        "answer": 2
+    },
+    {
+        "question": "Na literatura portuguesa, o movimento modernista procurou principalmente:",
+        "choice1": "Romantizar a história e valorizar o nacionalismo.",
+        "choice2": "Agarra-se a tradições literárias e culturais, com uma linguagem complexa.",
+        "choice3": "Quebrar as formas tradicionais de escrita e buscar uma nova linguagem e estética.",
+        "choice4": "Explorar os aspectos sociais da vida urbana e industrial.",
+        "answer": 3
+    },
+    {
+        "question": "A expressão 'ir à deriva' é um exemplo de qual figura de linguagem?",
+        "choice1": "Metáfora",
+        "choice2": "Antítese",
+        "choice3": "Hipérbole",
+        "choice4": "Eufemismo",
+        "answer": 1
+    },
+    {
+        "question": "Qual dos seguintes autores é associado ao movimento naturalista em Portugal?",
+        "choice1": "Júlio Dinis",
+        "choice2": "Almeida Garrett",
+        "choice3": "Érico Veríssimo",
+        "choice4": "José de Alencar",
+        "answer": 2
+    },
+    {
+        "question": "O que caracteriza uma frase com sujeito indeterminado?",
+        "choice1": "Quando o sujeito é explícito, mas não se sabe quem é.",
+        "choice2": "Quando o sujeito é subentendido, mas não é mencionado.",
+        "choice3": "Quando o sujeito não é especificado e o verbo está na terceira pessoa do plural.",
+        "choice4": "Quando o sujeito é um pronome pessoal do caso reto.",
+        "answer": 3
+    },
+    {
+        "question": "Em qual obra de Almeida Garrett encontramos o conceito de 'teatro romântico' em sua forma mais pura?",
+        "choice1": "'Frei Luís de Sousa'",
+        "choice2": "'O Primo Basílio'",
+        "choice3": "'O Crime do Padre Amaro'",
+        "choice4": "'A Moreninha'",
+        "answer": 1
+    },
+    {
+        "question": "O que é uma oração subordinada causal?",
+        "choice1": "Uma oração que expressa a causa da ação da principal.",
+        "choice2": "Uma oração que faz uma comparação entre duas ações.",
+        "choice3": "Uma oração que expressa um desejo ou uma hipótese.",
+        "choice4": "Uma oração que resume a ideia da principal.",
+        "answer": 1
+    }
+]
+
+}

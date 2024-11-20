@@ -1,0 +1,125 @@
+{   "response_code": 0,
+    "results": [
+        {
+        "type": "multiple",
+        "difficulty": "moderate",
+        "category": "Philosophy",
+        "question": "Quem é o filósofo responsável pela teoria do 'Cogito, ergo sum' ('Penso, logo existo')?",
+        "correct_answer": "René Descartes",
+        "incorrect_answers": [
+            "Immanuel Kant",
+            "Friedrich Nietzsche",
+            "Jean-Paul Sartre"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "moderate",
+        "category": "Philosophy",
+        "question": "O que caracteriza o conceito de 'imperativo categórico' de Kant?",
+        "correct_answer": "A ideia de que as ações devem ser feitas de acordo com uma máxima que possa ser universalizada",
+        "incorrect_answers": [
+            "A crença de que as ações devem ser determinadas pelas consequências",
+            "A defesa da liberdade absoluta de ação",
+            "A ideia de que o bem é o que gera prazer para o maior número"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "moderate",
+        "category": "Philosophy",
+        "question": "Em qual das seguintes obras Nietzsche desenvolve a teoria do 'Além-do-Homem' e a ideia do 'Übermensch'?",
+        "correct_answer": "Assim Falou Zaratustra",
+        "incorrect_answers": [
+            "O Anticristo",
+            "Genealogia da Moral",
+            "O Nascimento da Tragédia"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "moderate",
+        "category": "Philosophy",
+        "question": "Qual é a principal ideia do empirismo filosófico defendida por John Locke?",
+        "correct_answer": "Todo o conhecimento é originado da experiência sensorial",
+        "incorrect_answers": [
+            "O conhecimento é uma capacidade inata da razão humana",
+            "A razão é a principal fonte de conhecimento",
+            "O conhecimento não pode ser adquirido, sendo uma ilusão"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "moderate",
+        "category": "Philosophy",
+        "question": "O que é o 'niilismo', segundo Nietzsche?",
+        "correct_answer": "A negação de valores absolutos e de um sentido objetivo para a vida",
+        "incorrect_answers": [
+            "A crença em um sentido divino e universal para o mundo",
+            "A afirmação de que a moralidade é universal e objetiva",
+            "A defesa de uma ética baseada unicamente na busca do prazer"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "moderate",
+        "category": "Philosophy",
+        "question": "O que é o 'tabula rasa', conceito defendido por John Locke?",
+        "correct_answer": "A ideia de que a mente humana é uma 'folha em branco', sem ideias inatas",
+        "incorrect_answers": [
+            "A crença de que o conhecimento é transmitido através da religião",
+            "A noção de que as ideias humanas são determinadas pela biologia",
+            "A ideia de que a mente humana nasce com um conjunto de valores morais"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "moderate",
+        "category": "Philosophy",
+        "question": "Qual filósofo é conhecido pela teoria do 'contracto social' e pela defesa de um governo baseado no consenso popular?",
+        "correct_answer": "Jean-Jacques Rousseau",
+        "incorrect_answers": [
+            "Thomas Hobbes",
+            "John Locke",
+            "Karl Marx"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "moderate",
+        "category": "Philosophy",
+        "question": "Qual é a principal ideia da filosofia de Immanuel Kant sobre a ética?",
+        "correct_answer": "A moralidade deve ser orientada por regras universais, válidas para todos",
+        "incorrect_answers": [
+            "A moralidade é relativa e depende das consequências das ações",
+            "A ética deve ser baseada na maximização do prazer",
+            "A moralidade deve ser entendida como uma construção social variável"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "moderate",
+        "category": "Philosophy",
+        "question": "Na filosofia de Hegel, o que representa a dialética?",
+        "correct_answer": "O processo de desenvolvimento das ideias através de contradições e superações",
+        "incorrect_answers": [
+            "A ideia de que todas as verdades são absolutas e imutáveis",
+            "A visão de que o desenvolvimento das ideias é linear e sem conflitos",
+            "A concepção de que a razão humana é incapaz de alcançar a verdade"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "moderate",
+        "category": "Philosophy",
+        "question": "Qual é a principal contribuição de Sócrates para a filosofia ocidental?",
+        "correct_answer": "O método socrático de questionamento e a busca pela verdade através do diálogo",
+        "incorrect_answers": [
+            "A criação da teoria da evolução das espécies",
+            "A introdução da lógica formal nas ciências naturais",
+            "A defesa da ética utilitarista e da maximização do prazer"
+        ]
+    }
+]    
+  }
+  

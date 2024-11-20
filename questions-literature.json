@@ -1,0 +1,437 @@
+{   "response_code": 0,
+    "results": [
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Quem é o autor da obra 'Os Maias'?",
+        "correct_answer": "Eça de Queirós",
+        "incorrect_answers": [
+          "José Saramago",
+          "Fernando Pessoa",
+          "Camilo Castelo Branco"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "A obra 'O Primo Basílio' de José de Alencar pertence a qual movimento literário?",
+        "correct_answer": "Realismo",
+        "incorrect_answers": [
+          "Romantismo",
+          "Naturalismo",
+          "Modernismo"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Quem é o autor da obra 'Dom Casmurro'?",
+        "correct_answer": "Machado de Assis",
+        "incorrect_answers": [
+          "José de Alencar",
+          "Raul Pompeia",
+          "Monteiro Lobato"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Qual é o estilo literário predominante na obra 'Senhora' de José de Alencar?",
+        "correct_answer": "Romantismo",
+        "incorrect_answers": [
+          "Realismo",
+          "Naturalismo",
+          "Modernismo"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Grammar",
+        "question": "Qual destas palavras está correta segundo a norma ortográfica?",
+        "correct_answer": "Líquido",
+        "incorrect_answers": [
+          "Liquido",
+          "Liqüido",
+          "Liquído"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Grammar",
+        "question": "Qual destas palavras é um exemplo de adjetivo no grau comparativo de superioridade?",
+        "correct_answer": "Mais bonito",
+        "incorrect_answers": [
+          "Bonito",
+          "Bonitamente",
+          "Bonitão"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Em que obra de Fernando Pessoa o personagem Bernardo Soares aparece?",
+        "correct_answer": "O Livro do Desassossego",
+        "incorrect_answers": [
+          "Mensagem",
+          "Os Maias",
+          "A Moreninha"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Qual é o nome completo de Fernando Pessoa?",
+        "correct_answer": "Fernando António Nogueira Pessoa",
+        "incorrect_answers": [
+          "Fernando Nogueira Pessoa",
+          "António Pessoa",
+          "Fernando Pessoa Nogueira"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "O autor da obra 'A Moreninha' é:",
+        "correct_answer": "Joaquim Manuel de Macedo",
+        "incorrect_answers": [
+          "José de Alencar",
+          "Raul Pompeia",
+          "Machado de Assis"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Qual é a principal característica do movimento literário Realismo?",
+        "correct_answer": "A objetividade e a crítica social",
+        "incorrect_answers": [
+          "A idealização do amor e da natureza",
+          "O nacionalismo exacerbado",
+          "A busca por um estilo extravagante"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Qual é o nome da personagem principal da obra 'Dom Casmurro'?",
+        "correct_answer": "Bentinho",
+        "incorrect_answers": [
+            "Capitu",
+            "Escobar",
+            "D. Evarista"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Em qual obra de Fernando Pessoa encontramos o heterônimo Álvaro de Campos?",
+        "correct_answer": "Ode Marítima",
+        "incorrect_answers": [
+            "Mensagem",
+            "O Livro do Desassossego",
+            "A Morada do Longe"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Qual é o título da obra que reúne a reflexão filosófica de Fernando Pessoa sobre a condição humana e o seu país?",
+        "correct_answer": "Mensagem",
+        "incorrect_answers": [
+            "O Livro do Desassossego",
+            "A Morada do Longe",
+            "Ode Marítima"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Quem escreveu a obra 'A Morada do Longe'?",
+        "correct_answer": "António Ramos Rosa",
+        "incorrect_answers": [
+            "José Saramago",
+            "Fernando Pessoa",
+            "Miguel Torga"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Em que obra de José Saramago é retratada a cegueira que atinge uma cidade inteira?",
+        "correct_answer": "Ensaio sobre a cegueira",
+        "incorrect_answers": [
+            "A Jangada de Pedra",
+            "O Ano da Morte de Ricardo Reis",
+            "Memorial do Convento"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Qual é o autor da obra 'Os Maias'?",
+        "correct_answer": "Eça de Queirós",
+        "incorrect_answers": [
+            "José de Alencar",
+            "Machado de Assis",
+            "Raul Pompeia"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "A que período literário pertence a obra 'Mensagem' de Fernando Pessoa?",
+        "correct_answer": "Modernismo",
+        "incorrect_answers": [
+            "Realismo",
+            "Romantismo",
+            "Pós-modernismo"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Qual é o nome da obra mais conhecida de Luís de Camões?",
+        "correct_answer": "Os Lusíadas",
+        "incorrect_answers": [
+            "Sonetos",
+            "Rimas",
+            "Poesias"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Em 'O Primo Basílio', de José de Alencar, qual é o nome da personagem que tem um caso extraconjugal com a esposa de Jorge?",
+        "correct_answer": "Basilio",
+        "incorrect_answers": [
+            "Luísa",
+            "Jorge",
+            "Juliana"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Qual é a principal temática abordada na obra 'O Primo Basílio', de José de Alencar?",
+        "correct_answer": "O adultério e a moralidade da sociedade",
+        "incorrect_answers": [
+            "A luta pelo poder",
+            "A fuga para o campo",
+            "A relação entre pais e filhos"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Qual é o nome da protagonista feminina da obra 'Dom Casmurro', de Machado de Assis?",
+        "correct_answer": "Capitu",
+        "incorrect_answers": [
+            "D. Evarista",
+            "Ismênia",
+            "Juliana"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Em qual obra de José Saramago o personagem principal se encontra sozinho, tentando entender a realidade e o seu lugar no mundo?",
+        "correct_answer": "Ensaio sobre a cegueira",
+        "incorrect_answers": [
+            "O Jogo do Anjo",
+            "A Caverna",
+            "As Intermitências da Morte"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Literature",
+        "question": "Em qual obra de Eça de Queirós o autor critica a hipocrisia da sociedade burguesa?",
+        "correct_answer": "O Primo Basílio",
+        "incorrect_answers": [
+            "A Relíquia",
+            "Os Maias",
+            "O Crime do Padre Amaro"
+        ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "moderate",
+      "category": "Literature",
+      "question": "Qual é a principal característica da escrita de Fernando Pessoa, no contexto da sua poesia modernista?",
+      "correct_answer": "A pluralidade de vozes poéticas através dos heterônimos",
+      "incorrect_answers": [
+          "A crítica social e política",
+          "A valorização da subjetividade e da sensibilidade",
+          "A exaltação do nacionalismo"
+      ]
+  },
+  {
+      "type": "multiple",
+      "difficulty": "moderate",
+      "category": "Literature",
+      "question": "Qual a relação entre 'O Primo Basílio', de José de Alencar, e a crítica à sociedade urbana do século XIX?",
+      "correct_answer": "A obra critica a hipocrisia e os valores da burguesia urbana",
+      "incorrect_answers": [
+          "A obra celebra a liberdade e os valores do campo",
+          "A obra critica a moral rural e a opressão social",
+          "A obra exalta a honestidade e o pudor da sociedade portuguesa"
+      ]
+  },
+  {
+      "type": "multiple",
+      "difficulty": "moderate",
+      "category": "Literature",
+      "question": "Qual é a inovação estética e literária presente em 'Os Maias', de Eça de Queirós?",
+      "correct_answer": "A inserção de uma narrativa realista e detalhada da sociedade portuguesa do século XIX",
+      "incorrect_answers": [
+          "A utilização de uma linguagem simbólica e mística",
+          "A idealização de personagens e o caráter romântico da obra",
+          "A forma epistolar e fragmentada do enredo"
+      ]
+  },
+  {
+      "type": "multiple",
+      "difficulty": "moderate",
+      "category": "Literature",
+      "question": "No contexto de 'Dom Casmurro', de Machado de Assis, qual é o principal dilema que caracteriza a psicologia de Bentinho?",
+      "correct_answer": "A dúvida sobre a fidelidade de Capitu e a questão da memória subjetiva",
+      "incorrect_answers": [
+          "A luta pelo poder e a manipulação política",
+          "A busca pela felicidade e a busca pela redenção",
+          "A angústia existencial e a busca de sentido na vida"
+      ]
+  },
+  {
+      "type": "multiple",
+      "difficulty": "moderate",
+      "category": "Literature",
+      "question": "Qual é a principal temática abordada em 'O Livro do Desassossego', de Fernando Pessoa?",
+      "correct_answer": "O vazio existencial e a fragmentação da identidade humana",
+      "incorrect_answers": [
+          "A busca por um amor impossível e a rejeição da realidade",
+          "A análise crítica da sociedade portuguesa do século XX",
+          "A exaltação do sonho e da liberdade individual"
+      ]
+  },
+  {
+      "type": "multiple",
+      "difficulty": "moderate",
+      "category": "Literature",
+      "question": "Em qual das obras de José Saramago o autor utiliza uma alegoria sobre a morte e a imortalidade?",
+      "correct_answer": "As Intermitências da Morte",
+      "incorrect_answers": [
+          "Ensaio sobre a cegueira",
+          "O Jogo do Anjo",
+          "A Caverna"
+      ]
+  },
+  {
+      "type": "multiple",
+      "difficulty": "moderate",
+      "category": "Literature",
+      "question": "Qual é o nome do personagem principal da obra 'O Crime do Padre Amaro', de José de Alencar?",
+      "correct_answer": "Padre Amaro",
+      "incorrect_answers": [
+          "D. Evarista",
+          "Amélia",
+          "Jorge"
+      ]
+  },
+  {
+      "type": "multiple",
+      "difficulty": "moderate",
+      "category": "Literature",
+      "question": "Qual é a relação entre o movimento modernista e a obra 'Mensagem', de Fernando Pessoa?",
+      "correct_answer": "A obra reflete a busca do 'eu' português através de uma linguagem modernista e simbólica",
+      "incorrect_answers": [
+          "A obra reflete um retorno à estética romântica e ao nacionalismo",
+          "A obra segue os princípios do Realismo, com uma visão crítica da sociedade portuguesa",
+          "A obra apresenta uma estrutura formal rigorosa, com base na tradição clássica"
+      ]
+  },
+  {
+      "type": "multiple",
+      "difficulty": "moderate",
+      "category": "Literature",
+      "question": "O que caracteriza a obra 'O Primo Basílio', de José de Alencar, do ponto de vista da crítica social?",
+      "correct_answer": "A crítica à moral burguesa e ao adultério dentro da classe média urbana",
+      "incorrect_answers": [
+          "A exaltação da fidelidade conjugal e dos valores tradicionais",
+          "A abordagem de temas como a pobreza rural e a luta de classes",
+          "A crítica ao militarismo e ao imperialismo europeu"
+      ]
+  },
+  {
+      "type": "multiple",
+      "difficulty": "moderate",
+      "category": "Literature",
+      "question": "Qual é o principal conflito presente na obra 'A Relíquia', de José de Alencar?",
+      "correct_answer": "O conflito entre a devoção religiosa e o desejo de liberdade pessoal",
+      "incorrect_answers": [
+          "A luta pelo poder na corte portuguesa",
+          "O conflito entre o amor romântico e os interesses familiares",
+          "A oposição entre a modernidade e as tradições rurais"
+      ]
+  },
+  {
+      "type": "multiple",
+      "difficulty": "moderate",
+      "category": "Literature",
+      "question": "Qual é a importância de 'Memorial do Convento', de José Saramago, para a literatura contemporânea portuguesa?",
+      "correct_answer": "A obra utiliza o realismo mágico para tratar de temas históricos e filosóficos",
+      "incorrect_answers": [
+          "A obra segue um estilo minimalista e técnico, com uma narrativa seca e objetiva",
+          "A obra é uma crítica explícita à monarquia portuguesa e suas injustiças sociais",
+          "A obra utiliza um estilo épico para narrar os feitos heroicos de figuras históricas"
+      ]
+  },
+  {
+      "type": "multiple",
+      "difficulty": "moderate",
+      "category": "Literature",
+      "question": "O que caracteriza a narrativa de 'O Livro do Desassossego', de Fernando Pessoa, do ponto de vista estrutural?",
+      "correct_answer": "A obra é uma coleção fragmentada de pensamentos e reflexões, sem uma trama linear",
+      "incorrect_answers": [
+          "A obra segue uma estrutura convencional, com uma trama central e personagens principais",
+          "A obra é um romance histórico, que narra eventos reais da história portuguesa",
+          "A obra é composta por uma série de cartas fictícias entre o narrador e outros personagens"
+      ]
+  },
+  {
+      "type": "multiple",
+      "difficulty": "moderate",
+      "category": "Literature",
+      "question": "Qual é o tema principal da obra 'A Morada do Longe', de António Ramos Rosa?",
+      "correct_answer": "A busca pela transcendência e o confronto com o vazio existencial",
+      "incorrect_answers": [
+          "A descrição detalhada da vida cotidiana em uma pequena cidade portuguesa",
+          "A reflexão sobre o tempo e a história da literatura portuguesa",
+          "A crítica à sociedade moderna e suas injustiças sociais"
+      ]
+  }  
+    ]
+  }
+  

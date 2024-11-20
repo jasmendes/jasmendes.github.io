@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+    <title>Quiz App</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="home" class="flex-center flex-column">
+            <h1>Quick Quiz</h1>
+            <a class="btn" href="./game-literature.html">Play Portugues 11 Ano</a>
+            <a class="btn" href="./game-philosophy.html">Play Filosofia 11 Ano</a>
+            <a class="btn" href="./highscores.html">High Scores</a>
+        </div>
+        </div>
+
+</body>
+
+<!-- Inside home.html -->
+<button onclick="logout()">Logout</button>
+
+<script>
+    function logout() {
+        // Remove login status from localStorage
+        localStorage.removeItem('isLoggedIn');
+
+        // Redirect back to the login page
+        window.location.href = "index.html";
+    }
+</script>
+
+<style>
+    /* Estilo para o botão de logout */
+button {
+    background-color: #08067e; /* Cor de fundo vermelha */
+    text-align: center;
+    color: white; /* Texto branco */
+  
+}
+
+/* Estilo quando o botão é clicado (hover) */
+button:hover {
+    background-color: #3547e5; /* Cor de fundo um pouco mais escura quando passar o mouse */
+}
+
+/* Estilo para o botão quando for pressionado (active) */
+button:active {
+    background-color: #4a2fd3; /* Cor de fundo ainda mais escura quando pressionado */
+    transform: scale(0.98); /* Leve diminuição de tamanho para o efeito de clique */
+}
+
+    </style>
+</html>
