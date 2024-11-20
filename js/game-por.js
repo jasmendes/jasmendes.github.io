@@ -18,7 +18,7 @@ let questions = []; //voir json
 
 //fetch question from .json:
 fetch(
-    "http://localhost:8000/questions-literature.json"
+    "./questions-literature.json"
     //"https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
     )
 .then(res =>{   
