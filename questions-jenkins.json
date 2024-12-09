@@ -1,0 +1,246 @@
+{
+    "response_code": 0,
+    "results": [
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "O que é o Jenkins?",
+        "correct_answer": "Uma ferramenta de integração contínua e entrega contínua.",
+        "incorrect_answers": [
+          "Um banco de dados relacional.",
+          "Uma linguagem de programação.",
+          "Um sistema operacional."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "Qual linguagem é usada para criar plugins do Jenkins?",
+        "correct_answer": "Java",
+        "incorrect_answers": [
+          "Python",
+          "Ruby",
+          "C++"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "O que é um *Pipeline* no Jenkins?",
+        "correct_answer": "Uma sequência de etapas para construir, testar e implantar um software.",
+        "incorrect_answers": [
+          "Uma configuração de rede para Jenkins.",
+          "Um conjunto de tarefas manuais.",
+          "Um banco de dados de credenciais."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "Qual é o arquivo principal de configuração para Pipelines declarativos no Jenkins?",
+        "correct_answer": "Jenkinsfile",
+        "incorrect_answers": [
+          "Pipeline.yaml",
+          "Config.xml",
+          "Buildfile"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "Qual plugin é necessário para usar Pipelines no Jenkins?",
+        "correct_answer": "Pipeline Plugin",
+        "incorrect_answers": [
+          "Git Plugin",
+          "Blue Ocean Plugin",
+          "SSH Agent Plugin"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "Qual é o papel principal do Jenkins Master?",
+        "correct_answer": "Controlar e distribuir tarefas para os agentes.",
+        "incorrect_answers": [
+          "Executar todos os builds.",
+          "Armazenar logs do sistema operacional.",
+          "Hospedar sites e servidores."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "O que é um agente no Jenkins?",
+        "correct_answer": "Uma máquina ou nó que executa tarefas delegadas pelo master.",
+        "incorrect_answers": [
+          "Uma interface gráfica para o Jenkins.",
+          "Uma linguagem de programação.",
+          "Uma credencial para autenticação."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "Qual porta padrão é usada pelo Jenkins?",
+        "correct_answer": "8080",
+        "incorrect_answers": [
+          "80",
+          "443",
+          "3306"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "Qual comando instala o Jenkins em um sistema baseado em Debian?",
+        "correct_answer": "sudo apt-get install jenkins",
+        "incorrect_answers": [
+          "yum install jenkins",
+          "brew install jenkins",
+          "snap install jenkins"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "Qual formato de autenticação pode ser usado no Jenkins?",
+        "correct_answer": "Login e senha",
+        "incorrect_answers": [
+          "Reconhecimento facial",
+          "Leitor de impressão digital",
+          "Blockchain"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "O que é o Jenkins Blue Ocean?",
+        "correct_answer": "Uma interface moderna para visualização de pipelines.",
+        "incorrect_answers": [
+          "Uma ferramenta de monitoramento de servidores.",
+          "Um novo sistema operacional Jenkins.",
+          "Um plugin para realizar backups."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "Como o Jenkins pode ser integrado com o Git?",
+        "correct_answer": "Usando o Git Plugin.",
+        "incorrect_answers": [
+          "Usando o Python Plugin.",
+          "Usando o Docker Plugin.",
+          "Sem nenhum plugin adicional."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "O Jenkins suporta quais sistemas de controle de versão?",
+        "correct_answer": "Git e Subversion (SVN).",
+        "incorrect_answers": [
+          "Apenas Git.",
+          "Apenas Mercurial.",
+          "Apenas Perforce."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "Qual é o comando para iniciar o Jenkins manualmente?",
+        "correct_answer": "java -jar jenkins.war",
+        "incorrect_answers": [
+          "jenkins start",
+          "run jenkins",
+          "start jenkins.war"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "O que é necessário para instalar o Jenkins?",
+        "correct_answer": "Java JDK ou JRE.",
+        "incorrect_answers": [
+          "Docker instalado.",
+          "Um banco de dados configurado.",
+          "Git instalado."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "Qual método é usado para adicionar um nó no Jenkins?",
+        "correct_answer": "Através da configuração de nós e agentes no painel.",
+        "incorrect_answers": [
+          "Instalando um aplicativo externo.",
+          "Adicionando manualmente no código-fonte.",
+          "Não é possível adicionar novos nós."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "O Jenkins é uma ferramenta...",
+        "correct_answer": "Open-source.",
+        "incorrect_answers": [
+          "Proprietária.",
+          "Limitada ao Windows.",
+          "Apenas para Java."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "O que significa CI/CD no contexto do Jenkins?",
+        "correct_answer": "Integração Contínua e Entrega Contínua.",
+        "incorrect_answers": [
+          "Conexão Integrada e Comunicação Direta.",
+          "Conexão Contínua e Desenvolvimento Compartilhado.",
+          "Integração Centralizada e Deploy Direto."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "O que é o 'Freestyle Project' no Jenkins?",
+        "correct_answer": "Um tipo de projeto básico para configurar builds simples.",
+        "incorrect_answers": [
+          "Um plugin para gerenciar credenciais.",
+          "Um tipo de pipeline avançado.",
+          "Uma configuração para gerenciar múltiplos agentes."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Jenkins",
+        "question": "Qual empresa inicialmente criou o Jenkins?",
+        "correct_answer": "Sun Microsystems.",
+        "incorrect_answers": [
+          "Google.",
+          "Red Hat.",
+          "Microsoft."
+        ]
+      }
+    ]
+  }
+  
