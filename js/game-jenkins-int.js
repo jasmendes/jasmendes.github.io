@@ -27,8 +27,11 @@ fetch(
 })
   .then(loadedQuestions => {
       console.log(loadedQuestions.results);
+      
+      const difficultyLevel = "medium"; // Change to "medium" or "hard" as needed
+      const filteredQuestions = loadedQuestions.results.filter(question => question.difficulty === difficultyLevel);
 
-      questions = loadedQuestions.results.map(loadedQuestion => {
+      questions = filteredQuestions.results.map(loadedQuestion => {
           const formattedQuestion = {
              question: loadedQuestion.question
           };

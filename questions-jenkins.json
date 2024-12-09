@@ -240,6 +240,486 @@
           "Red Hat.",
           "Microsoft."
         ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Como você configura um pipeline para executar paralelamente em Jenkins?",
+        "correct_answer": "Usando o bloco 'parallel' no Jenkinsfile.",
+        "incorrect_answers": [
+          "Adicionando múltiplos Jenkinsfiles ao projeto.",
+          "Usando o plugin Multibranch.",
+          "Ativando a opção 'Parallel Execution' nas configurações do job."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "O que é o Jenkinsfile?",
+        "correct_answer": "Um arquivo de script que define um pipeline como código.",
+        "incorrect_answers": [
+          "Um arquivo de configuração XML para agentes.",
+          "Um log gerado após cada build.",
+          "Um banco de dados local para Jenkins."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Qual é o propósito do plugin 'Credentials' no Jenkins?",
+        "correct_answer": "Gerenciar senhas, chaves e outros dados sensíveis.",
+        "incorrect_answers": [
+          "Armazenar logs de builds.",
+          "Conectar ao banco de dados.",
+          "Gerenciar permissões de usuários."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Como você compartilha artefatos entre jobs no Jenkins?",
+        "correct_answer": "Usando o recurso de 'Arquivar Artefatos' e 'Copiar Artefatos'.",
+        "incorrect_answers": [
+          "Enviando por e-mail os arquivos do job.",
+          "Criando um novo Jenkinsfile.",
+          "Combinando todos os builds em um único pipeline."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "O que é um trigger de webhook no Jenkins?",
+        "correct_answer": "Um evento enviado por um repositório para iniciar um job automaticamente.",
+        "incorrect_answers": [
+          "Uma função para pausar um build.",
+          "Um comando para iniciar builds manualmente.",
+          "Um script para configurar agentes remotamente."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Como os jobs no Jenkins podem ser vinculados entre si?",
+        "correct_answer": "Usando o plugin 'Build Trigger'.",
+        "incorrect_answers": [
+          "Usando scripts de automação Python.",
+          "Adicionando dependências no Jenkinsfile.",
+          "Vinculando credenciais entre os jobs."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Qual é a principal diferença entre Pipelines Declarativos e Scriptados?",
+        "correct_answer": "Pipelines Declarativos têm uma sintaxe mais restrita e legível.",
+        "incorrect_answers": [
+          "Pipelines Scriptados não suportam paralelismo.",
+          "Pipelines Declarativos só podem ser usados com o plugin Blue Ocean.",
+          "Pipelines Scriptados não podem ser usados com Jenkinsfiles."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Como você protege os dados sensíveis em um Jenkinsfile?",
+        "correct_answer": "Usando o comando 'withCredentials' e variáveis ocultas.",
+        "incorrect_answers": [
+          "Armazenando-os diretamente no Jenkinsfile.",
+          "Criando scripts externos para criptografia.",
+          "Configurando um ambiente separado no servidor."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "O que é o plugin 'Pipeline Syntax' no Jenkins?",
+        "correct_answer": "Uma ferramenta para gerar scripts para etapas de pipeline.",
+        "incorrect_answers": [
+          "Um recurso para depuração de Jenkinsfiles.",
+          "Um editor visual para pipelines.",
+          "Um plugin para gerenciar erros de configuração."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Como você conecta um agente remoto ao Jenkins?",
+        "correct_answer": "Usando um arquivo JAR chamado 'agent.jar'.",
+        "incorrect_answers": [
+          "Configurando uma conexão SSH sem senha.",
+          "Adicionando as informações no Jenkinsfile.",
+          "Executando o comando 'jenkins-agent-init'."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Como você configura um pipeline multi-branch?",
+        "correct_answer": "Usando o plugin Multibranch Pipeline.",
+        "incorrect_answers": [
+          "Usando o plugin GitHub Integration.",
+          "Criando múltiplos jobs manuais para cada branch.",
+          "Configurando o Jenkins para monitorar todas as branches."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "O que significa o status 'unstable' em um build do Jenkins?",
+        "correct_answer": "O build foi concluído com avisos ou falhas menores.",
+        "incorrect_answers": [
+          "O build falhou completamente.",
+          "O build não conseguiu encontrar as dependências.",
+          "O build está esperando por uma nova execução."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Como você executa um script Groovy diretamente no Jenkins?",
+        "correct_answer": "Acessando o console de script do Jenkins.",
+        "incorrect_answers": [
+          "Inserindo o script no Jenkinsfile.",
+          "Instalando o plugin Groovy Runner.",
+          "Adicionando o script na interface de pipeline visual."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Qual comando você usa para reiniciar o Jenkins a partir do terminal?",
+        "correct_answer": "java -jar jenkins.war --restart",
+        "incorrect_answers": [
+          "jenkins-cli restart",
+          "restart-jenkins",
+          "sudo restart jenkins"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Como o Jenkins se integra ao Docker?",
+        "correct_answer": "Usando o plugin Docker Pipeline.",
+        "incorrect_answers": [
+          "Instalando o Docker Engine no Jenkins.",
+          "Configurando agentes Docker manualmente.",
+          "Usando o comando 'docker-jenkins-init'."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Como você faz backup da configuração do Jenkins?",
+        "correct_answer": "Copiando o diretório JENKINS_HOME.",
+        "incorrect_answers": [
+          "Exportando jobs individualmente.",
+          "Usando o comando 'jenkins-backup'.",
+          "Criando um Jenkinsfile especial para backups."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Qual é a extensão padrão dos plugins Jenkins?",
+        "correct_answer": ".hpi",
+        "incorrect_answers": [
+          ".war",
+          ".jar",
+          ".jenkins"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Como você visualiza logs de execução detalhados no Jenkins?",
+        "correct_answer": "Clicando em 'Console Output' no job.",
+        "incorrect_answers": [
+          "Acessando o Jenkinsfile.",
+          "Visualizando o arquivo de configuração do job.",
+          "Exportando relatórios de build."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "O que é o Pipeline 'Shared Libraries'?",
+        "correct_answer": "Um recurso para compartilhar código entre múltiplos pipelines.",
+        "incorrect_answers": [
+          "Uma biblioteca para integrar pipelines com sistemas externos.",
+          "Um plugin para criar bibliotecas Java.",
+          "Um conjunto de exemplos pré-configurados de pipelines."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Jenkins",
+        "question": "Como você limita o número de builds armazenados em um job?",
+        "correct_answer": "Configurando o 'Build Discarder' nas opções do job.",
+        "incorrect_answers": [
+          "Adicionando um comando no Jenkinsfile.",
+          "Habilitando o plugin 'Build Manager'.",
+          "Criando um agente específico para limpeza."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Como você configura autenticação e autorização personalizada no Jenkins?",
+        "correct_answer": "Usando o plugin 'Role-Based Authorization Strategy'.",
+        "incorrect_answers": [
+          "Configurando diretamente no Jenkinsfile.",
+          "Usando o plugin 'LDAP Integration'.",
+          "Modificando o arquivo config.xml do Jenkins manualmente."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "O que é necessário para configurar alta disponibilidade no Jenkins?",
+        "correct_answer": "Um balanceador de carga e múltiplos Jenkins Masters.",
+        "incorrect_answers": [
+          "Múltiplos agentes configurados.",
+          "Instalar o Jenkins em um cluster Kubernetes.",
+          "Usar apenas pipelines declarativos."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Como você otimiza a execução de builds em uma grande infraestrutura Jenkins?",
+        "correct_answer": "Configurando a distribuição de builds entre agentes com rótulos.",
+        "incorrect_answers": [
+          "Aumentando o tempo limite de execução dos jobs.",
+          "Criando jobs paralelos sem agentes dedicados.",
+          "Executando todos os builds no master."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Como o Jenkins pode gerenciar pipelines em ambientes Kubernetes?",
+        "correct_answer": "Usando o plugin Kubernetes para provisionar pods como agentes dinâmicos.",
+        "incorrect_answers": [
+          "Configurando pipelines declarativos diretamente no cluster.",
+          "Usando o plugin Docker.",
+          "Instalando o Jenkins em um pod Kubernetes único."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Qual é o papel de um 'Flyweight Task' no Jenkins?",
+        "correct_answer": "Uma tarefa que consome poucos recursos, geralmente para coordenar etapas.",
+        "incorrect_answers": [
+          "Uma tarefa executada apenas em agentes específicos.",
+          "Um tipo de build para projetos pequenos.",
+          "Uma tarefa que interrompe builds em falha."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Como você depura problemas de performance no Jenkins?",
+        "correct_answer": "Ativando o 'Slow Request Logging' e revisando métricas no console de administração.",
+        "incorrect_answers": [
+          "Modificando o Jenkinsfile para incluir logs detalhados.",
+          "Reconfigurando pipelines como scriptados.",
+          "Usando o plugin de monitoramento de agentes."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Qual é a melhor maneira de gerenciar configurações complexas no Jenkins?",
+        "correct_answer": "Usando o plugin Configuration as Code (JCasC).",
+        "incorrect_answers": [
+          "Armazenando configurações no Jenkinsfile.",
+          "Exportando as configurações para XML.",
+          "Configurando manualmente cada job no painel do Jenkins."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Como você usa o Groovy para manipular diretamente o JENKINS_HOME?",
+        "correct_answer": "Executando scripts Groovy no console do administrador.",
+        "incorrect_answers": [
+          "Usando um Jenkinsfile para rodar scripts Groovy.",
+          "Configurando o Groovy como o ambiente principal de pipelines.",
+          "Adicionando scripts Groovy em um plugin customizado."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "O que acontece se um agente Jenkins perder a conexão durante a execução de um pipeline?",
+        "correct_answer": "O pipeline entra em modo de espera até que a conexão seja restaurada ou o tempo limite seja atingido.",
+        "incorrect_answers": [
+          "O pipeline é automaticamente reiniciado.",
+          "O pipeline é pausado indefinidamente até intervenção manual.",
+          "A execução do pipeline é descartada."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Como você migra um servidor Jenkins para um novo ambiente?",
+        "correct_answer": "Copiando o diretório JENKINS_HOME para o novo ambiente e reinstalando os plugins necessários.",
+        "incorrect_answers": [
+          "Exportando cada job individualmente e importando no novo ambiente.",
+          "Instalando o Jenkins do zero e recriando manualmente os jobs.",
+          "Usando o plugin 'Jenkins Migration Tool'."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Qual é o principal benefício de usar 'Shared Libraries' em pipelines Jenkins?",
+        "correct_answer": "Reutilizar código e promover consistência entre pipelines.",
+        "incorrect_answers": [
+          "Facilitar o uso de múltiplos Jenkins Masters.",
+          "Automatizar a criação de novos agentes.",
+          "Permitir pipelines multi-branch sem Jenkinsfiles."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Como você gerencia grandes volumes de logs no Jenkins?",
+        "correct_answer": "Configurando um sistema de logging externo como ELK ou Splunk.",
+        "incorrect_answers": [
+          "Habilitando logs rotativos no JENKINS_HOME.",
+          "Exportando os logs manualmente para análise.",
+          "Reduzindo o número de builds ativos."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Como você configura autenticação SSO (Single Sign-On) no Jenkins?",
+        "correct_answer": "Integrando com um provedor de SAML ou OAuth.",
+        "incorrect_answers": [
+          "Habilitando o LDAP diretamente no Jenkins.",
+          "Instalando um plugin de autenticação de dois fatores.",
+          "Adicionando tokens SSO no Jenkinsfile."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "O que o Jenkins suporta como armazenamento de artefatos a longo prazo?",
+        "correct_answer": "Integração com soluções como AWS S3 ou Nexus.",
+        "incorrect_answers": [
+          "Armazenamento diretamente no JENKINS_HOME.",
+          "Exportação de artefatos como arquivos JSON.",
+          "Habilitando backups no Jenkinsfile."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Como você detecta problemas de segurança em plugins Jenkins?",
+        "correct_answer": "Acompanhando atualizações no boletim de segurança oficial do Jenkins.",
+        "incorrect_answers": [
+          "Executando pipelines com permissões limitadas.",
+          "Usando o plugin Security Scanner.",
+          "Analisando o código dos plugins manualmente."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Como os 'Stages' em um pipeline Jenkins ajudam na depuração?",
+        "correct_answer": "Permitem identificar falhas em seções específicas do pipeline.",
+        "incorrect_answers": [
+          "Automatizam a reexecução de pipelines com falhas.",
+          "Permitem log detalhado para todo o Jenkinsfile.",
+          "Isolam etapas para execução em agentes dedicados."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Como o Jenkins lida com builds que dependem de múltiplos repositórios?",
+        "correct_answer": "Configurando múltiplos SCMs em um único job.",
+        "incorrect_answers": [
+          "Criando pipelines separados para cada repositório.",
+          "Usando o plugin 'Git MultiRepo'.",
+          "Agrupando os repositórios em um Jenkinsfile compartilhado."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Como você adiciona verificações de qualidade de código ao pipeline Jenkins?",
+        "correct_answer": "Usando plugins como SonarQube ou Checkstyle.",
+        "incorrect_answers": [
+          "Adicionando validações manuais no Jenkinsfile.",
+          "Configurando jobs independentes para cada etapa.",
+          "Usando apenas agentes dedicados para análise de qualidade."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Qual é a abordagem recomendada para escalar um Jenkins Master?",
+        "correct_answer": "Configurar o Jenkins Master como somente leitura e usar agentes para execução.",
+        "incorrect_answers": [
+          "Adicionar mais memória e CPU ao servidor Master.",
+          "Configurar o Master para executar múltiplos pipelines simultâneos.",
+          "Migrar o Master para um cluster Kubernetes."
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Jenkins",
+        "question": "Como você previne problemas de concorrência em pipelines Jenkins?",
+        "correct_answer": "Usando o recurso 'lock' para sincronização entre jobs.",
+        "incorrect_answers": [
+          "Evitando pipelines paralelos.",
+          "Configurando agentes dedicados para cada job.",
+          "Criando regras de acesso no Jenkinsfile."
+        ]
       }
     ]
   }
