@@ -17,46 +17,47 @@ let availableQuestions = [];
 let questions = []; //voir json
 
 //fetch question from .json:
-fetch(
-    //"./questions-philosophy.json"
-    "https://raw.githubusercontent.com/jasmendes/jasmendes.github.io/master/questions-jenkins.json"
-    //"https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
-    )
-.then(res =>{   
-    return res.json();
-})
-  .then(loadedQuestions => {
-      console.log(loadedQuestions.results);
-      
-      const difficultyLevel = "medium"; // Change to "medium" or "hard" as needed
-      const filteredQuestions = loadedQuestions.results.filter(question => question.difficulty === difficultyLevel);
+fetch("https://raw.githubusercontent.com/jasmendes/jasmendes.github.io/master/questions-jenkins.json")
+    .then(res => {
+        return res.json();
+    })
+    .then(loadedQuestions => {
+        console.log(loadedQuestions.results);
 
-      questions = filteredQuestions.results.map(filteredQuestions => {
-          const formattedQuestion = {
-             question: filteredQuestions.question
-          };
+        const difficultyLevel = "medium"; // Change to "medium" or "hard" as needed
 
-          const answerChoices = [...filteredQuestions.incorrect_answers];
-          formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
-          answerChoices.splice(
-              formattedQuestion.answer - 1,
-              0,
-              filteredQuestions.correct_answer
-          );
+        // Filter questions based on the desired difficulty
+        const filteredQuestions = loadedQuestions.results.filter(
+            question => question.difficulty === difficultyLevel
+        );
 
-          answerChoices.forEach((choice, index) =>{
-              formattedQuestion["choice" + (index +1)] = choice;
-          });
-          return formattedQuestion;
-      });
+        // Map filtered questions into the desired format
+        questions = filteredQuestions.map(filteredQuestion => {
+            const formattedQuestion = {
+                question: filteredQuestion.question
+            };
 
-      
-       
-      //questions = loadedQuestions;
-      startGame();
-  })
+            // Randomize and arrange answer choices
+            const answerChoices = [...filteredQuestion.incorrect_answers];
+            formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
+            answerChoices.splice(
+                formattedQuestion.answer - 1,
+                0,
+                filteredQuestion.correct_answer
+            );
+
+            // Add choices to formattedQuestion
+            answerChoices.forEach((choice, index) => {
+                formattedQuestion["choice" + (index + 1)] = choice;
+            });
+
+            return formattedQuestion;
+        });
+
+        console.log(questions); // Final filtered and formatted questions
+    })
     .catch(err => {
-         console.log(err);
+        console.error("Error fetching or processing questions:", err);
     });
 
     /*{
