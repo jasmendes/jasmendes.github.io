@@ -31,17 +31,17 @@ fetch(
       const difficultyLevel = "medium"; // Change to "medium" or "hard" as needed
       const filteredQuestions = loadedQuestions.results.filter(question => question.difficulty === difficultyLevel);
 
-      questions = filteredQuestions.results.map(loadedQuestion => {
+      questions = filteredQuestions.results.map(filteredQuestions => {
           const formattedQuestion = {
-             question: loadedQuestion.question
+             question: filteredQuestions.question
           };
 
-          const answerChoices = [...loadedQuestion.incorrect_answers];
+          const answerChoices = [...filteredQuestions.incorrect_answers];
           formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
           answerChoices.splice(
               formattedQuestion.answer - 1,
               0,
-              loadedQuestion.correct_answer
+              filteredQuestions.correct_answer
           );
 
           answerChoices.forEach((choice, index) =>{
