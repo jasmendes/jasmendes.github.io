@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/app.css">
     <title>Quiz App</title>
+    <nav>
+        <!-- Outros links -->
+        <a href="minha_conta.html">Minha Conta</a>
+      </nav>
+      
 </head>
 
 <body>
@@ -14,6 +19,7 @@
         <!-- Página Inicial - ocultada até o login ser feito -->
         <div id="home" class="flex-center flex-column hidden">
             <h1>Quick Quiz</h1>
+            <a class="btn" href="./game-easy-qi.html">Play QI Easy</a>
             <a class="btn" href="./game-literature.html">Play Portugues 11 Ano</a>
             <a class="btn" href="./game-philosophy.html">Play Filosofia 11 Ano</a>
             <a class="btn" href="./game-jenkins-beg.html">Play Jenkins Begineer</a>
@@ -42,7 +48,7 @@
             // Recupera os dados de login do formulário
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-
+            sessionStorage.setItem('username', username);
             // Aqui você pode fazer a verificação de usuário e senha
             if (username === 'admin' && password === '1234') {
                 showHomePage(); // Se login for bem-sucedido, mostra a página inicial
@@ -62,6 +68,15 @@
                 // Mostra a página inicial
                 homeElement.classList.remove('hidden');
             }
+        }
+        function saveScore(score) {
+        const username = sessionStorage.getItem('username');
+        if (username) {
+            // Lógica para salvar a pontuação, por exemplo, enviando para um servidor ou armazenando localmente
+            console.log(`Salvando a pontuação de ${score} para o usuário ${username}`);
+        } else {
+            console.log('Usuário não autenticado.');
+        }
         }
 
         // Função para fazer logout
