@@ -1,0 +1,365 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é a capital do estado do Rio de Janeiro?",
+      "correct_answer": "Rio de Janeiro",
+      "incorrect_answers": [
+        "São Paulo",
+        "Belo Horizonte",
+        "Salvador"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o famoso Cristo localizado no Rio de Janeiro?",
+      "correct_answer": "Cristo Redentor",
+      "incorrect_answers": [
+        "Cristo da Barra",
+        "Cristo Rei",
+        "Cristo da Paz"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é a praia mais famosa do Rio de Janeiro?",
+      "correct_answer": "Copacabana",
+      "incorrect_answers": [
+        "Ipanema",
+        "Leblon",
+        "Barra da Tijuca"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Em qual continente está localizado o Rio de Janeiro?",
+      "correct_answer": "América do Sul",
+      "incorrect_answers": [
+        "América do Norte",
+        "Europa",
+        "África"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o nome do famoso bairro conhecido pelo Pão de Açúcar?",
+      "correct_answer": "Urca",
+      "incorrect_answers": [
+        "Copacabana",
+        "Ipanema",
+        "Botafogo"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é a famosa montanha com formato de pão de forma?",
+      "correct_answer": "Pão de Açúcar",
+      "incorrect_answers": [
+        "Corcovado",
+        "Morro da Urca",
+        "Pedra da Gávea"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o principal estádio de futebol do Rio de Janeiro?",
+      "correct_answer": "Maracanã",
+      "incorrect_answers": [
+        "Engenhão",
+        "Nilton Santos",
+        "Maracanãzinho"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o famoso carnaval do Rio de Janeiro conhecido mundialmente?",
+      "correct_answer": "Carnaval do Rio de Janeiro",
+      "incorrect_answers": [
+        "Carnaval de Salvador",
+        "Carnaval de Recife",
+        "Carnaval de São Paulo"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o famoso bairro conhecido pelo calçadão de pedras em preto e branco?",
+      "correct_answer": "Copacabana",
+      "incorrect_answers": [
+        "Ipanema",
+        "Leblon",
+        "Botafogo"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o famoso morro conhecido pelo Cristo Redentor?",
+      "correct_answer": "Corcovado",
+      "incorrect_answers": [
+        "Pão de Açúcar",
+        "Morro da Urca",
+        "Pedra da Gávea"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o principal aeroporto internacional do Rio de Janeiro?",
+      "correct_answer": "Galeão",
+      "incorrect_answers": [
+        "Santos Dumont",
+        "Confins",
+        "Viracopos"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o famoso bairro conhecido pelo Jardim Botânico?",
+      "correct_answer": "Jardim Botânico",
+      "incorrect_answers": [
+        "Botafogo",
+        "Lagoa",
+        "Leblon"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o nome da lagoa famosa no bairro da Zona Sul?",
+      "correct_answer": "Lagoa Rodrigo de Freitas",
+      "incorrect_answers": [
+        "Lagoa da Tijuca",
+        "Lagoa do Aterro",
+        "Lagoa Azul"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o famoso bairro boêmio do Rio de Janeiro?",
+      "correct_answer": "Lapa",
+      "incorrect_answers": [
+        "Copacabana",
+        "Ipanema",
+        "Leblon"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é a bebida típica que pode ser encontrada em quiosques à beira-mar?",
+      "correct_answer": "Coco gelado",
+      "incorrect_answers": [
+        "Guaraná",
+        "Caipirinha",
+        "Suco de laranja"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o famoso ponto turístico com bondinho no Rio de Janeiro?",
+      "correct_answer": "Pão de Açúcar",
+      "incorrect_answers": [
+        "Corcovado",
+        "Pedra da Gávea",
+        "Morro Dois Irmãos"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o nome do sambódromo do Rio de Janeiro?",
+      "correct_answer": "Sambódromo Marquês de Sapucaí",
+      "incorrect_answers": [
+        "Sambódromo do Leblon",
+        "Sambódromo de Copacabana",
+        "Sambódromo do Leme"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o famoso bairro conhecido pelas mansões e praias elegantes?",
+      "correct_answer": "Leblon",
+      "incorrect_answers": [
+        "Ipanema",
+        "Copacabana",
+        "Botafogo"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é a famosa ilha localizada próxima à cidade do Rio de Janeiro?",
+      "correct_answer": "Ilha Fiscal",
+      "incorrect_answers": [
+        "Ilha Grande",
+        "Ilha do Governador",
+        "Ilha das Cobras"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é a maior favela do Rio de Janeiro?",
+      "correct_answer": "Rocinha",
+      "incorrect_answers": [
+        "Vidigal",
+        "Complexo do Alemão",
+        "Santa Marta"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o famoso ponto turístico conhecido por ter vista panorâmica da cidade?",
+      "correct_answer": "Corcovado",
+      "incorrect_answers": [
+        "Pão de Açúcar",
+        "Pedra da Gávea",
+        "Morro Dois Irmãos"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o principal time de futebol da cidade?",
+      "correct_answer": "Flamengo",
+      "incorrect_answers": [
+        "Vasco da Gama",
+        "Botafogo",
+        "Fluminense"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é a avenida famosa que liga a Zona Sul à Zona Oeste do Rio?",
+      "correct_answer": "Avenida Atlântica",
+      "incorrect_answers": [
+        "Avenida Brasil",
+        "Avenida Rio Branco",
+        "Avenida das Américas"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o famoso bairro conhecido por sua vida noturna e bares?",
+      "correct_answer": "Lapa",
+      "incorrect_answers": [
+        "Ipanema",
+        "Leblon",
+        "Copacabana"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é a famosa escadaria colorida no bairro da Lapa?",
+      "correct_answer": "Escadaria Selarón",
+      "incorrect_answers": [
+        "Escadaria do Corcovado",
+        "Escadaria do Pão de Açúcar",
+        "Escadaria da Urca"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o famoso parque localizado na Lagoa Rodrigo de Freitas?",
+      "correct_answer": "Parque dos Patins",
+      "incorrect_answers": [
+        "Parque do Flamengo",
+        "Parque da Tijuca",
+        "Parque Lage"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o bairro conhecido pelo Maracanã e Estádio do Engenhão?",
+      "correct_answer": "Maracanã",
+      "incorrect_answers": [
+        "Tijuca",
+        "Laranjeiras",
+        "Botafogo"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o famoso monumento com a estátua do Cristo Redentor?",
+      "correct_answer": "Corcovado",
+      "incorrect_answers": [
+        "Pão de Açúcar",
+        "Pedra da Gávea",
+        "Morro Dois Irmãos"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o principal porto do Rio de Janeiro?",
+      "correct_answer": "Porto do Rio de Janeiro",
+      "incorrect_answers": [
+        "Porto de Santos",
+        "Porto de Niterói",
+        "Porto de Angra"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Qual é o principal museu de arte moderna do Rio de Janeiro?",
+      "correct_answer": "Museu de Arte Moderna (MAM)",
+      "incorrect_answers": [
+        "Museu do Amanhã",
+        "Museu Nacional",
+        "Museu Imperial"
+      ]
+    }
+  ]
+}
