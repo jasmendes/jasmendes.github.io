@@ -1,72 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz App</title>
-  <link rel="stylesheet" href="css/index.css"> <!-- Link to your custom CSS -->
-</head>
-<body>
-  <!-- Login Form -->
-  <div id="loginPage" class="login-page">
-    <h2>Login to Access Quiz</h2>
-    <form id="loginForm" class="login-form">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required />
-      
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required />
-      
-      <button type="submit">Login</button>
-      <p id="loginError" class="hidden">Invalid username or password</p>
-    </form>
-  </div>
-
-
-  <script>
-    // Mock user credentials
-    const validUsername = 'jose';
-    const validPassword = '1234';
-
-    // DOM elements
-    const loginPage = document.getElementById('loginPage');
-    const quizPage = document.getElementById('home');
-    const loginForm = document.getElementById('loginForm');
-    const loginError = document.getElementById('loginError');
-
-    // Check if the user is already logged in
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    
-    if (isLoggedIn === 'true') {
-      // If logged in, show the quiz page and hide the login page
-      loginPage.classList.add('hidden');
-      quizPage.classList.remove('hidden');
-    } else {
-      // If not logged in, show the login page
-      loginPage.classList.remove('hidden');
-      quizPage.classList.add('hidden');
+<script>
+  // Quando o utilizador já está logado, vai direto para o quiz
+  window.onload = () => {
+    const user = sessionStorage.getItem("username");
+    if (user) {
+      window.location.href = "index.html"; // redireciona se já estiver logado
     }
+  };
 
-    // Handle login form submission
-    loginForm.addEventListener('submit', function (e) {
-      e.preventDefault();
+  const loginForm = document.getElementById("loginForm");
+  const loginError = document.getElementById("loginError");
 
-      // Get username and password
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+  loginForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      // Validate username and password
-      if (username === validUsername && password === validPassword) {
-        // Successful login
-        localStorage.setItem('isLoggedIn', 'true'); // Store login status
-        loginPage.classList.add('hidden'); // Hide login page
-        quizPage.classList.remove('hidden'); // Show quiz page
-      } else {
-        // Invalid login
-        loginError.classList.remove('hidden'); // Show error message
-      }
-    });
-  </script>
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-</body>
-</html>
+    // Login temporário — podes mudar as credenciais
+    if (username === "jose" && password === "1234") {
+      sessionStorage.setItem("username", username);
+      window.location.href = "index.html"; // vai para o menu principal
+    } else {
+      loginError.textContent = "Credenciais inválidas!";
+      loginError.classList.remove("hidden");
+    }
+  });
+</script>

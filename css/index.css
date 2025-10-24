@@ -1,54 +1,100 @@
-/* Simple styles for the login page */
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* === BACKGROUND === */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #9333ea, #4f46e5);
+}
+
+/* === LOGIN CARD === */
+.login-page {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  width: 90%;
+  max-width: 350px;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* === HEADER === */
+.login-page h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* === FORM === */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  text-align: left;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+.login-form input {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.login-form input:focus {
+  box-shadow: 0 0 0 2px #a78bfa;
+}
+
+/* === BUTTON === */
+.login-form button {
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-form button:hover {
+  background: #818cf8;
+  transform: scale(1.03);
+}
+
+/* === ERROR === */
+#loginError {
+  color: #f87171;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
 
 .hidden {
-    display: none;
-  }
-.login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f2f2f2;
-  }
+  display: none;
+}
 
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+/* === ANIMAÇÕES === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-  .login-form input {
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-
-  .login-form button {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-
-  .login-form button:hover {
-    background-color: #45a049;
-  }
-
-  #loginError {
-    color: red;
-    display: none;
-  }
+.container, .login-page {
+  animation: fadeIn 0.6s ease forwards;
+}
