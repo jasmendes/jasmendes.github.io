@@ -1,0 +1,165 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Qual é o resultado de 3²?",
+      "correct_answer": "9",
+      "incorrect_answers": ["6", "8", "12"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Quanto é 2 × (5 + 3)?",
+      "correct_answer": "16",
+      "incorrect_answers": ["13", "10", "8"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Qual é o valor de 5³?",
+      "correct_answer": "125",
+      "incorrect_answers": ["25", "15", "75"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "O dobro da soma de 6 e 4 é:",
+      "correct_answer": "20",
+      "incorrect_answers": ["10", "12", "24"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Qual é o mínimo múltiplo comum (MMC) de 6 e 8?",
+      "correct_answer": "24",
+      "incorrect_answers": ["12", "18", "30"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Qual é o máximo divisor comum (MDC) de 12 e 18?",
+      "correct_answer": "6",
+      "incorrect_answers": ["3", "4", "9"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Qual é a fração equivalente a 3/5?",
+      "correct_answer": "6/10",
+      "incorrect_answers": ["5/10", "2/3", "9/15"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Qual é o resultado de 3/4 + 1/8?",
+      "correct_answer": "7/8",
+      "incorrect_answers": ["4/8", "5/8", "6/8"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Qual é o resultado de 2/3 × 9?",
+      "correct_answer": "6",
+      "incorrect_answers": ["9", "3", "12"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Se 25% de um número é 10, qual é o número?",
+      "correct_answer": "40",
+      "incorrect_answers": ["25", "50", "30"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Qual é 15% de 200?",
+      "correct_answer": "30",
+      "incorrect_answers": ["25", "35", "40"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Qual é o resultado de 8² - 5²?",
+      "correct_answer": "39",
+      "incorrect_answers": ["13", "33", "45"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Qual é o resultado da expressão 12 ÷ (3 + 1)?",
+      "correct_answer": "3",
+      "incorrect_answers": ["4", "2", "6"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Quantos ângulos tem um hexágono?",
+      "correct_answer": "6",
+      "incorrect_answers": ["5", "7", "8"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Um retângulo tem 12 cm de comprimento e 5 cm de largura. Qual é a sua área?",
+      "correct_answer": "60 cm²",
+      "incorrect_answers": ["24 cm²", "30 cm²", "17 cm²"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Qual é o perímetro de um triângulo equilátero com lados de 9 cm?",
+      "correct_answer": "27 cm",
+      "incorrect_answers": ["18 cm", "36 cm", "30 cm"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Qual é o número primo imediatamente a seguir a 19?",
+      "correct_answer": "23",
+      "incorrect_answers": ["21", "25", "27"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Escreve 3/5 como número decimal.",
+      "correct_answer": "0,6",
+      "incorrect_answers": ["0,3", "0,5", "0,8"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Transforma 0,25 em fração irredutível.",
+      "correct_answer": "1/4",
+      "incorrect_answers": ["2/4", "1/5", "1/2"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Matemática 6.º ano",
+      "question": "Um tanque contém 60 litros de água. Se se retirarem 25%, quantos litros sobram?",
+      "correct_answer": "45",
+      "incorrect_answers": ["40", "50", "30"]
+    }
+  ]
+}

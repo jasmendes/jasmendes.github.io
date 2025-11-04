@@ -1,0 +1,165 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Qual é o valor de 345 + 278?",
+      "correct_answer": "623",
+      "incorrect_answers": ["613", "633", "653"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Qual é o resultado de 900 - 356?",
+      "correct_answer": "544",
+      "incorrect_answers": ["554", "534", "564"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Quanto é 12 × 8?",
+      "correct_answer": "96",
+      "incorrect_answers": ["84", "108", "86"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Qual é o quociente de 72 ÷ 8?",
+      "correct_answer": "9",
+      "incorrect_answers": ["8", "10", "7"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Qual é o número que vem a seguir a 3 999?",
+      "correct_answer": "4 000",
+      "incorrect_answers": ["3 900", "4 009", "4 099"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Qual é o valor posicional do 7 em 7 234?",
+      "correct_answer": "7 unidades de milhar",
+      "incorrect_answers": ["7 centenas", "7 dezenas", "7 unidades"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Quantos minutos tem uma hora e meia?",
+      "correct_answer": "90",
+      "incorrect_answers": ["80", "100", "120"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Qual é o dobro de 125?",
+      "correct_answer": "250",
+      "incorrect_answers": ["225", "240", "275"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Quantas dezenas há em 320?",
+      "correct_answer": "32",
+      "incorrect_answers": ["30", "3,2", "320"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Se um retângulo tem 5 cm de largura e 8 cm de comprimento, qual é o seu perímetro?",
+      "correct_answer": "26 cm",
+      "incorrect_answers": ["40 cm", "25 cm", "16 cm"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Qual é o resultado de 1/2 + 1/4?",
+      "correct_answer": "3/4",
+      "incorrect_answers": ["2/4", "1/8", "2/3"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Qual é a fração equivalente a 2/4?",
+      "correct_answer": "1/2",
+      "incorrect_answers": ["3/4", "1/3", "2/3"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Quantos lados tem um pentágono?",
+      "correct_answer": "5",
+      "incorrect_answers": ["6", "4", "8"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Se uma pizza é dividida em 8 fatias iguais e comes 3, que fração da pizza comeste?",
+      "correct_answer": "3/8",
+      "incorrect_answers": ["5/8", "8/3", "3/5"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Quantos centímetros tem um metro?",
+      "correct_answer": "100",
+      "incorrect_answers": ["10", "1 000", "60"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Qual é o resultado de 35 ÷ 5?",
+      "correct_answer": "7",
+      "incorrect_answers": ["6", "8", "5"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Qual destes números é divisível por 3?",
+      "correct_answer": "81",
+      "incorrect_answers": ["82", "85", "88"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Qual é o menor número primo?",
+      "correct_answer": "2",
+      "incorrect_answers": ["1", "3", "5"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Um pacote tem 24 bolachas. Se cada criança recebe 6, quantas crianças podem receber bolachas?",
+      "correct_answer": "4",
+      "incorrect_answers": ["3", "5", "6"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Matemática 5.º ano",
+      "question": "Se um autocarro transporta 45 alunos e há 3 autocarros iguais, quantos alunos são transportados ao todo?",
+      "correct_answer": "135",
+      "incorrect_answers": ["120", "125", "140"]
+    }
+  ]
+}
