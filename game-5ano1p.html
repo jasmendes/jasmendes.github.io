@@ -62,32 +62,23 @@
         );
 
         // Save score to Supabase
-        async function saveScore(score) {
+       async function saveScore(score, subject = 'Economia', difficulty = 'easy') {
+
             const username = sessionStorage.getItem('username');
 
-            if (!username) {
-                console.log('Usuário não autenticado.');
-                return;
-            }
+            if (!username) return;
 
-            try {
-                const { data, error } = await supabase
-                    .from('scores')
-                    .insert([{
-                        username,
-                        score,
-                        date: new Date().toISOString()
-                    }])
-                    .select();
+            const { error } = await supabase
+                .from('scores')
+                .insert([{
+                    username,
+                    score,
+                    subject,
+                    difficulty
+                }]);
 
-                if (error) {
-                    console.error('Erro ao salvar score:', error);
-                    return;
-                }
-
-                console.log(`Score ${score} salvo para ${username}`);
-            } catch (err) {
-                console.error('Save score error:', err);
+            if (error) {
+                console.error(error);
             }
         }
 

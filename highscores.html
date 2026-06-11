@@ -1,22 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High Scores</title>
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/highscores.css">
+    <title>Ranking</title>
+</head>
 <body>
-    
-   <div class="container">
-       <div id="highScore" class="flex-center flex-column">
-           <h1 id="finalScore">High Scores</h1>
-           <ul id="highScoresList"></ul>
-           <a href="/" class="btn">Go Home</a>
-       </div>
-   </div>
 
+<h1>Ranking</h1>
 
-    <script src="js/highscores.js"></script>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Utilizador</th>
+            <th>Pontuação</th>
+        </tr>
+    </thead>
+
+    <tbody id="ranking"></tbody>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const supabase = window.supabase.createClient(
+    "https://rdactxwmqqxognfiltgt.supabase.co",
+    "TUA_ANON_KEY"
+);
+const { data } = await supabase
+    .from('scores')
+    .select('*')
+    .order('score', { ascending:false });
+
+let html = '';
+
+data.forEach(item => {
+
+    html += `
+    <tr>
+        <td>${item.username}</td>
+        <td>${item.score}</td>
+        <td>${item.subject}</td>
+    </tr>
+    `;
+});
+
+document
+    .getElementById('scores')
+    .innerHTML = html;
+
+loadScores();
+
+</script>
+
 </body>
 </html>

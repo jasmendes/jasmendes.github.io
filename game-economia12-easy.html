@@ -61,39 +61,30 @@
 <script>
     // Supabase initialization
     const supabase = window.supabase.createClient(
-        "https://rdactxwmqqxognfiltgt.supabase.co/rest/v1/",
+        "https://rdactxwmqqxognfiltgt.supabase.co",
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJkYWN0eHdtcXF4b2duZmlsdGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExODY5MzcsImV4cCI6MjA5Njc2MjkzN30.gpukeBC44WRNmzBVhTg1_nB756DbWRzpX88rDdzO-Eo"
     );
 
     // Save score to Supabase
-    async function saveScore(score) {
-        const username = sessionStorage.getItem('username');
+    async function saveScore(score, subject = 'Economia', difficulty = 'easy') {
 
-        if (!username) {
-            console.log('Usuário não autenticado.');
-            return;
-        }
+    const username = sessionStorage.getItem('username');
 
-        try {
-            const { data, error } = await supabase
-                .from('scores')
-                .insert([{
-                    username,
-                    score,
-                    date: new Date().toISOString()
-                }])
-                .select();
+    if (!username) return;
 
-            if (error) {
-                console.error('Erro ao salvar score:', error);
-                return;
-            }
+    const { error } = await supabase
+        .from('scores')
+        .insert([{
+            username,
+            score,
+            subject,
+            difficulty
+        }]);
 
-            console.log(`Score ${score} salvo para ${username}`);
-        } catch (err) {
-            console.error('Save score error:', err);
-        }
+    if (error) {
+        console.error(error);
     }
+}
 
     function logout() {
         // Remove login credentials from session

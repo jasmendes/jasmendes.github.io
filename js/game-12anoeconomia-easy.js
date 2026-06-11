@@ -16,6 +16,33 @@ let availableQuestions = [];
 
 let questions = []; //voir json
 
+async function saveScore(score, subject, difficulty) {
+
+    const username =
+        sessionStorage.getItem('username');
+
+    if (!username) {
+        console.log('Utilizador não autenticado');
+        return;
+    }
+
+    const { error } = await supabase
+        .from('scores')
+        .insert([{
+            username,
+            score,
+            subject,
+            difficulty,
+            total_questions: MAX_QUESTIONS
+        }]);
+
+    if (error) {
+        console.error(error);
+    } else {
+        console.log('Score guardado');
+    }
+}
+
 //fetch question from .json:
 fetch(
    // "./questions-12anoeconomia-easy.json"
@@ -100,13 +127,26 @@ startGame = () =>{
 
 getNewQuestions = () =>{
      
-    if(availableQuestions.length ===0 || questionCounter >= MAX_QUESTIONS){
+   if(
+    availableQuestions.length === 0 ||
+    questionCounter >= MAX_QUESTIONS
+){
 
-        //save the user score:
-        localStorage.setItem("mostRecentScore", score);
-        //go to ebd of the page:
-        return window.location.assign('end.html');
-    }
+    localStorage.setItem(
+        "mostRecentScore",
+        score
+    );
+
+    saveScore(
+        score,
+        "Economia 12",
+        "easy"
+    );
+
+    return window.location.assign(
+        'end.html'
+    );
+}
 
     questionCounter++;
     progressText.innerText = ` Question ${questionCounter}/${MAX_QUESTIONS}`;
