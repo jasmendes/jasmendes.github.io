@@ -65,7 +65,7 @@
 
             if (!username) return;
 
-            const { error } = await supabase
+            const { error } = await supabaseClient
                 .from('scores')
                 .insert([{
                     username,

@@ -23,7 +23,7 @@
 <script>
 
 
-const { data } = await supabase
+const { data } = await supabaseClient
     .from('scores')
     .select('*')
     .order('score', { ascending:false });

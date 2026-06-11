@@ -136,7 +136,7 @@ const supabaseClient = window.supabase.createClient(
 
             try {
                 // Verifica se username já existe
-                const { data: existingUser } = await supabase
+                const { data: existingUser } = await supabaseClient
                     .from('users')
                     .select('*')
                     .eq('username', username)

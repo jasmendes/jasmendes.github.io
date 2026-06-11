@@ -26,7 +26,7 @@ async function saveScore(score, subject, difficulty) {
         return;
     }
 
-    const { error } = await supabase
+    const { error } = await supabaseClient
         .from('scores')
         .insert([{
             username,
