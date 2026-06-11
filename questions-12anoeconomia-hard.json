@@ -1,0 +1,70 @@
+{
+  "response_code": 0,
+  "results": [
+    
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Economia A 12.º ano",
+      "question": "Se um país exporta 120 milhões de euros e importa 100 milhões de euros, qual é o saldo da balança comercial?",
+      "correct_answer": "20 milhões de euros",
+      "incorrect_answers": ["-20 milhões de euros", "220 milhões de euros", "100 milhões de euros"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Economia A 12.º ano",
+      "question": "Uma população ativa de 4 milhões inclui 320 mil desempregados. Qual é a taxa de desemprego?",
+      "correct_answer": "8%",
+      "incorrect_answers": ["12%", "6%", "4%"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Economia A 12.º ano",
+      "question": "O PIB per capita obtém-se dividindo:",
+      "correct_answer": "PIB pela população",
+      "incorrect_answers": ["PIB pelas exportações", "Consumo pela população", "PIB pelo número de empresas"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Economia A 12.º ano",
+      "question": "Se o PIB de um país é 250 mil milhões de euros e a população é 10 milhões, o PIB per capita é:",
+      "correct_answer": "25000 euros",
+      "incorrect_answers": ["2500 euros", "250000 euros", "12500 euros"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Economia A 12.º ano",
+      "question": "Se um produto custava 80€ e passou a custar 100€, qual foi a taxa de variação percentual?",
+      "correct_answer": "25%",
+      "incorrect_answers": ["20%", "15%", "30%"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Economia A 12.º ano",
+      "question": "Uma taxa de inflação de 4% significa que um cabaz que custava 200€ passa a custar aproximadamente:",
+      "correct_answer": "208€",
+      "incorrect_answers": ["204€", "216€", "220€"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Economia A 12.º ano",
+      "question": "Qual dos seguintes indicadores é frequentemente utilizado para medir o desenvolvimento humano?",
+      "correct_answer": "IDH",
+      "incorrect_answers": ["IVA", "IRS", "IPC"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Economia A 12.º ano",
+      "question": "Quando as receitas do Estado são superiores às despesas públicas, existe:",
+      "correct_answer": "Superavit orçamental",
+      "incorrect_answers": ["Défice orçamental", "Inflação", "Recessão"]
+    }
+  ]
+}

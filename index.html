@@ -22,6 +22,9 @@
             <a class="btn" href="./game-6ano1p.html">Play 6 Ano Escolaridade 1º Periodo</a>
             <a class="btn" href="./game-literature.html">Play Portugues 11 Ano</a>
             <a class="btn" href="./game-philosophy.html">Play Filosofia 11 Ano</a>
+            <a class="btn" href="./game-economia12-hard.html">Play Economia A 12º Ano Hard</a>
+            <a class="btn" href="./game-economia12-medium.html">Play Economia A 12º Ano Medium</a>
+            <a class="btn" href="./game-economia12-easy.html">Play Economia A 12º Ano Easy</a>
             <!--a class="btn" href="./game-rio.html">Play Rio janeiro - Basic</a-->
             <a class="btn" href="./highscores.html">High Scores</a>
             <button onclick="logout()">Logout</button>
@@ -67,14 +70,34 @@
                 homeElement.classList.remove('hidden');
             }
         }
-        function saveScore(score) {
-        const username = sessionStorage.getItem('username');
-        if (username) {
-            // Lógica para salvar a pontuação, por exemplo, enviando para um servidor ou armazenando localmente
-            console.log(`Salvando a pontuação de ${score} para o usuário ${username}`);
-        } else {
-            console.log('Usuário não autenticado.');
+        function saveScores(score) {
+            const username = sessionStorage.getItem('username');
+            if (username) {
+                // Lógica para salvar a pontuação, por exemplo, enviando para um servidor ou armazenando localmente
+                console.log(`Salvando a pontuação de ${score} para o usuário ${username}`);
+            } else {
+                console.log('Usuário não autenticado.');
+            }
         }
+
+        function saveScore(score) {
+            const username = sessionStorage.getItem('username');
+
+            if (!username) return;
+
+            const scores =
+                JSON.parse(localStorage.getItem('scores')) || [];
+
+            scores.push({
+                username,
+                score,
+                date: new Date().toLocaleString()
+            });
+
+            localStorage.setItem(
+                'scores',
+                JSON.stringify(scores)
+            );
         }
 
         // Função para fazer logout

@@ -1,0 +1,54 @@
+{
+  "response_code": 0,
+  "results": [
+   
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Se o rendimento das famílias aumenta, a procura tende a:",
+      "correct_answer": "Aumentar",
+      "incorrect_answers": ["Diminuir", "Desaparecer", "Permanecer sempre igual"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Qual dos seguintes fatores pode provocar um aumento da oferta?",
+      "correct_answer": "Redução dos custos de produção",
+      "incorrect_answers": ["Aumento dos impostos sobre produção", "Desastres naturais", "Greves prolongadas"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "A taxa de atividade mede:",
+      "correct_answer": "A relação entre população ativa e população em idade ativa",
+      "incorrect_answers": ["A relação entre exportações e importações", "A relação entre consumo e poupança", "A relação entre PIB e inflação"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Qual é o principal objetivo de uma política monetária restritiva?",
+      "correct_answer": "Reduzir a inflação",
+      "incorrect_answers": ["Aumentar a despesa pública", "Reduzir impostos", "Aumentar subsídios"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Uma subida das taxas de juro tende a:",
+      "correct_answer": "Reduzir o consumo e o investimento",
+      "incorrect_answers": ["Aumentar o consumo", "Aumentar automaticamente o PIB", "Eliminar a inflação"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Qual dos seguintes fluxos pertence ao circuito económico?",
+      "correct_answer": "Pagamento de salários",
+      "incorrect_answers": ["Rotação da Terra", "Produção agrícola mundial", "Criação de moeda digital privada"]
+    }
+  ]
+}

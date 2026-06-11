@@ -7,3 +7,7 @@ highScoresList.innerHTML = highScores
    return `<li class= "high-score">${score.name} - ${score.score}</li>`;
 }).join(""); //getting a srting with all my li
 
+const scores =
+    JSON.parse(localStorage.getItem('scores')) || [];
+
+console.table(scores);

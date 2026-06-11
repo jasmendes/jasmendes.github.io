@@ -1,0 +1,325 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Economia A 12.º ano",
+      "question": "Qual é a moeda oficial de Portugal?",
+      "correct_answer": "Euro",
+      "incorrect_answers": ["Dólar", "Libra", "Franco"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Economia A 12.º ano",
+      "question": "Qual destes agentes económicos pertence ao setor Famílias?",
+      "correct_answer": "Consumidores",
+      "incorrect_answers": ["Bancos Centrais", "Empresas Públicas", "Municípios"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Economia A 12.º ano",
+      "question": "O consumo corresponde à:",
+      "correct_answer": "Utilização de bens e serviços para satisfazer necessidades",
+      "incorrect_answers": ["Produção de bens", "Cobrança de impostos", "Exportação de produtos"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Economia A 12.º ano",
+      "question": "Qual destas entidades produz bens e serviços?",
+      "correct_answer": "Empresa",
+      "incorrect_answers": ["Família", "Banco Central Europeu", "Tribunal"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Economia A 12.º ano",
+      "question": "A poupança corresponde à parte do rendimento que:",
+      "correct_answer": "Não é consumida",
+      "incorrect_answers": ["É toda investida", "É paga em impostos", "É exportada"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Economia A 12.º ano",
+      "question": "Qual destes é um exemplo de necessidade primária?",
+      "correct_answer": "Alimentação",
+      "incorrect_answers": ["Viagem turística", "Consola de jogos", "Joias"]
+    },
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Qual é a principal função da moeda como meio de troca?",
+  "correct_answer": "Facilitar as transações",
+  "incorrect_answers": ["Aumentar salários", "Criar impostos", "Controlar empresas"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Quem produz bens e serviços numa economia?",
+  "correct_answer": "As empresas",
+  "incorrect_answers": ["Os tribunais", "As escolas", "Os consumidores"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Qual é o principal objetivo do consumo?",
+  "correct_answer": "Satisfazer necessidades",
+  "incorrect_answers": ["Produzir riqueza", "Cobrar impostos", "Exportar produtos"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "O rendimento recebido pelo trabalho chama-se:",
+  "correct_answer": "Salário",
+  "incorrect_answers": ["Juro", "Lucro", "Renda"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Uma necessidade secundária é:",
+  "correct_answer": "Viagem de férias",
+  "incorrect_answers": ["Água potável", "Alimentação", "Habitação básica"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Qual destes é um bem duradouro?",
+  "correct_answer": "Automóvel",
+  "incorrect_answers": ["Pão", "Leite", "Jornal"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "O conjunto de pessoas que trabalham ou procuram emprego constitui:",
+  "correct_answer": "População ativa",
+  "incorrect_answers": ["População total", "População jovem", "População dependente"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Qual é o imposto aplicado ao consumo em Portugal?",
+  "correct_answer": "IVA",
+  "incorrect_answers": ["IRS", "IRC", "IMI"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Quando uma família guarda parte do rendimento está a:",
+  "correct_answer": "Poupar",
+  "incorrect_answers": ["Investir", "Exportar", "Importar"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Qual destas operações é uma importação?",
+  "correct_answer": "Comprar automóveis ao Japão",
+  "incorrect_answers": ["Vender vinho para França", "Exportar cortiça", "Vender azeite para Espanha"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Qual destas operações é uma exportação?",
+  "correct_answer": "Venda de calçado português para a Alemanha",
+  "incorrect_answers": ["Compra de petróleo", "Compra de gás natural", "Compra de computadores"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Quem cobra impostos em Portugal?",
+  "correct_answer": "Estado",
+  "incorrect_answers": ["Famílias", "Empresas privadas", "Consumidores"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "O Banco Central Europeu está associado à:",
+  "correct_answer": "Política monetária",
+  "incorrect_answers": ["Política agrícola", "Política educativa", "Política industrial"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Qual destes é um serviço?",
+  "correct_answer": "Consulta médica",
+  "incorrect_answers": ["Telemóvel", "Automóvel", "Mesa"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "O mercado é o local onde:",
+  "correct_answer": "Se encontram compradores e vendedores",
+  "incorrect_answers": ["Se produzem apenas bens", "Se cobram impostos", "Se criam leis"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "O preço de um bem resulta geralmente da interação entre:",
+  "correct_answer": "Oferta e procura",
+  "incorrect_answers": ["Estado e bancos", "Salários e impostos", "Exportações e importações"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Quando os preços aumentam de forma generalizada existe:",
+  "correct_answer": "Inflação",
+  "incorrect_answers": ["Deflação", "Recessão", "Investimento"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "O desemprego refere-se a pessoas que:",
+  "correct_answer": "Querem trabalhar mas não encontram emprego",
+  "incorrect_answers": ["Estão reformadas", "São estudantes", "Não procuram emprego"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Qual destes é um fator de produção?",
+  "correct_answer": "Trabalho",
+  "incorrect_answers": ["Consumo", "Poupança", "Inflação"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "O capital inclui:",
+  "correct_answer": "Máquinas e equipamentos",
+  "incorrect_answers": ["Consumidores", "Impostos", "Exportações"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Qual destes é um recurso natural?",
+  "correct_answer": "Água",
+  "incorrect_answers": ["Computador", "Automóvel", "Televisão"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "A produção corresponde à:",
+  "correct_answer": "Criação de bens e serviços",
+  "incorrect_answers": ["Cobrança de impostos", "Distribuição de salários", "Importação de produtos"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Qual destes setores produz bens agrícolas?",
+  "correct_answer": "Setor primário",
+  "incorrect_answers": ["Setor secundário", "Setor terciário", "Setor financeiro"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "A indústria pertence ao:",
+  "correct_answer": "Setor secundário",
+  "incorrect_answers": ["Setor primário", "Setor terciário", "Setor público"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "O comércio pertence principalmente ao:",
+  "correct_answer": "Setor terciário",
+  "incorrect_answers": ["Setor primário", "Setor secundário", "Setor agrícola"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Qual destes é um exemplo de investimento?",
+  "correct_answer": "Compra de uma máquina por uma empresa",
+  "incorrect_answers": ["Compra de pão", "Pagamento de impostos", "Compra de bilhete de autocarro"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "O PIB mede:",
+  "correct_answer": "A produção de bens e serviços finais",
+  "incorrect_answers": ["Apenas salários", "Apenas exportações", "Apenas impostos"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Qual destes agentes económicos concede crédito?",
+  "correct_answer": "Banco",
+  "incorrect_answers": ["Escola", "Hospital", "Município"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "O IRS é um imposto sobre:",
+  "correct_answer": "O rendimento das pessoas",
+  "incorrect_answers": ["O consumo", "As importações", "As exportações"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "A globalização facilita:",
+  "correct_answer": "As trocas internacionais",
+  "incorrect_answers": ["O fim do comércio", "A eliminação das empresas", "A redução dos transportes"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Qual destes países pertence à Zona Euro?",
+  "correct_answer": "Portugal",
+  "incorrect_answers": ["Reino Unido", "Suíça", "Noruega"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "A procura representa:",
+  "correct_answer": "Quantidade que os consumidores desejam comprar",
+  "incorrect_answers": ["Quantidade produzida", "Quantidade exportada", "Quantidade poupada"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "A oferta representa:",
+  "correct_answer": "Quantidade que os produtores desejam vender",
+  "incorrect_answers": ["Quantidade importada", "Quantidade consumida", "Quantidade poupada"]
+},
+{
+  "type": "multiple",
+  "difficulty": "easy",
+  "category": "Economia A 12.º ano",
+  "question": "Uma empresa tem como objetivo principal:",
+  "correct_answer": "Produzir bens e serviços",
+  "incorrect_answers": ["Criar leis", "Cobrar impostos", "Emitir moeda"]
+}
+  ]
+}
