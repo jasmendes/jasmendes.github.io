@@ -77,7 +77,7 @@ const supabaseClient = window.supabase.createClient(
 
             try {
                 // Query users table
-                const { data, error } = await supabase
+                const { data, error } = await supabaseClient
                     .from('users')
                     .select('*')
                     .eq('username', username)
@@ -149,7 +149,7 @@ const supabaseClient = window.supabase.createClient(
                 }
 
                 // Cria novo utilizador
-                const { data, error } = await supabase
+                const { data, error } = await supabaseClient
                     .from('users')
                     .insert([{ username, password }])
                     .select();
@@ -220,7 +220,7 @@ const supabaseClient = window.supabase.createClient(
             }
 
             try {
-                const { data, error } = await supabase
+                const { data, error } = await supabaseClient
                     .from('scores')
                     .insert([{
                         username,
