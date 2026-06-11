@@ -72,12 +72,14 @@
         }
 
         try {
-            const { data, error } = await supabaseClient
+                   const { data, error } = await supabaseClient
                 .from('scores')
-                .insert([{
+                    .insert([{
                     username,
                     score,
-                    date: new Date().toISOString()
+                    subject: 'Economia 12 ano',
+                    difficulty: 'hard',
+                    total_questions: 10
                 }])
                 .select();
 

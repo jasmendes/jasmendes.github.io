@@ -75,10 +75,12 @@
             const { data, error } = await supabaseClient
                 .from('scores')
                 .insert([{
-                    username,
-                    score,
-                    date: new Date().toISOString()
-                }])
+                username,
+                score,
+                subject: 'Matemativa 6 ano',
+                difficulty: 'easy',
+                total_questions: 10
+            }])
                 .select();
 
             if (error) {
