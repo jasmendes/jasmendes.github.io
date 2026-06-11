@@ -65,6 +65,609 @@
       "question": "Quando as receitas do Estado são superiores às despesas públicas, existe:",
       "correct_answer": "Superavit orçamental",
       "incorrect_answers": ["Défice orçamental", "Inflação", "Recessão"]
-    }
+    },
+    {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Se a procura de um bem é elástica ao preço, uma subida do preço provoca:",
+    "correct_answer": "Uma redução proporcionalmente superior na quantidade procurada",
+    "incorrect_answers": [
+      "Uma redução proporcionalmente inferior na quantidade procurada",
+      "Nenhuma alteração na quantidade procurada",
+      "Um aumento da quantidade procurada"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O PIB a preços de mercado obtém-se adicionando ao Valor Acrescentado Bruto:",
+    "correct_answer": "Os impostos líquidos de subsídios sobre os produtos",
+    "incorrect_answers": [
+      "As exportações líquidas",
+      "Os rendimentos primários",
+      "A formação bruta de capital fixo"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Uma deslocação da curva da procura pode resultar de:",
+    "correct_answer": "Alterações no rendimento dos consumidores",
+    "incorrect_answers": [
+      "Alterações no preço do próprio bem",
+      "Mudanças na tecnologia de produção",
+      "Aumento da produtividade"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A produtividade do trabalho corresponde à relação entre:",
+    "correct_answer": "Produção obtida e quantidade de trabalho utilizada",
+    "incorrect_answers": [
+      "Capital utilizado e produção",
+      "Salários e emprego",
+      "Receitas e custos"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Uma política monetária expansionista tende a:",
+    "correct_answer": "Reduzir as taxas de juro e estimular o crédito",
+    "incorrect_answers": [
+      "Aumentar as taxas de juro",
+      "Reduzir a oferta monetária",
+      "Aumentar os impostos"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A Formação Bruta de Capital Fixo inclui:",
+    "correct_answer": "Aquisição de máquinas pelas empresas",
+    "incorrect_answers": [
+      "Compra de ações na bolsa",
+      "Pagamento de salários",
+      "Transferências sociais"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Um défice da balança comercial significa que:",
+    "correct_answer": "As importações de bens excedem as exportações de bens",
+    "incorrect_answers": [
+      "As exportações excedem as importações",
+      "Não existem trocas internacionais",
+      "A balança de capitais é negativa"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O desemprego estrutural está geralmente associado a:",
+    "correct_answer": "Desajustamentos entre qualificações e necessidades do mercado",
+    "incorrect_answers": [
+      "Procura sazonal de trabalho",
+      "Mudanças temporárias de emprego",
+      "Férias coletivas"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A propensão média ao consumo é calculada através da relação entre:",
+    "correct_answer": "Consumo e rendimento disponível",
+    "incorrect_answers": [
+      "Poupança e consumo",
+      "Investimento e rendimento",
+      "PIB e consumo"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Uma externalidade negativa ocorre quando:",
+    "correct_answer": "Uma atividade económica gera custos para terceiros não envolvidos",
+    "incorrect_answers": [
+      "Uma empresa obtém lucro",
+      "O Estado aumenta impostos",
+      "O consumidor reduz o consumo"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A função principal do mercado financeiro é:",
+    "correct_answer": "Canalizar poupanças para investimento",
+    "incorrect_answers": [
+      "Produzir bens de consumo",
+      "Determinar salários mínimos",
+      "Controlar a inflação diretamente"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O índice de preços no consumidor é utilizado para medir:",
+    "correct_answer": "A evolução do nível geral dos preços",
+    "incorrect_answers": [
+      "O crescimento económico",
+      "A produtividade",
+      "O saldo orçamental"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Os bens públicos caracterizam-se por serem:",
+    "correct_answer": "Não rivais e não excluíveis",
+    "incorrect_answers": [
+      "Rivais e excluíveis",
+      "Exclusivamente privados",
+      "Sempre gratuitos de produzir"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O saldo orçamental corresponde à diferença entre:",
+    "correct_answer": "Receitas e despesas públicas",
+    "incorrect_answers": [
+      "Exportações e importações",
+      "Consumo e poupança",
+      "PIB e PNB"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Uma depreciação da moeda tende a:",
+    "correct_answer": "Favorecer as exportações",
+    "incorrect_answers": [
+      "Reduzir a competitividade externa",
+      "Eliminar a inflação",
+      "Diminuir automaticamente o PIB"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A taxa de desemprego calcula-se através da relação entre:",
+    "correct_answer": "Desempregados e população ativa",
+    "incorrect_answers": [
+      "Desempregados e população total",
+      "Empregados e população ativa",
+      "Inativos e ativos"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O consumo intermédio corresponde a:",
+    "correct_answer": "Bens e serviços utilizados no processo produtivo",
+    "incorrect_answers": [
+      "Consumo das famílias",
+      "Investimento empresarial",
+      "Exportações"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O multiplicador do investimento explica que:",
+    "correct_answer": "Um aumento do investimento gera um aumento mais que proporcional do rendimento",
+    "incorrect_answers": [
+      "O investimento reduz o rendimento",
+      "O investimento não afeta o PIB",
+      "A poupança elimina o investimento"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O Banco Central Europeu tem como principal objetivo:",
+    "correct_answer": "A estabilidade dos preços",
+    "incorrect_answers": [
+      "Aumentar a despesa pública",
+      "Financiar empresas privadas",
+      "Controlar as exportações"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O rendimento disponível das famílias resulta do rendimento após:",
+    "correct_answer": "Impostos e transferências",
+    "incorrect_answers": [
+      "Exportações e importações",
+      "Produção e consumo",
+      "Inflação e desemprego"
+    ]
+  },
+
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A curva da oferta desloca-se para a direita quando:",
+    "correct_answer": "A produtividade aumenta",
+    "incorrect_answers": [
+      "A procura diminui",
+      "O preço do bem aumenta",
+      "O rendimento dos consumidores diminui"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Uma política fiscal restritiva pode incluir:",
+    "correct_answer": "Aumento dos impostos",
+    "incorrect_answers": [
+      "Redução das taxas de juro",
+      "Aumento da despesa pública",
+      "Aumento dos subsídios"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A especialização internacional permite:",
+    "correct_answer": "Aumentar a eficiência produtiva",
+    "incorrect_answers": [
+      "Eliminar o comércio externo",
+      "Reduzir a produtividade",
+      "Acabar com as importações"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Os rendimentos primários incluem:",
+    "correct_answer": "Salários, juros, rendas e lucros",
+    "incorrect_answers": [
+      "Subsídios e pensões",
+      "Impostos indiretos",
+      "Exportações líquidas"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Uma taxa de inflação negativa designa-se por:",
+    "correct_answer": "Deflação",
+    "incorrect_answers": [
+      "Estagflação",
+      "Desvalorização",
+      "Recessão"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O mercado de trabalho encontra-se em equilíbrio quando:",
+    "correct_answer": "A oferta de trabalho iguala a procura de trabalho",
+    "incorrect_answers": [
+      "Não existe desemprego",
+      "Todos os salários são iguais",
+      "A produtividade é máxima"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Uma barreira alfandegária consiste em:",
+    "correct_answer": "Um imposto sobre produtos importados",
+    "incorrect_answers": [
+      "Um subsídio às exportações",
+      "Uma redução da moeda em circulação",
+      "Um aumento da produtividade"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A economia informal caracteriza-se por atividades:",
+    "correct_answer": "Não declaradas às autoridades",
+    "incorrect_answers": [
+      "Exclusivamente ilegais",
+      "Realizadas pelo Estado",
+      "Sem qualquer produção"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O valor acrescentado de uma empresa corresponde à diferença entre:",
+    "correct_answer": "Produção e consumo intermédio",
+    "incorrect_answers": [
+      "Receitas e lucros",
+      "Salários e impostos",
+      "Investimento e poupança"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A estagflação corresponde à coexistência de:",
+    "correct_answer": "Inflação elevada e fraco crescimento económico",
+    "incorrect_answers": [
+      "Deflação e crescimento",
+      "Emprego pleno e inflação baixa",
+      "Exportações elevadas e desemprego baixo"
+    ]
+  },
+
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A balança corrente inclui:",
+    "correct_answer": "Bens, serviços, rendimentos e transferências correntes",
+    "incorrect_answers": [
+      "Apenas bens",
+      "Apenas capitais",
+      "Apenas investimento direto"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Uma subida do salário mínimo pode provocar:",
+    "correct_answer": "Aumento dos custos de produção para algumas empresas",
+    "incorrect_answers": [
+      "Redução automática da inflação",
+      "Fim do desemprego",
+      "Eliminação da procura"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A poupança nacional resulta da soma da poupança:",
+    "correct_answer": "Privada e pública",
+    "incorrect_answers": [
+      "Interna e externa",
+      "Financeira e monetária",
+      "Corrente e de capital"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A política de rendimentos procura:",
+    "correct_answer": "Influenciar a evolução de salários e preços",
+    "incorrect_answers": [
+      "Controlar exportações",
+      "Produzir bens públicos",
+      "Regular apenas os bancos"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Uma vantagem comparativa existe quando um país:",
+    "correct_answer": "Produz um bem com menor custo de oportunidade",
+    "incorrect_answers": [
+      "Produz todos os bens mais baratos",
+      "Tem salários mais elevados",
+      "Importa menos bens"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O capital humano refere-se a:",
+    "correct_answer": "Conhecimentos, competências e qualificações dos trabalhadores",
+    "incorrect_answers": [
+      "Máquinas utilizadas",
+      "Capital financeiro dos bancos",
+      "Recursos naturais"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A taxa de cobertura mede:",
+    "correct_answer": "A relação entre exportações e importações",
+    "incorrect_answers": [
+      "A relação entre ativos e desempregados",
+      "A relação entre PIB e população",
+      "A relação entre impostos e despesas"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Uma empresa monopolista caracteriza-se por:",
+    "correct_answer": "Ser a única oferente no mercado",
+    "incorrect_answers": [
+      "Ter muitos concorrentes",
+      "Vender produtos homogéneos num mercado concorrencial",
+      "Não influenciar preços"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O desenvolvimento sustentável implica:",
+    "correct_answer": "Satisfazer necessidades atuais sem comprometer as futuras",
+    "incorrect_answers": [
+      "Maximizar apenas o crescimento económico",
+      "Eliminar a indústria",
+      "Reduzir obrigatoriamente o consumo"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Uma redução dos impostos sobre as empresas tende a:",
+    "correct_answer": "Estimular o investimento",
+    "incorrect_answers": [
+      "Reduzir a oferta",
+      "Aumentar os custos de produção",
+      "Eliminar a concorrência"
+    ]
+  },
+
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O coeficiente de Gini é utilizado para medir:",
+    "correct_answer": "A desigualdade na distribuição do rendimento",
+    "incorrect_answers": [
+      "A inflação",
+      "A produtividade",
+      "O desemprego"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O crescimento económico real é calculado utilizando:",
+    "correct_answer": "PIB a preços constantes",
+    "incorrect_answers": [
+      "PIB nominal",
+      "Taxa de desemprego",
+      "Índice de Gini"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Os estabilizadores automáticos atuam através de:",
+    "correct_answer": "Mecanismos que variam sem novas decisões governamentais",
+    "incorrect_answers": [
+      "Alterações da política monetária",
+      "Decisões do BCE",
+      "Exportações líquidas"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A taxa de juro real corresponde à taxa de juro nominal:",
+    "correct_answer": "Menos a taxa de inflação",
+    "incorrect_answers": [
+      "Mais a inflação",
+      "Dividida pela inflação",
+      "Multiplicada pela inflação"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A liberalização do comércio internacional tende a:",
+    "correct_answer": "Reduzir barreiras ao comércio",
+    "incorrect_answers": [
+      "Aumentar tarifas alfandegárias",
+      "Eliminar exportações",
+      "Reduzir a concorrência"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "O investimento direto estrangeiro caracteriza-se por:",
+    "correct_answer": "Aquisição ou criação de empresas noutro país",
+    "incorrect_answers": [
+      "Compra de bens de consumo",
+      "Pagamento de impostos",
+      "Transferências sociais"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A eficiência económica ocorre quando:",
+    "correct_answer": "Os recursos são utilizados da melhor forma possível",
+    "incorrect_answers": [
+      "Existe inflação elevada",
+      "Os preços são fixados pelo Estado",
+      "Não existe comércio externo"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Uma apreciação do euro face ao dólar torna:",
+    "correct_answer": "As importações mais baratas para a zona euro",
+    "incorrect_answers": [
+      "As exportações mais competitivas",
+      "As importações mais caras",
+      "A inflação inevitável"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "A taxa de dependência relaciona:",
+    "correct_answer": "População dependente e população em idade ativa",
+    "incorrect_answers": [
+      "Desempregados e empregados",
+      "Importações e exportações",
+      "Consumo e poupança"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Economia A 12.º ano",
+    "question": "Uma falha de mercado pode justificar a intervenção do Estado porque:",
+    "correct_answer": "O mercado nem sempre conduz a uma afetação eficiente dos recursos",
+    "incorrect_answers": [
+      "O mercado elimina toda a concorrência",
+      "Os consumidores deixam de comprar",
+      "As empresas deixam de produzir"
+    ]
+  }
   ]
 }

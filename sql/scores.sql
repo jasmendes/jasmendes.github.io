@@ -15,3 +15,22 @@ create table scores (
 
     created_at timestamp default now()
 );
+
+
+
+create table profiles (
+
+    id uuid primary key
+    references auth.users(id)
+    on delete cascade,
+
+    username text unique not null,
+
+    full_name text,
+
+    turma text,
+
+    role text default 'student',
+
+    created_at timestamp default now()
+);
