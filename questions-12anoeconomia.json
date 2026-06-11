@@ -1,0 +1,245 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Qual é a principal função do Banco Central Europeu (BCE)?",
+      "correct_answer": "Manter a estabilidade dos preços na Zona Euro",
+      "incorrect_answers": [
+        "Financiar diretamente os governos",
+        "Controlar as exportações europeias",
+        "Definir os salários mínimos dos países membros"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "O Produto Interno Bruto (PIB) mede:",
+      "correct_answer": "O valor dos bens e serviços finais produzidos num país durante um período",
+      "incorrect_answers": [
+        "A riqueza total acumulada pelas famílias",
+        "A soma das exportações de um país",
+        "O rendimento apenas das empresas"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Uma taxa de inflação elevada significa que:",
+      "correct_answer": "Os preços dos bens e serviços aumentam de forma generalizada",
+      "incorrect_answers": [
+        "Os salários diminuem obrigatoriamente",
+        "O desemprego desaparece",
+        "O PIB torna-se negativo"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Qual das seguintes situações representa uma exportação portuguesa?",
+      "correct_answer": "Uma empresa portuguesa vende vinho para a Alemanha",
+      "incorrect_answers": [
+        "Portugal compra petróleo à Nigéria",
+        "Um consumidor português compra um telemóvel importado",
+        "Uma empresa portuguesa paga juros a um banco espanhol"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "O desemprego friccional ocorre quando:",
+      "correct_answer": "Os trabalhadores estão temporariamente entre empregos",
+      "incorrect_answers": [
+        "As empresas encerram devido a crises económicas",
+        "As máquinas substituem trabalhadores",
+        "Há redução da procura agregada"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "A balança comercial corresponde à diferença entre:",
+      "correct_answer": "Exportações e importações de bens",
+      "incorrect_answers": [
+        "Receitas e despesas do Estado",
+        "Poupança e investimento",
+        "Salários e lucros"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Quando a procura aumenta e a oferta permanece constante, o preço tende a:",
+      "correct_answer": "Aumentar",
+      "incorrect_answers": [
+        "Diminuir",
+        "Permanecer obrigatoriamente igual",
+        "Tornar-se zero"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "O rendimento disponível das famílias corresponde ao rendimento:",
+      "correct_answer": "Após impostos e recebimento de transferências",
+      "incorrect_answers": [
+        "Antes de qualquer imposto",
+        "Obtido apenas através do trabalho",
+        "Exclusivamente proveniente de investimentos"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Qual é um exemplo de política fiscal expansionista?",
+      "correct_answer": "Aumento da despesa pública",
+      "incorrect_answers": [
+        "Aumento das taxas de juro",
+        "Redução da oferta monetária",
+        "Diminuição dos subsídios às famílias"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "A população ativa inclui:",
+      "correct_answer": "Empregados e desempregados que procuram trabalho",
+      "incorrect_answers": [
+        "Apenas os empregados",
+        "Toda a população do país",
+        "Apenas estudantes e reformados"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Qual é a principal função da moeda como unidade de conta?",
+      "correct_answer": "Permitir expressar o valor dos bens e serviços",
+      "incorrect_answers": [
+        "Garantir lucros às empresas",
+        "Aumentar o consumo",
+        "Reduzir a inflação"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Uma empresa que investe numa nova fábrica está a realizar:",
+      "correct_answer": "Formação Bruta de Capital Fixo",
+      "incorrect_answers": [
+        "Consumo intermédio",
+        "Despesa pública",
+        "Exportação de serviços"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Qual dos seguintes é um imposto indireto?",
+      "correct_answer": "IVA",
+      "incorrect_answers": [
+        "IRS",
+        "IRC",
+        "IMI"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "A produtividade mede:",
+      "correct_answer": "A relação entre produção obtida e recursos utilizados",
+      "incorrect_answers": [
+        "O número total de trabalhadores",
+        "A taxa de inflação",
+        "O valor das exportações"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Se a taxa de desemprego for 8% numa população ativa de 5 milhões, quantos desempregados existem?",
+      "correct_answer": "400000",
+      "incorrect_answers": [
+        "200000",
+        "500000",
+        "800000"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Qual é uma consequência possível da inflação elevada?",
+      "correct_answer": "Perda do poder de compra",
+      "incorrect_answers": [
+        "Aumento automático da poupança",
+        "Redução obrigatória dos preços",
+        "Eliminação do desemprego"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "O défice orçamental ocorre quando:",
+      "correct_answer": "As despesas públicas são superiores às receitas públicas",
+      "incorrect_answers": [
+        "As exportações superam as importações",
+        "As famílias gastam mais do que recebem",
+        "O PIB diminui"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Qual das seguintes entidades pertence ao setor institucional Administrações Públicas?",
+      "correct_answer": "Uma Câmara Municipal",
+      "incorrect_answers": [
+        "Um banco comercial",
+        "Uma empresa privada",
+        "Uma associação desportiva privada"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "Quando a oferta de um bem aumenta e a procura permanece constante, o preço tende a:",
+      "correct_answer": "Diminuir",
+      "incorrect_answers": [
+        "Aumentar",
+        "Duplicar",
+        "Permanecer sempre igual"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Economia A 12.º ano",
+      "question": "A globalização económica caracteriza-se por:",
+      "correct_answer": "Maior integração económica entre países",
+      "incorrect_answers": [
+        "Redução das trocas internacionais",
+        "Fim do comércio externo",
+        "Eliminação das empresas multinacionais"
+      ]
+    }
+  ]
+}
