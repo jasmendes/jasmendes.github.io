@@ -54,29 +54,12 @@
       <!-- Inside home.html -->
 <button onclick="logout()">Logout</button>
 
+    <script src="js/supabase-client.js"></script>
+    <script src="js/scores.js"></script>
     <script>
-        // Supabase initialization
- 
-
-        // Save score to Supabase
-       async function saveScore(score, subject = 'Economia', difficulty = 'easy') {
-
-            const username = sessionStorage.getItem('username');
-
-            if (!username) return;
-
-            const { error } = await supabaseClient
-                .from('scores')
-                .insert([{
-                    username,
-                    score,
-                    subject,
-                    difficulty
-                }]);
-
-            if (error) {
-                console.error(error);
-            }
+        // Delegate to shared saveScore helper with quiz-specific defaults
+        async function saveScore(score) {
+            return window.saveScore(score, 'Economia 5 Ano', 'easy', 10);
         }
 
         function logout() {

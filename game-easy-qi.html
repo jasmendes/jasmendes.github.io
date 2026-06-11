@@ -56,7 +56,6 @@
 
 
       <script src="js/game-easy-qi.js"></script>
-</body>
 
 <script>
     // Supabase initialization
@@ -103,6 +102,25 @@
 </script>
 
 <style>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/scores.js"></script>
+    <script>
+        // Delegate to shared saveScore helper with quiz-specific defaults
+        async function saveScore(score) {
+            return window.saveScore(score, 'QI Easy', 'easy', 10);
+        }
+
+        function logout() {
+            // Remove login credentials from session
+            sessionStorage.removeItem('username');
+            sessionStorage.removeItem('userId');
+
+            // Redirect back to the login page
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <style>
     /* Estilo para o botão de logout */
 button {
     background-color: #08067e; /* Cor de fundo vermelha */

@@ -26,38 +26,12 @@
 <!-- Inside home.html -->
 <button onclick="logout()">Logout</button>
 
+<script src="js/supabase-client.js"></script>
+<script src="js/scores.js"></script>
 <script>
-    // Supabase initialization
-
-
-    // Save score to Supabase
+    // Delegate to shared saveScore helper (home-alpha default)
     async function saveScore(score) {
-        const username = sessionStorage.getItem('username');
-
-        if (!username) {
-            console.log('Usuário não autenticado.');
-            return;
-        }
-
-        try {
-            const { data, error } = await supabaseClient
-                .from('scores')
-                .insert([{
-                    username,
-                    score,
-                    date: new Date().toISOString()
-                }])
-                .select();
-
-            if (error) {
-                console.error('Erro ao salvar score:', error);
-                return;
-            }
-
-            console.log(`Score ${score} salvo para ${username}`);
-        } catch (err) {
-            console.error('Save score error:', err);
-        }
+        return window.saveScore(score, 'General', 'medium', null);
     }
 
     function logout() {

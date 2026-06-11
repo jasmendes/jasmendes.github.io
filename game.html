@@ -51,7 +51,6 @@
       <button onclick="logout()">Logout</button>
     </div>
   </div>
-
   <script>
     // Supabase initialization
 
@@ -98,4 +97,23 @@
 
   <script src="js/game-por.js"></script>
 </body>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/scores.js"></script>
+  <script>
+    // Delegate to shared saveScore helper with quiz-specific defaults
+    async function saveScore(score) {
+      return window.saveScore(score, 'General Quiz', 'medium', 10);
+    }
+
+    function logout() {
+      // Remove login credentials from session
+      sessionStorage.removeItem('username');
+      sessionStorage.removeItem('userId');
+
+      // Redirect back to the login page
+      window.location.href = "index.html";
+    }
+  </script>
+
+  <style>
 </html>
