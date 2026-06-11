@@ -15,8 +15,9 @@ body {
   background: linear-gradient(135deg, #9333ea, #4f46e5);
 }
 
-/* === LOGIN CARD === */
-.login-page {
+/* === LOGIN/REGISTER CARD === */
+.login-page,
+.flex-center {
   background: rgba(255, 255, 255, 0.15);
   padding: 3rem 2rem;
   border-radius: 20px;
@@ -29,25 +30,29 @@ body {
 }
 
 /* === HEADER === */
-.login-page h2 {
+.login-page h2,
+.flex-center h1 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
 }
 
 /* === FORM === */
-.login-form {
+.login-form,
+#register-form {
   display: flex;
   flex-direction: column;
 }
 
-.login-form label {
+.login-form label,
+#register-form label {
   text-align: left;
   margin-bottom: 0.3rem;
   font-weight: 500;
   color: #e0e0e0;
 }
 
-.login-form input {
+.login-form input,
+#register-form input {
   padding: 0.7rem;
   border-radius: 8px;
   border: none;
@@ -56,12 +61,14 @@ body {
   outline: none;
 }
 
-.login-form input:focus {
+.login-form input:focus,
+#register-form input:focus {
   box-shadow: 0 0 0 2px #a78bfa;
 }
 
 /* === BUTTON === */
-.login-form button {
+.login-form button,
+#register-form button {
   background: #6366f1;
   color: #fff;
   border: none;
@@ -71,15 +78,18 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-bottom: 1rem;
 }
 
-.login-form button:hover {
+.login-form button:hover,
+#register-form button:hover {
   background: #818cf8;
   transform: scale(1.03);
 }
 
 /* === ERROR === */
-#loginError {
+#loginError,
+#registerError {
   color: #f87171;
   margin-top: 0.5rem;
   font-weight: 500;

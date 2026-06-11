@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/app.css">
+
     <title>Quiz App</title>
    
       
@@ -37,25 +38,153 @@
                 <input type="text" id="username" placeholder="Username" required>
                 <input type="password" id="password" placeholder="Password" required>
                 <button type="submit">Login</button>
+                <p id="loginError" style="color: red; display: none;"></p>
             </form>
+            <p>Não tem conta? <button type="button" onclick="showRegister()" style="background: none; border: none; color: #007bff; cursor: pointer; text-decoration: underline; padding: 0;">Crie uma aqui</button></p>
+        </div>
+
+        <!-- Página de Registo -->
+        <div id="register" class="flex-center flex-column hidden">
+            <h1>Criar Conta</h1>
+            <form id="register-form" onsubmit="registerUser(event)">
+                <input type="text" id="reg-username" placeholder="Username" required>
+                <input type="password" id="reg-password" placeholder="Password" required>
+                <input type="password" id="reg-password-confirm" placeholder="Confirmar Password" required>
+                <button type="submit">Criar Conta</button>
+                <p id="registerError" style="color: red; display: none;"></p>
+            </form>
+            <p><button type="button" onclick="showLogin()" style="background: none; border: none; color: #007bff; cursor: pointer; text-decoration: underline; padding: 0;">Voltar ao Login</button></p>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        // Função de login
-        function login(event) {
-            event.preventDefault(); // Previne o envio padrão do formulário
-            
-            // Recupera os dados de login do formulário
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            sessionStorage.setItem('username', username);
-            // Aqui você pode fazer a verificação de usuário e senha
-            if (username === 'admin' && password === '1234') {
-                showHomePage(); // Se login for bem-sucedido, mostra a página inicial
-            } else {
-                alert("Credenciais inválidas!"); // Se falhar, exibe um alerta
+const supabase = window.supabase.createClient(
+    "https://rdactxwmqqxognfiltgt.supabase.co/rest/v1/",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJkYWN0eHdtcXF4b2duZmlsdGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExODY5MzcsImV4cCI6MjA5Njc2MjkzN30.gpukeBC44WRNmzBVhTg1_nB756DbWRzpX88rDdzO-Eo"
+);
+</script>
+    <script>
+        // ===== USER MANAGEMENT - SUPABASE =====
+        
+        // Função de login com Supabase
+        async function login(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const loginError = document.getElementById('loginError');
+
+            try {
+                // Query users table
+                const { data, error } = await supabase
+                    .from('users')
+                    .select('*')
+                    .eq('username', username)
+                    .eq('password', password)
+                    .single();
+
+                if (error || !data) {
+                    // Login falhou
+                    loginError.textContent = 'Credenciais inválidas!';
+                    loginError.style.display = 'block';
+                    return;
+                }
+
+                // Login bem-sucedido
+                sessionStorage.setItem('username', username);
+                sessionStorage.setItem('userId', data.id);
+                loginError.style.display = 'none';
+                document.getElementById('login-form').reset();
+                showHomePage();
+            } catch (err) {
+                console.error('Login error:', err);
+                loginError.textContent = 'Erro ao fazer login. Tente novamente.';
+                loginError.style.display = 'block';
             }
+        }
+
+        // ===== REGISTRATION FUNCTIONS - SUPABASE =====
+
+        // Função de registo com Supabase
+        async function registerUser(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('reg-username').value.trim();
+            const password = document.getElementById('reg-password').value.trim();
+            const passwordConfirm = document.getElementById('reg-password-confirm').value.trim();
+            const registerError = document.getElementById('registerError');
+
+            // Validação
+            if (!username || username.length < 3) {
+                registerError.textContent = 'Username deve ter pelo menos 3 caracteres!';
+                registerError.style.display = 'block';
+                return;
+            }
+
+            if (!password || password.length < 4) {
+                registerError.textContent = 'Password deve ter pelo menos 4 caracteres!';
+                registerError.style.display = 'block';
+                return;
+            }
+
+            if (password !== passwordConfirm) {
+                registerError.textContent = 'Passwords não correspondem!';
+                registerError.style.display = 'block';
+                return;
+            }
+
+            try {
+                // Verifica se username já existe
+                const { data: existingUser } = await supabase
+                    .from('users')
+                    .select('*')
+                    .eq('username', username)
+                    .single();
+
+                if (existingUser) {
+                    registerError.textContent = 'Username já existe!';
+                    registerError.style.display = 'block';
+                    return;
+                }
+
+                // Cria novo utilizador
+                const { data, error } = await supabase
+                    .from('users')
+                    .insert([{ username, password }])
+                    .select();
+
+                if (error) {
+                    registerError.textContent = 'Erro ao criar conta. Tente novamente.';
+                    registerError.style.display = 'block';
+                    return;
+                }
+
+                // Limpa formulário e mensagens
+                registerError.style.display = 'none';
+                document.getElementById('register-form').reset();
+                
+                // Mostra mensagem de sucesso
+                alert('Conta criada com sucesso! Pode agora fazer login.');
+                showLogin();
+            } catch (err) {
+                console.error('Registration error:', err);
+                registerError.textContent = 'Erro ao criar conta. Tente novamente.';
+                registerError.style.display = 'block';
+            }
+        }
+
+        // ===== VIEW SWITCHING =====
+
+        function showLogin() {
+            document.getElementById('login').classList.remove('hidden');
+            document.getElementById('register').classList.add('hidden');
+            document.getElementById('loginError').style.display = 'none';
+        }
+
+        function showRegister() {
+            document.getElementById('login').classList.add('hidden');
+            document.getElementById('register').classList.remove('hidden');
+            document.getElementById('registerError').style.display = 'none';
         }
 
         // Função para mostrar a página inicial
@@ -70,38 +199,63 @@
                 homeElement.classList.remove('hidden');
             }
         }
+
+        // Se o utilizador já estiver autenticado na sessão, mostra a home automaticamente
+        window.addEventListener('DOMContentLoaded', () => {
+            const user = sessionStorage.getItem('username');
+            if (user) {
+                showHomePage();
+            }
+        });
+
+        // ===== SCORE MANAGEMENT - SUPABASE =====
+
+        async function saveScore(score) {
+            const username = sessionStorage.getItem('username');
+
+            if (!username) {
+                console.log('Usuário não autenticado.');
+                return;
+            }
+
+            try {
+                const { data, error } = await supabase
+                    .from('scores')
+                    .insert([{
+                        username,
+                        score,
+                        date: new Date().toISOString()
+                    }])
+                    .select();
+
+                if (error) {
+                    console.error('Erro ao salvar score:', error);
+                    return;
+                }
+
+                console.log(`Score ${score} salvo para ${username}`);
+            } catch (err) {
+                console.error('Save score error:', err);
+            }
+        }
+
         function saveScores(score) {
             const username = sessionStorage.getItem('username');
             if (username) {
-                // Lógica para salvar a pontuação, por exemplo, enviando para um servidor ou armazenando localmente
                 console.log(`Salvando a pontuação de ${score} para o usuário ${username}`);
+                saveScore(score);
             } else {
                 console.log('Usuário não autenticado.');
             }
         }
 
-        function saveScore(score) {
-            const username = sessionStorage.getItem('username');
-
-            if (!username) return;
-
-            const scores =
-                JSON.parse(localStorage.getItem('scores')) || [];
-
-            scores.push({
-                username,
-                score,
-                date: new Date().toLocaleString()
-            });
-
-            localStorage.setItem(
-                'scores',
-                JSON.stringify(scores)
-            );
-        }
-
         // Função para fazer logout
         function logout() {
+            // Remove credenciais da sessão
+            sessionStorage.removeItem('username');
+            sessionStorage.removeItem('userId');
+            localStorage.removeItem('isLoggedIn');
+
             const homeElement = document.getElementById('home');
             const loginElement = document.getElementById('login');
 

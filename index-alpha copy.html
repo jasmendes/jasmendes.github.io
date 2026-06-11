@@ -79,6 +79,10 @@
 
         // Função para fazer logout
         function logout() {
+            // Remove login credentials from session and storage
+            sessionStorage.removeItem('username');
+            localStorage.removeItem('isLoggedIn');
+
             const homeElement = document.getElementById('home');
             const loginElement = document.getElementById('login');
 

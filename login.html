@@ -1,28 +1,33 @@
 <script>
   // Quando o utilizador já está logado, vai direto para o quiz
-  window.onload = () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const user = sessionStorage.getItem("username");
     if (user) {
       window.location.href = "index.html"; // redireciona se já estiver logado
+      return;
     }
-  };
 
-  const loginForm = document.getElementById("loginForm");
-  const loginError = document.getElementById("loginError");
+    const loginForm = document.getElementById("loginForm");
+    const loginError = document.getElementById("loginError");
 
-  loginForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+    if (!loginForm) return; // nada a fazer se o formulário não existir
 
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    // Login temporário — podes mudar as credenciais
-    if (username === "jose" && password === "1234") {
-      sessionStorage.setItem("username", username);
-      window.location.href = "index.html"; // vai para o menu principal
-    } else {
-      loginError.textContent = "Credenciais inválidas!";
-      loginError.classList.remove("hidden");
-    }
+      const usernameEl = document.getElementById("username");
+      const passwordEl = document.getElementById("password");
+      const username = usernameEl ? usernameEl.value.trim() : '';
+      const password = passwordEl ? passwordEl.value.trim() : '';
+
+      // Login temporário — podes mudar as credenciais
+      if (username === "jose" && password === "1234") {
+        sessionStorage.setItem("username", username);
+        window.location.href = "index.html"; // vai para o menu principal
+      } else if (loginError) {
+        loginError.textContent = "Credenciais inválidas!";
+        loginError.classList.remove("hidden");
+      }
+    });
   });
 </script>

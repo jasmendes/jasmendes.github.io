@@ -60,6 +60,7 @@
   // Função logout
   function logout() {
     sessionStorage.removeItem("username");
+    localStorage.removeItem('isLoggedIn');
     window.location.href = "login.html";
   }
 </script>

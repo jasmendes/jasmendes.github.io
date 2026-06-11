@@ -49,6 +49,166 @@
       "question": "Qual dos seguintes fluxos pertence ao circuito económico?",
       "correct_answer": "Pagamento de salários",
       "incorrect_answers": ["Rotação da Terra", "Produção agrícola mundial", "Criação de moeda digital privada"]
-    }
+    },
+     {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "O custo de oportunidade corresponde a:",
+    "correct_answer": "A melhor alternativa sacrificada",
+    "incorrect_answers": ["O custo monetário de um produto", "O lucro obtido numa atividade", "A soma dos custos fixos e variáveis"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "Quando a procura aumenta e a oferta permanece constante, o preço tende a:",
+    "correct_answer": "Aumentar",
+    "incorrect_answers": ["Diminuir", "Manter-se sempre igual", "Desaparecer"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "O Produto Interno Bruto (PIB) mede:",
+    "correct_answer": "O valor dos bens e serviços finais produzidos num país",
+    "incorrect_answers": ["A riqueza acumulada das famílias", "O total das exportações", "A quantidade de moeda em circulação"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "A inflação corresponde a:",
+    "correct_answer": "Um aumento generalizado e contínuo dos preços",
+    "incorrect_answers": ["Uma redução dos salários", "Um aumento do desemprego", "Uma subida das exportações"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "Qual das seguintes situações representa uma exportação portuguesa?",
+    "correct_answer": "Venda de vinho português para França",
+    "incorrect_answers": ["Compra de automóveis alemães", "Férias de portugueses em Espanha", "Importação de petróleo"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "A população ativa inclui:",
+    "correct_answer": "Empregados e desempregados à procura de emprego",
+    "incorrect_answers": ["Apenas empregados", "Apenas desempregados", "Toda a população residente"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "Uma empresa pertence ao setor institucional:",
+    "correct_answer": "Sociedades não financeiras",
+    "incorrect_answers": ["Administrações públicas", "Famílias", "Resto do mundo"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "A poupança das famílias corresponde à parte do rendimento que:",
+    "correct_answer": "Não é consumida",
+    "incorrect_answers": ["É totalmente investida", "É paga em impostos", "É destinada apenas a empréstimos"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "Uma política orçamental expansionista pode incluir:",
+    "correct_answer": "Aumento da despesa pública",
+    "incorrect_answers": ["Aumento das taxas de juro", "Redução da moeda em circulação", "Diminuição dos investimentos públicos"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "O mercado encontra-se em equilíbrio quando:",
+    "correct_answer": "A quantidade procurada é igual à quantidade oferecida",
+    "incorrect_answers": ["A procura é nula", "A oferta é superior à procura", "Os preços deixam de variar"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "Os impostos indiretos incidem principalmente sobre:",
+    "correct_answer": "O consumo de bens e serviços",
+    "incorrect_answers": ["Os salários", "As heranças", "O património imobiliário"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "Qual dos seguintes é um fator de produção?",
+    "correct_answer": "Trabalho",
+    "incorrect_answers": ["Inflação", "Consumo", "Importação"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "A balança comercial regista:",
+    "correct_answer": "Exportações e importações de bens",
+    "incorrect_answers": ["Movimentos de capitais", "Receitas fiscais", "Despesas públicas"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "Uma redução da procura tende a provocar:",
+    "correct_answer": "Diminuição do preço de equilíbrio",
+    "incorrect_answers": ["Aumento garantido dos salários", "Aumento do preço de equilíbrio", "Fim da oferta"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "O desemprego friccional resulta principalmente de:",
+    "correct_answer": "Mudanças e transições entre empregos",
+    "incorrect_answers": ["Crises económicas prolongadas", "Automatização da produção", "Falta de recursos naturais"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "O investimento das empresas tem como objetivo principal:",
+    "correct_answer": "Aumentar a capacidade produtiva",
+    "incorrect_answers": ["Reduzir o consumo das famílias", "Diminuir a oferta", "Aumentar os impostos"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "Qual dos seguintes exemplos corresponde a um bem de consumo duradouro?",
+    "correct_answer": "Automóvel",
+    "incorrect_answers": ["Pão", "Eletricidade", "Combustível"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "Uma apreciação da moeda nacional tende a:",
+    "correct_answer": "Tornar as exportações menos competitivas",
+    "incorrect_answers": ["Aumentar automaticamente o PIB", "Eliminar as importações", "Reduzir a produtividade"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "O Banco Central Europeu é responsável por:",
+    "correct_answer": "Definir a política monetária da zona euro",
+    "incorrect_answers": ["Cobrar impostos aos cidadãos", "Aprovar o orçamento português", "Regular apenas o comércio externo"]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Economia A 12.º ano",
+    "question": "O crescimento económico corresponde a:",
+    "correct_answer": "Aumento da produção de bens e serviços ao longo do tempo",
+    "incorrect_answers": ["Aumento dos preços", "Redução do consumo", "Diminuição da população ativa"]
+  }
   ]
 }
