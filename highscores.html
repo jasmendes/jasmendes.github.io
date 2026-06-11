@@ -22,10 +22,7 @@
 
 <script>
 
-const supabase = window.supabase.createClient(
-    "https://rdactxwmqqxognfiltgt.supabase.co",
-    "TUA_ANON_KEY"
-);
+
 const { data } = await supabase
     .from('scores')
     .select('*')
