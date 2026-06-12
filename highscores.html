@@ -36,6 +36,24 @@ tr:nth-child(even){
 <body>
 
 <h1>🏆 Ranking Global</h1>
+<div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;">
+    <label>Disciplina:
+        <select id="subjectFilter">
+            <option value="">Todas</option>
+        </select>
+    </label>
+    <label>Dificuldade:
+        <select id="difficultyFilter">
+            <option value="">Todas</option>
+            <option value="easy">easy</option>
+            <option value="medium">medium</option>
+            <option value="hard">hard</option>
+            <option value="standard">standard</option>
+        </select>
+    </label>
+    <button id="applyFilter">Aplicar</button>
+    <button id="resetFilter">Limpar</button>
+</div>
 
 <table>
     <thead>
@@ -67,20 +85,17 @@ const supabaseClient = window.supabase.createClient(
 <script>
    
 async function loadScores(){
-
-    const ranking =
-        document.getElementById("ranking");
+    const ranking = document.getElementById("ranking");
+    const subject = document.getElementById('subjectFilter').value;
+    const difficulty = document.getElementById('difficultyFilter').value;
 
     try {
+        let query = supabaseClient.from('scores').select('*');
 
-        const { data, error } =
-            await supabaseClient
-                .from("scores")
-                .select("*")
-                .order("score", {
-                    ascending:false
-                })
-                .limit(100);
+        if (subject) query = query.eq('subject', subject);
+        if (difficulty) query = query.eq('difficulty', difficulty);
+
+        const { data, error } = await query.order('score', { ascending: false }).limit(500);
 
         if(error){
             console.error(error);
@@ -138,7 +153,31 @@ async function loadScores(){
     }
 }
 
-loadScores();
+// Populate subject filter with existing subjects (fetch distinct client-side)
+async function populateSubjects() {
+    try {
+        const { data } = await supabaseClient.from('scores').select('subject').limit(1000);
+        const subjects = Array.from(new Set((data || []).map(s => s.subject).filter(Boolean))).sort();
+        const sel = document.getElementById('subjectFilter');
+        subjects.forEach(sub => {
+            const opt = document.createElement('option');
+            opt.value = sub;
+            opt.textContent = sub;
+            sel.appendChild(opt);
+        });
+    } catch (err) {
+        console.warn('Could not populate subjects:', err);
+    }
+}
+
+document.getElementById('applyFilter').addEventListener('click', loadScores);
+document.getElementById('resetFilter').addEventListener('click', () => {
+    document.getElementById('subjectFilter').value = '';
+    document.getElementById('difficultyFilter').value = '';
+    loadScores();
+});
+
+populateSubjects().then(loadScores);
 
 </script>
 
