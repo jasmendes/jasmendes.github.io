@@ -19,7 +19,7 @@ let questions = []; //voir json
 //fetch question from .json:
 fetch(
     //"./questions-philosophy.json"
-    "https://raw.githubusercontent.com/jasmendes/jasmendes.github.io/master/questions-philosophy.json"
+    "https://raw.githubusercontent.com/jasmendes/jasmendes.github.io/master/questions/questions-philosophy.json"
     //"https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
     )
 .then(res =>{   
