@@ -4,10 +4,13 @@ const summaryText = document.getElementById('summaryText');
 const categorySummary = document.getElementById('categorySummary');
 const categoryScores = document.getElementById('categoryScores');
 
-const mostRecentScore = sessionStorage.getItem('lastScore') || localStorage.getItem('mostRecentScore');
+// Get score and category info from storage
+const mostRecentScore = localStorage.getItem('mostRecentScore');
 const subject = sessionStorage.getItem('lastScoreSubject');
 const difficulty = sessionStorage.getItem('lastScoreDifficulty');
 const username = sessionStorage.getItem('username');
+
+console.log('📋 End page values:', { mostRecentScore, subject, difficulty, username });
 
 finalScore.innerText = mostRecentScore ? `Score final: ${mostRecentScore}` : 'Score não encontrado.';
 summaryText.innerText = username
@@ -86,11 +89,15 @@ async function loadCategoryScores() {
 const showBtn = document.getElementById('showScoresBtn');
 if (showBtn) {
   showBtn.addEventListener('click', () => {
+    console.log('🎯 Show Scores clicked. Redirecting with:', { subject, difficulty });
     if (subject && difficulty) {
       // Redirect to highscores with filters applied
-      window.location.href = `highscores.html?subject=${encodeURIComponent(subject)}&difficulty=${encodeURIComponent(difficulty)}`;
+      const url = `highscores.html?subject=${encodeURIComponent(subject)}&difficulty=${encodeURIComponent(difficulty)}`;
+      console.log('📍 Redirect URL:', url);
+      window.location.href = url;
     } else {
       // If no category/difficulty, just go to highscores
+      console.warn('⚠️ Missing subject or difficulty. Going to highscores without filters.');
       window.location.href = 'highscores.html';
     }
   });
@@ -100,10 +107,11 @@ if (showBtn) {
 async function tryAutoSave() {
   try {
     console.log('🔄 tryAutoSave starting...');
+    console.log('🔍 Checking values:', { mostRecentScore, subject, difficulty, username });
     console.log('lastScoreSaved flag:', sessionStorage.getItem('lastScoreSaved'));
     
     if (!mostRecentScore) {
-      console.log('⚠️ No mostRecentScore found');
+      console.log('⚠️ No mostRecentScore found in localStorage');
       return;
     }
     if (!subject || !difficulty) {
@@ -111,19 +119,28 @@ async function tryAutoSave() {
       return;
     }
     if (sessionStorage.getItem('lastScoreSaved') === '1') {
-      console.log('ℹ️ Score already saved in this session');
+      console.log('ℹ️ Score already marked as saved in this session');
       return;
     }
     if (!window.saveScore) {
-      console.warn('⚠️ saveScore helper not available');
+      console.warn('⚠️ window.saveScore helper not available - ensure supabase-client.js is loaded');
       return;
     }
 
-    console.log('📤 Calling auto-save with:', { mostRecentScore, subject, difficulty });
-    const res = await window.saveScore(mostRecentScore, subject, difficulty, sessionStorage.getItem('lastScoreTotal'));
+    const totalQuestions = sessionStorage.getItem('lastScoreTotal');
+    console.log('📤 Calling auto-save with:', { 
+      score: mostRecentScore, 
+      subject, 
+      difficulty, 
+      totalQuestions 
+    });
+    
+    const res = await window.saveScore(mostRecentScore, subject, difficulty, totalQuestions);
     if (res) {
       sessionStorage.setItem('lastScoreSaved', '1');
-      console.log('✅ Score auto-saved on end page.');
+      console.log('✅ Score auto-saved successfully on end page.');
+    } else {
+      console.log('ℹ️ saveScore returned without error but no result.');
     }
   } catch (err) {
     console.error('❌ Auto-save error:', err);
