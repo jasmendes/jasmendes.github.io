@@ -107,18 +107,25 @@ getNewQuestions = async () =>{
         // record subject/difficulty for end page
         sessionStorage.setItem('lastScoreSubject', '5 Ano Escolaridade 1º Periodo');
         sessionStorage.setItem('lastScoreDifficulty', 'medium');
+        sessionStorage.setItem('lastScoreTotal', MAX_QUESTIONS);
+        console.log('🏁 Quiz ended. Score:', score);
 
         // try to save to Supabase using the global helper if available
         try {
             if (window.saveScore) {
+                console.log('📤 Calling window.saveScore...');
                 await window.saveScore(score, '5 Ano Escolaridade 1º Periodo', 'medium', MAX_QUESTIONS);
                 sessionStorage.setItem('lastScoreSaved', '1');
+                console.log('✅ saveScore completed');
+            } else {
+                console.warn('⚠️ window.saveScore not available');
             }
         } catch (err) {
-            console.error('Error saving score before redirect:', err);
+            console.error('❌ Error saving score before redirect:', err);
         }
 
         //go to end page:
+        console.log('➡️ Redirecting to end.html...');
         return window.location.assign('end.html');
     }
 
@@ -163,10 +170,10 @@ choices.forEach(choice =>{
             //add the class:
             selectedChoice.parentElement.classList.add(classToApply);
 
-            setTimeout(() =>{
+            setTimeout(async () =>{
                 //remove that class after his work:
                 selectedChoice.parentElement.classList.remove(classToApply);
-                getNewQuestions();
+                await getNewQuestions();
             },1000); //how long to do the main setTimeout
 
              //or use :

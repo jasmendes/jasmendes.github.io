@@ -95,21 +95,34 @@ if (showBtn) {
 // Try to save the score once when arriving to this page if we have subject/difficulty
 async function tryAutoSave() {
   try {
-    if (!mostRecentScore) return;
-    if (!subject || !difficulty) return;
-    if (sessionStorage.getItem('lastScoreSaved') === '1') return;
+    console.log('🔄 tryAutoSave starting...');
+    console.log('lastScoreSaved flag:', sessionStorage.getItem('lastScoreSaved'));
+    
+    if (!mostRecentScore) {
+      console.log('⚠️ No mostRecentScore found');
+      return;
+    }
+    if (!subject || !difficulty) {
+      console.log('⚠️ Missing subject or difficulty:', { subject, difficulty });
+      return;
+    }
+    if (sessionStorage.getItem('lastScoreSaved') === '1') {
+      console.log('ℹ️ Score already saved in this session');
+      return;
+    }
     if (!window.saveScore) {
-      console.warn('saveScore helper not available');
+      console.warn('⚠️ saveScore helper not available');
       return;
     }
 
+    console.log('📤 Calling auto-save with:', { mostRecentScore, subject, difficulty });
     const res = await window.saveScore(mostRecentScore, subject, difficulty, sessionStorage.getItem('lastScoreTotal'));
     if (res) {
       sessionStorage.setItem('lastScoreSaved', '1');
-      console.log('Score auto-saved on end page.');
+      console.log('✅ Score auto-saved on end page.');
     }
   } catch (err) {
-    console.error('Auto-save error:', err);
+    console.error('❌ Auto-save error:', err);
   }
 }
 

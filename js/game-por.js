@@ -60,11 +60,7 @@ function getNewQuestion() {
       // record subject/difficulty for end page
       sessionStorage.setItem('lastScoreSubject', 'Portugues 11 Ano');
       sessionStorage.setItem('lastScoreDifficulty', 'medium');
-
-      // try to save to Supabase using the global helper if available
-      try {
-        if (window.saveScore) {
-          await window.saveScore(score, 'Portugues 11 Ano', 'medium', MAX_QUESTIONS);
+        sessionStorage.setItem('lastScoreTotal', MAX_QUESTIONS);
           sessionStorage.setItem('lastScoreSaved', '1');
         }
       } catch (err) {

@@ -107,6 +107,7 @@ getNewQuestions = async () =>{
         // record subject/difficulty for end page
         sessionStorage.setItem('lastScoreSubject', 'QI');
         sessionStorage.setItem('lastScoreDifficulty', 'easy');
+        sessionStorage.setItem('lastScoreTotal', MAX_QUESTIONS);
 
         // try to save to Supabase using the global helper if available
         try {
@@ -163,10 +164,10 @@ choices.forEach(choice =>{
             //add the class:
             selectedChoice.parentElement.classList.add(classToApply);
 
-            setTimeout(() =>{
+            setTimeout(async () =>{
                 //remove that class after his work:
                 selectedChoice.parentElement.classList.remove(classToApply);
-                getNewQuestions();
+                await getNewQuestions();
             },1000); //how long to do the main setTimeout
 
              //or use :

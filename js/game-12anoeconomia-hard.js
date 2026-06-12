@@ -119,10 +119,7 @@ getNewQuestions = async () => {
         localStorage.setItem('mostRecentScore', score);
         sessionStorage.setItem('lastScoreSubject', 'Economia 12');
         sessionStorage.setItem('lastScoreDifficulty', 'hard');
-
-        try {
-            await saveScore(score, 'Economia 12', 'hard');
-            console.log('Score saved. Redirecting to end.html...');
+    sessionStorage.setItem('lastScoreTotal', MAX_QUESTIONS);
         } catch (err) {
             console.error('Error during save:', err);
         }

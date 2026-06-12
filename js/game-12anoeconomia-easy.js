@@ -120,6 +120,7 @@ getNewQuestions = async () => {
     localStorage.setItem('mostRecentScore', score);
     sessionStorage.setItem('lastScoreSubject', 'Economia 12');
     sessionStorage.setItem('lastScoreDifficulty', 'easy');
+    sessionStorage.setItem('lastScoreTotal', MAX_QUESTIONS);
 
     try {
       await saveScore(score, 'Economia 12', 'easy');

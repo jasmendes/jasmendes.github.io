@@ -111,6 +111,7 @@ getNewQuestions = async () =>{
         // record subject/difficulty for end page
         sessionStorage.setItem('lastScoreSubject', 'Jenkins');
         sessionStorage.setItem('lastScoreDifficulty', 'medium');
+        sessionStorage.setItem('lastScoreTotal', MAX_QUESTIONS);
 
         // try to save to Supabase using the global helper if available
         try {

@@ -10,23 +10,31 @@
 // Global helper to save a score reusing the same checks as insertTestScore in index.html
 window.saveScore = async function(score, subject = '', difficulty = '', totalQuestions = null) {
   try {
-    if (!window.supabaseClient) throw new Error('supabaseClient not initialized');
+    console.log('🎮 saveScore called:', { score, subject, difficulty, totalQuestions });
+    if (!window.supabaseClient) {
+      console.error('❌ supabaseClient not initialized');
+      throw new Error('supabaseClient not initialized');
+    }
+    console.log('✅ supabaseClient ready');
 
     const username = sessionStorage.getItem('username');
+    console.log('👤 username from sessionStorage:', username);
     if (!username) {
-      console.log('No username in sessionStorage; cannot save score');
+      console.log('❌ No username in sessionStorage; cannot save score');
       return null;
     }
 
     // Verify user exists
+    console.log('🔍 Verifying user exists...');
     const { data: userExists, error: userErr } = await window.supabaseClient
       .from('users')
       .select('*')
       .eq('username', username)
       .single();
 
+    console.log('✅ User check result:', { userExists, userErr });
     if (userErr || !userExists) {
-      console.warn('User does not exist or could not be verified:', userErr);
+      console.warn('❌ User does not exist or could not be verified:', userErr);
       return null;
     }
 
@@ -51,13 +59,15 @@ window.saveScore = async function(score, subject = '', difficulty = '', totalQue
     if (normDiff) insertObj.difficulty = normDiff;
     if (totalQuestions) insertObj.total_questions = totalQuestions;
 
+    console.log('📝 Inserting score object:', insertObj);
     const { data, error } = await window.supabaseClient
       .from('scores')
       .insert([insertObj])
       .select();
 
+    console.log('📊 Insert result:', { data, error });
     if (error) {
-      console.error('Error inserting score:', error);
+      console.error('❌ Error inserting score:', error);
       return null;
     }
 
