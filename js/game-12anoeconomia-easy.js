@@ -124,30 +124,18 @@ startGame = () =>{
     loader.classList.add("hidden");
 };
 
-getNewQuestions = () =>{
-     
-   if(
-    availableQuestions.length === 0 ||
-    questionCounter >= MAX_QUESTIONS
-){
+getNewQuestions = async () => {
+  if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    localStorage.setItem('mostRecentScore', score);
+    sessionStorage.setItem('lastScoreSubject', 'Economia 12');
+    sessionStorage.setItem('lastScoreDifficulty', 'easy');
 
-    localStorage.setItem(
-        "mostRecentScore",
-        score
-    );
+    await saveScore(score, 'Economia 12', 'easy');
 
-    saveScore(
-        score,
-        "Economia 12",
-        "easy"
-    );
+    return window.location.assign('end.html');
+  }
 
-    return window.location.assign(
-        'end.html'
-    );
-}
-
-    questionCounter++;
+  questionCounter++;
     progressText.innerText = ` Question ${questionCounter}/${MAX_QUESTIONS}`;
  
     //UPDATE THE PROGRESS BAR:(on prend pourcentage de chq qstn vrai)

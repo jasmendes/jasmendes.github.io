@@ -54,93 +54,37 @@
 <button onclick="logout()">Logout</button>
 
 
+      <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+      <script src="js/supabase-client.js"></script>
+      <script src="js/scores.js"></script>
       <script src="js/game-12anoeconomia-hard.js"></script>
-</body>
 
-<script>
-    // Supabase initialization
-  
-
-    // Save score to Supabase
-    async function saveScore(score) {
-        const username = sessionStorage.getItem('username');
-
-        if (!username) {
-            console.log('Usuário não autenticado.');
-            return;
+      <script>
+        function logout() {
+            sessionStorage.removeItem('username');
+            sessionStorage.removeItem('userId');
+            window.location.href = 'index.html';
         }
+      </script>
 
-        try {
-                   const { data, error } = await supabaseClient
-                .from('scores')
-                    .insert([{
-                    <script src="js/supabase-client.js"></script>
-                    <script src="js/scores.js"></script>
-                    <script>
-                        // Delegate to shared saveScore helper with quiz-specific defaults
-                        async function saveScore(score) {
-                            return window.saveScore(score, 'Economia 12 Ano - Hard', 'hard', 10);
-                        }
+      <style>
+      /* Estilo para o botão de logout */
+      button {
+          background-color: #08067e;
+          text-align: center;
+          color: white;
+          border: none;
+          padding: 0.8rem 1.2rem;
+          cursor: pointer;
+      }
 
-                        function logout() {
-                            // Remove login credentials from session
-                            sessionStorage.removeItem('username');
-                            sessionStorage.removeItem('userId');
+      button:hover {
+          background-color: #3547e5;
+      }
 
-                            // Redirect back to the login page
-                            window.location.href = "index.html";
-                        }
-                    </script>
-
-                    <style>
-                    username,
-                    score,
-                    subject: 'Economia 12 ano',
-                    difficulty: 'hard',
-                    total_questions: 10
-                }])
-                .select();
-
-            if (error) {
-                console.error('Erro ao salvar score:', error);
-                return;
-            }
-
-            console.log(`Score ${score} salvo para ${username}`);
-        } catch (err) {
-            console.error('Save score error:', err);
-        }
-    }
-
-    function logout() {
-        // Remove login credentials from session
-        sessionStorage.removeItem('username');
-        sessionStorage.removeItem('userId');
-
-        // Redirect back to the login page
-        window.location.href = "index.html";
-    }
-</script>
-
-<style>
-    /* Estilo para o botão de logout */
-button {
-    background-color: #08067e; /* Cor de fundo vermelha */
-    text-align: center;
-    color: white; /* Texto branco */
-
-}
-
-/* Estilo quando o botão é clicado (hover) */
-button:hover {
-    background-color: #3547e5; /* Cor de fundo um pouco mais escura quando passar o mouse */
-}
-
-/* Estilo para o botão quando for pressionado (active) */
-button:active {
-    background-color: #4a2fd3; /* Cor de fundo ainda mais escura quando pressionado */
-    transform: scale(0.98); /* Leve diminuição de tamanho para o efeito de clique */
-}
-
-    </style>
+      button:active {
+          background-color: #4a2fd3;
+          transform: scale(0.98);
+      }
+      </style>
 </html>

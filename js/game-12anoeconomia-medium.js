@@ -17,30 +17,7 @@ let availableQuestions = [];
 let questions = []; //voir json
 
 async function saveScore(score, subject, difficulty) {
-
-    const username =
-        sessionStorage.getItem('username');
-
-    if (!username) {
-        console.log('Utilizador não autenticado');
-        return;
-    }
-
-    const { error } = await supabaseClient
-        .from('scores')
-        .insert([{
-            username,
-            score,
-            subject,
-            difficulty,
-            total_questions: MAX_QUESTIONS
-        }]);
-
-    if (error) {
-        console.error(error);
-    } else {
-        console.log('Score guardado');
-    }
+    return window.saveScore(score, subject, difficulty, MAX_QUESTIONS);
 }
 
 //fetch question from .json:
@@ -125,28 +102,16 @@ startGame = () =>{
     loader.classList.add("hidden");
 };
 
-getNewQuestions = () =>{
-     
-   if(
-    availableQuestions.length === 0 ||
-    questionCounter >= MAX_QUESTIONS
-){
+getNewQuestions = async () => {
+    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+        localStorage.setItem('mostRecentScore', score);
+        sessionStorage.setItem('lastScoreSubject', 'Economia 12');
+        sessionStorage.setItem('lastScoreDifficulty', 'medium');
 
-    localStorage.setItem(
-        "mostRecentScore",
-        score
-    );
+        await saveScore(score, 'Economia 12', 'medium');
 
-    saveScore(
-        score,
-        "Economia 12",
-        "medium"
-    );
-
-    return window.location.assign(
-        'end.html'
-    );
-}
+        return window.location.assign('end.html');
+    }
 
     questionCounter++;
     progressText.innerText = ` Question ${questionCounter}/${MAX_QUESTIONS}`;
