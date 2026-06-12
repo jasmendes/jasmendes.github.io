@@ -17,30 +17,20 @@ let availableQuestions = [];
 let questions = []; //voir json
 
 async function saveScore(score, subject, difficulty) {
-    return window.saveScore(score, subject, difficulty, MAX_QUESTIONS);
-
-
-    if (!username) {
-        console.log('Utilizador não autenticado');
+    console.log('saveScore called:', { score, subject, difficulty, username: sessionStorage.getItem('username') });
+    if (!window.supabaseClient) {
+        console.error('supabaseClient not initialized');
         return;
     }
-
-    const { error } = await supabaseClient
-        .from('scores')
-        .insert([{
-            username,
-            score,
-            subject,
-            difficulty,
-            total_questions: MAX_QUESTIONS
-        }]);
-
-    if (error) {
-        console.error(error);
-    } else {
-        console.log('Score guardado');
+    if (!window.saveScore) {
+        console.error('window.saveScore not defined');
+        return;
     }
+    const result = await window.saveScore(score, subject, difficulty, MAX_QUESTIONS);
+    console.log('saveScore result:', result);
+    return result;
 }
+
 
 //fetch question from .json:
 fetch(
@@ -126,11 +116,17 @@ startGame = () =>{
 
 getNewQuestions = async () => {
   if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    console.log('Quiz finished. Final score:', score);
     localStorage.setItem('mostRecentScore', score);
     sessionStorage.setItem('lastScoreSubject', 'Economia 12');
     sessionStorage.setItem('lastScoreDifficulty', 'easy');
 
-    await saveScore(score, 'Economia 12', 'easy');
+    try {
+      await saveScore(score, 'Economia 12', 'easy');
+      console.log('Score saved. Redirecting to end.html...');
+    } catch (err) {
+      console.error('Error during save:', err);
+    }
 
     return window.location.assign('end.html');
   }
@@ -176,10 +172,10 @@ choices.forEach(choice =>{
             //add the class:
             selectedChoice.parentElement.classList.add(classToApply);
 
-            setTimeout(() =>{
+            setTimeout(async () =>{
                 //remove that class after his work:
                 selectedChoice.parentElement.classList.remove(classToApply);
-                getNewQuestions();
+                await getNewQuestions();
             },1000); //how long to do the main setTimeout
 
              //or use :
