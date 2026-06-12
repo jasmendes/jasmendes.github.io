@@ -54,9 +54,25 @@ function getNewQuestion() {
   clearInterval(timer); // stop previous timer
   timeLeft = 30;
 
-  if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-    localStorage.setItem("mostRecentScore", score);
-    return window.location.assign("end.html"); // redirect to end screen
+    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+      //save the user score locally:
+      localStorage.setItem("mostRecentScore", score);
+      // record subject/difficulty for end page
+      sessionStorage.setItem('lastScoreSubject', 'Portugues 11 Ano');
+      sessionStorage.setItem('lastScoreDifficulty', 'medium');
+
+      // try to save to Supabase using the global helper if available
+      try {
+        if (window.saveScore) {
+          await window.saveScore(score, 'Portugues 11 Ano', 'medium', MAX_QUESTIONS);
+          sessionStorage.setItem('lastScoreSaved', '1');
+        }
+      } catch (err) {
+        console.error('Error saving score before redirect:', err);
+      }
+
+      //go to end page:
+      return window.location.assign('end.html');
   }
 
   questionCounter++;

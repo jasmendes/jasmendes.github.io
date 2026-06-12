@@ -98,13 +98,27 @@ startGame = () =>{
     loader.classList.add("hidden");
 };
 
-getNewQuestions = () =>{
-     
+getNewQuestions = async () =>{
+
     if(availableQuestions.length ===0 || questionCounter >= MAX_QUESTIONS){
 
-        //save the user score:
+        //save the user score locally:
         localStorage.setItem("mostRecentScore", score);
-        //go to ebd of the page:
+        // record subject/difficulty for end page
+        sessionStorage.setItem('lastScoreSubject', '6 Ano Escolaridade 1º Periodo');
+        sessionStorage.setItem('lastScoreDifficulty', 'medium');
+
+        // try to save to Supabase using the global helper if available
+        try {
+            if (window.saveScore) {
+                await window.saveScore(score, '6 Ano Escolaridade 1º Periodo', 'medium', MAX_QUESTIONS);
+                sessionStorage.setItem('lastScoreSaved', '1');
+            }
+        } catch (err) {
+            console.error('Error saving score before redirect:', err);
+        }
+
+        //go to end page:
         return window.location.assign('end.html');
     }
 

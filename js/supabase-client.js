@@ -30,6 +30,16 @@ window.saveScore = async function(score, subject = '', difficulty = '', totalQue
       return null;
     }
 
+    // Normalize difficulty to one of: easy, medium, hard
+    function normalizeDifficulty(d) {
+      if (!d) return null;
+      const s = String(d).toLowerCase();
+      if (s.includes('easy') || s === 'e' || s === 'beg' || s.includes('begin')) return 'easy';
+      if (s.includes('hard') || s === 'h' || s.includes('adv') || s.includes('int')) return 'hard';
+      // default and others ('standard', 'normal', '') -> medium
+      return 'medium';
+    }
+
     const insertObj = {
       username,
       score: parseInt(score, 10) || 0,
@@ -37,7 +47,8 @@ window.saveScore = async function(score, subject = '', difficulty = '', totalQue
     };
 
     if (subject) insertObj.subject = subject;
-    if (difficulty) insertObj.difficulty = difficulty;
+    const normDiff = normalizeDifficulty(difficulty);
+    if (normDiff) insertObj.difficulty = normDiff;
     if (totalQuestions) insertObj.total_questions = totalQuestions;
 
     const { data, error } = await window.supabaseClient

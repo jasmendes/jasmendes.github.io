@@ -106,12 +106,12 @@ getNewQuestions = async () =>{
         localStorage.setItem("mostRecentScore", score);
         // record subject/difficulty for end page
         sessionStorage.setItem('lastScoreSubject', '5 Ano Escolaridade 1º Periodo');
-        sessionStorage.setItem('lastScoreDifficulty', 'standard');
+        sessionStorage.setItem('lastScoreDifficulty', 'medium');
 
         // try to save to Supabase using the global helper if available
         try {
             if (window.saveScore) {
-                await window.saveScore(score, '5 Ano Escolaridade 1º Periodo', 'standard', MAX_QUESTIONS);
+                await window.saveScore(score, '5 Ano Escolaridade 1º Periodo', 'medium', MAX_QUESTIONS);
                 sessionStorage.setItem('lastScoreSaved', '1');
             }
         } catch (err) {

@@ -45,10 +45,9 @@ tr:nth-child(even){
     <label>Dificuldade:
         <select id="difficultyFilter">
             <option value="">Todas</option>
-            <option value="easy">easy</option>
-            <option value="medium">medium</option>
-            <option value="hard">hard</option>
-            <option value="standard">standard</option>
+                <option value="easy">easy</option>
+                <option value="medium">medium</option>
+                <option value="hard">hard</option>
         </select>
     </label>
     <button id="applyFilter">Aplicar</button>
@@ -110,6 +109,15 @@ async function loadScores(){
         }
 
         if(!data || data.length === 0){
+
+        // Render top scores with normalized difficulty display
+        function normalizeDisplayDifficulty(d) {
+            if (!d) return '-';
+            const s = String(d).toLowerCase();
+            if (s.includes('easy')) return 'easy';
+            if (s.includes('hard')) return 'hard';
+            return 'medium';
+        }
 
             ranking.innerHTML =
                 `<tr>
