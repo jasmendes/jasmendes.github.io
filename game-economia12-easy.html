@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/game.css" />
     <title>Quick Quiz - Play</title>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
       <div class="container">
@@ -55,81 +54,37 @@
 <button onclick="logout()">Logout</button>
 
 
+      <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+      <script src="js/supabase-client.js"></script>
+      <script src="js/scores.js"></script>
       <script src="js/game-12anoeconomia-easy.js"></script>
 
-<script>
-    // Supabase initialization
-
-
-    // Save score to Supabase
-    async function saveScore(score, subject = 'Economia', difficulty = 'easy') {
-
-    const username = sessionStorage.getItem('username');
-
-    if (!username) return;
-
-    const { error } = await supabaseClient
-        .from('scores')
-        .insert([{
-            username,
-            score,
-            subject,
-            difficulty
-        }]);
-
-    if (error) {
-        console.error(error);
-    }
-}
-
-    function logout() {
-        // Remove login credentials from session
-        sessionStorage.removeItem('username');
-        sessionStorage.removeItem('userId');
-
-        // Redirect back to the login page
-        window.location.href = "index.html";
-    }
-</script>
-
-<style>
-    <script src="js/supabase-client.js"></script>
-    <script src="js/scores.js"></script>
-    <script>
-        // Delegate to shared saveScore helper with quiz-specific defaults
-        async function saveScore(score) {
-            return window.saveScore(score, 'Economia 12 Ano - Easy', 'easy', 10);
-        }
-
+      <script>
         function logout() {
-            // Remove login credentials from session
             sessionStorage.removeItem('username');
             sessionStorage.removeItem('userId');
-
-            // Redirect back to the login page
-            window.location.href = "index.html";
+            window.location.href = 'index.html';
         }
-    </script>
+      </script>
 
-    <style>
-    /* Estilo para o botão de logout */
-button {
-    background-color: #08067e; /* Cor de fundo vermelha */
-    text-align: center;
-    color: white; /* Texto branco */
+      <style>
+      /* Estilo para o botão de logout */
+      button {
+          background-color: #08067e;
+          text-align: center;
+          color: white;
+          border: none;
+          padding: 0.8rem 1.2rem;
+          cursor: pointer;
+      }
 
-}
+      button:hover {
+          background-color: #3547e5;
+      }
 
-/* Estilo quando o botão é clicado (hover) */
-button:hover {
-    background-color: #3547e5; /* Cor de fundo um pouco mais escura quando passar o mouse */
-}
-
-/* Estilo para o botão quando for pressionado (active) */
-button:active {
-    background-color: #4a2fd3; /* Cor de fundo ainda mais escura quando pressionado */
-    transform: scale(0.98); /* Leve diminuição de tamanho para o efeito de clique */
-}
-
-    </style>
+      button:active {
+          background-color: #4a2fd3;
+          transform: scale(0.98);
+      }
+      </style>
 </html>

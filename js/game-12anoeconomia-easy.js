@@ -17,9 +17,8 @@ let availableQuestions = [];
 let questions = []; //voir json
 
 async function saveScore(score, subject, difficulty) {
+    return window.saveScore(score, subject, difficulty, MAX_QUESTIONS);
 
-    const username =
-        sessionStorage.getItem('username');
 
     if (!username) {
         console.log('Utilizador não autenticado');

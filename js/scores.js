@@ -19,6 +19,10 @@ window.saveScore = window.saveScore || (async function(score, subject = 'General
       return;
     }
 
+    sessionStorage.setItem('lastScoreSubject', subject);
+    sessionStorage.setItem('lastScoreDifficulty', difficulty);
+    sessionStorage.setItem('lastScore', String(score));
+
     console.log(`Score ${score} salvo para ${username}`);
     return data;
   } catch (err) {

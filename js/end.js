@@ -1,45 +1,85 @@
 
-const username = document.getElementById("username");
-const saveScoreBtn = document.getElementById("saveScoreBtn");
 const finalScore = document.getElementById('finalScore');
-const mostRecentScore = localStorage.getItem('mostRecentScore');
+const summaryText = document.getElementById('summaryText');
+const categorySummary = document.getElementById('categorySummary');
+const categoryScores = document.getElementById('categoryScores');
 
+const mostRecentScore = sessionStorage.getItem('lastScore') || localStorage.getItem('mostRecentScore');
+const subject = sessionStorage.getItem('lastScoreSubject');
+const difficulty = sessionStorage.getItem('lastScoreDifficulty');
+const username = sessionStorage.getItem('username');
 
-const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+finalScore.innerText = mostRecentScore ? `Score final: ${mostRecentScore}` : 'Score não encontrado.';
+summaryText.innerText = username
+  ? `Olá ${username}, aqui está o ranking para a categoria jogada.`
+  : 'Aqui está o ranking da categoria jogada.';
 
-const MAX_HIGH_SCORES = 5;
+async function loadCategoryScores() {
+  if (!window.supabaseClient) {
+    categoryScores.innerHTML = '<p>Supabase não inicializado.</p>';
+    return;
+  }
 
-//console.log(highScores);
+  if (!subject || !difficulty) {
+    categorySummary.innerText = 'Categoria ou dificuldade não definidos.';
+    categoryScores.innerHTML = '<p>Não há categoria guardada para mostrar resultados.</p>';
+    return;
+  }
 
-finalScore.innerText = mostRecentScore;
+  categorySummary.innerHTML = `
+    <p><strong>Disciplina:</strong> ${subject}</p>
+    <p><strong>Dificuldade:</strong> ${difficulty}</p>
+  `;
 
-username.addEventListener("keyup", () =>{
-    saveScoreBtn.disabled = !username.value;
-});
+  try {
+    const { data, error } = await window.supabaseClient
+      .from('scores')
+      .select('username, score, subject, difficulty, created_at')
+      .eq('subject', subject)
+      .eq('difficulty', difficulty)
+      .order('score', { ascending: false })
+      .limit(10);
 
-saveHighScore = e => {
-    console.log('clicked the save button!');
-    e.preventDefault();   
+    if (error) {
+      console.error('Erro ao carregar scores da categoria:', error);
+      categoryScores.innerHTML = '<p>Erro ao carregar os resultados.</p>';
+      return;
+    }
 
-    const score = {
-        score: Math.floor(Math.random() * 100),
-        name: username.value
-    };
-    //push thisnew score:
-    highScores.push(score);
-   
-    highScores.sort( (a,b) => b.score = a.score);
+    if (!data || data.length === 0) {
+      categoryScores.innerHTML = '<p>Não existem resultados para esta categoria ainda.</p>';
+      return;
+    }
 
-    /*<==> 
-    highScores.sort( (a,b) =>{
-        return b.score = a.score;
-    });
-    */
-    highScores.splice(5);
+    categoryScores.innerHTML = `
+      <h3>Top scores para ${subject} (${difficulty})</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Utilizador</th>
+            <th>Pontuação</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${data
+            .map((item, index) => `
+              <tr>
+                <td>${index + 1}</td>
+                <td>${item.username}</td>
+                <td>${item.score}</td>
+                <td>${new Date(item.created_at).toLocaleDateString('pt-PT')}</td>
+              </tr>
+            `)
+            .join('')}
+        </tbody>
+      </table>
+    `;
+  } catch (err) {
+    console.error(err);
+    categoryScores.innerHTML = '<p>Erro inesperado ao carregar os resultados.</p>';
+  }
+}
 
-    localStorage.setItem("highScores" ,JSON.stringify(highScores));
-
-    window.location.assign("/");
-    
-    //console.log(highScores);
-};
+loadCategoryScores();

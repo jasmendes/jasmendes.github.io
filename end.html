@@ -9,30 +9,19 @@
 <body>
      <div class="container">
          <div id="end" class="flex-center flex-column">
-            <h1 id="finalScore"></h1> <!--0 par default-->
-            <form>
-                <input 
-                type="text" 
-                name="username" 
-                id="username"
-                placeholder="username" 
-                />
-                <button 
-                type="submit" 
-                class="btn" 
-                id="saveScoreBtn" 
-                onclick = "saveHighScore(event)" 
-                disabled 
-                        />
-                     Save
-                </button>
-            </form>
-            <a class="btn" href="game.html">Play Again</a>
-            <a class="btn" href="index.html" >Go Home</a>
+            <h1>Quiz Concluído</h1>
+            <p id="summaryText">A carregar o resultado...</p>
+            <h2 id="finalScore"></h2>
+            <div id="categorySummary"></div>
+            <div id="categoryScores"></div>
+            <div class="buttons-row">
+                <a class="btn" href="index.html">Go Home</a>
+            </div>
          </div>
      </div>
 
-
+     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+     <script src="js/supabase-client.js"></script>
      <script src="js/end.js"></script>
 </body>
 </html>
