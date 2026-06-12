@@ -41,6 +41,7 @@
                 <p id="loginError" style="color: red; display: none;"></p>
             </form>
             <p>Não tem conta? <button type="button" onclick="showRegister()" style="background: none; border: none; color: #007bff; cursor: pointer; text-decoration: underline; padding: 0;">Crie uma aqui</button></p>
+            <p><button type="button" onclick="showInsertScore()" style="background: none; border: none; color: #007bff; cursor: pointer; text-decoration: underline; padding: 0;">Inserir Score de Teste</button></p>
         </div>
 
         <!-- Página de Registo -->
@@ -52,6 +53,21 @@
                 <input type="password" id="reg-password-confirm" placeholder="Confirmar Password" required>
                 <button type="submit">Criar Conta</button>
                 <p id="registerError" style="color: red; display: none;"></p>
+            </form>
+            <p><button type="button" onclick="showLogin()" style="background: none; border: none; color: #007bff; cursor: pointer; text-decoration: underline; padding: 0;">Voltar ao Login</button></p>
+        </div>
+
+        <!-- Página para Inserir Scores de Teste -->
+        <div id="insertScore" class="flex-center flex-column hidden">
+            <h1>Inserir Score de Teste</h1>
+            <form id="insert-score-form" onsubmit="insertTestScore(event)">
+                <input type="text" id="score-username" placeholder="Username" required>
+                <input type="text" id="score-subject" placeholder="Disciplina (ex: Economia 12)" required>
+                <input type="text" id="score-difficulty" placeholder="Dificuldade (easy, medium, hard)" required>
+                <input type="number" id="score-value" placeholder="Pontuação" min="0" required>
+                <input type="number" id="score-total" placeholder="Total de Perguntas" min="1" value="10">
+                <button type="submit">Inserir Score</button>
+                <p id="insertScoreError" style="color: red; display: none;"></p>
             </form>
             <p><button type="button" onclick="showLogin()" style="background: none; border: none; color: #007bff; cursor: pointer; text-decoration: underline; padding: 0;">Voltar ao Login</button></p>
         </div>
@@ -185,7 +201,15 @@ const supabaseClient = window.supabase.createClient(
         function showRegister() {
             document.getElementById('login').classList.add('hidden');
             document.getElementById('register').classList.remove('hidden');
+            document.getElementById('insertScore').classList.add('hidden');
             document.getElementById('registerError').style.display = 'none';
+        }
+
+        function showInsertScore() {
+            document.getElementById('login').classList.add('hidden');
+            document.getElementById('register').classList.add('hidden');
+            document.getElementById('insertScore').classList.remove('hidden');
+            document.getElementById('insertScoreError').style.display = 'none';
         }
 
         // Função para mostrar a página inicial
@@ -237,6 +261,89 @@ const supabaseClient = window.supabase.createClient(
                 console.log(`Score ${score} salvo para ${username}`);
             } catch (err) {
                 console.error('Save score error:', err);
+            }
+        }
+
+        // Função para inserir scores de teste com subject e difficulty
+        async function insertTestScore(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('score-username').value.trim();
+            const subject = document.getElementById('score-subject').value.trim();
+            const difficulty = document.getElementById('score-difficulty').value.trim();
+            const score = parseInt(document.getElementById('score-value').value);
+            const totalQuestions = parseInt(document.getElementById('score-total').value) || 10;
+            const insertScoreError = document.getElementById('insertScoreError');
+
+            // Validação
+            if (!username || username.length < 1) {
+                insertScoreError.textContent = 'Username é obrigatório!';
+                insertScoreError.style.display = 'block';
+                return;
+            }
+
+            if (!subject || subject.length < 1) {
+                insertScoreError.textContent = 'Disciplina é obrigatória!';
+                insertScoreError.style.display = 'block';
+                return;
+            }
+
+            if (!difficulty || difficulty.length < 1) {
+                insertScoreError.textContent = 'Dificuldade é obrigatória!';
+                insertScoreError.style.display = 'block';
+                return;
+            }
+
+            if (isNaN(score) || score < 0) {
+                insertScoreError.textContent = 'Pontuação deve ser um número válido!';
+                insertScoreError.style.display = 'block';
+                return;
+            }
+
+            try {
+                // Verifica se username existe
+                const { data: userExists } = await supabaseClient
+                    .from('users')
+                    .select('*')
+                    .eq('username', username)
+                    .single();
+
+                if (!userExists) {
+                    insertScoreError.textContent = 'Username não existe!';
+                    insertScoreError.style.display = 'block';
+                    return;
+                }
+
+                // Insere score
+                const { data, error } = await supabaseClient
+                    .from('scores')
+                    .insert([{
+                        username,
+                        subject,
+                        difficulty,
+                        score,
+                        total_questions: totalQuestions
+                    }])
+                    .select();
+
+                if (error) {
+                    console.error('Erro ao inserir score:', error);
+                    insertScoreError.textContent = 'Erro ao inserir score. Tente novamente.';
+                    insertScoreError.style.display = 'block';
+                    return;
+                }
+
+                // Limpa formulário e mensagens
+                insertScoreError.style.display = 'none';
+                document.getElementById('insert-score-form').reset();
+                
+                // Mostra mensagem de sucesso
+                alert(`Score ${score} inserido com sucesso para ${username}!`);
+                showLogin();
+            } catch (err) {
+                console.error('Insert score error:', err);
+                insertScoreError.textContent = 'Erro ao inserir score. Tente novamente.';
+                insertScoreError.style.display = 'block';
             }
         }
 

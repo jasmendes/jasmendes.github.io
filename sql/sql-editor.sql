@@ -52,3 +52,31 @@ select * from users;
 
 insert into scores ( username ,subject, difficulty, score, total_questions)
  values ( 'toto','Matemática 6 ano' ,'easy',17,10);
+
+-- Function to insert new user
+create or replace function insert_user(p_username text, p_password text)
+returns table (id uuid, username text, created_at timestamp) as $$
+begin
+  return query
+  insert into users (username, password)
+  values (p_username, p_password)
+  returning users.id, users.username, users.created_at;
+end;
+$$ language plpgsql;
+
+-- Function to insert new score
+create or replace function insert_score(
+  p_username text,
+  p_subject text,
+  p_difficulty text,
+  p_score integer,
+  p_total_questions integer default 10
+)
+returns table (id uuid, username text, subject text, difficulty text, score integer, created_at timestamp) as $$
+begin
+  return query
+  insert into scores (username, subject, difficulty, score, total_questions)
+  values (p_username, p_subject, p_difficulty, p_score, p_total_questions)
+  returning scores.id, scores.username, scores.subject, scores.difficulty, scores.score, scores.created_at;
+end;
+$$ language plpgsql;
