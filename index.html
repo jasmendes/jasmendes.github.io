@@ -746,32 +746,60 @@ const supabaseClient = window.supabase.createClient(
 
         // ===== SCORE MANAGEMENT - SUPABASE =====
 
-        async function saveScore(score) {
-            const username = sessionStorage.getItem('username');
+        function normalizeDifficulty(difficulty) {
+            if (!difficulty) return null;
+            const value = difficulty.trim().toLowerCase();
+            if (/easy|beg|begin|fácil|facil/.test(value)) return 'easy';
+            if (/hard|adv|int|difícil|dificil/.test(value)) return 'hard';
+            return 'medium';
+        }
+
+        async function saveScore(score, subject = null, difficulty = null, totalQuestions = null, username = null) {
+            username = username || sessionStorage.getItem('username');
 
             if (!username) {
                 console.log('Usuário não autenticado.');
-                return;
+                return null;
             }
 
             try {
+                const { data: userExists, error: userError } = await supabaseClient
+                    .from('users')
+                    .select('*')
+                    .eq('username', username)
+                    .single();
+
+                if (userError || !userExists) {
+                    console.error('Erro ao verificar usuário para salvar score:', userError);
+                    return null;
+                }
+
+                const insertObj = {
+                    username,
+                    score: parseInt(score, 10) || 0,
+                    date: new Date().toISOString()
+                };
+
+                if (subject) insertObj.subject = subject;
+                const normalizedDifficulty = normalizeDifficulty(difficulty);
+                if (normalizedDifficulty) insertObj.difficulty = normalizedDifficulty;
+                if (totalQuestions) insertObj.total_questions = totalQuestions;
+
                 const { data, error } = await supabaseClient
                     .from('scores')
-                    .insert([{
-                        username,
-                        score,
-                        date: new Date().toISOString()
-                    }])
+                    .insert([insertObj])
                     .select();
 
                 if (error) {
                     console.error('Erro ao salvar score:', error);
-                    return;
+                    return null;
                 }
 
                 console.log(`Score ${score} salvo para ${username}`);
+                return data;
             } catch (err) {
                 console.error('Save score error:', err);
+                return null;
             }
         }
 
@@ -782,24 +810,24 @@ const supabaseClient = window.supabase.createClient(
             const username = document.getElementById('score-username').value.trim();
             const subject = document.getElementById('score-subject').value.trim();
             const difficulty = document.getElementById('score-difficulty').value.trim();
-            const score = parseInt(document.getElementById('score-value').value);
-            const totalQuestions = parseInt(document.getElementById('score-total').value) || 10;
+            const score = parseInt(document.getElementById('score-value').value, 10);
+            const totalQuestions = parseInt(document.getElementById('score-total').value, 10) || 10;
             const insertScoreError = document.getElementById('insertScoreError');
 
             // Validação
-            if (!username || username.length < 1) {
+            if (!username) {
                 insertScoreError.textContent = 'Username é obrigatório!';
                 insertScoreError.style.display = 'block';
                 return;
             }
 
-            if (!subject || subject.length < 1) {
+            if (!subject) {
                 insertScoreError.textContent = 'Disciplina é obrigatória!';
                 insertScoreError.style.display = 'block';
                 return;
             }
 
-            if (!difficulty || difficulty.length < 1) {
+            if (!difficulty) {
                 insertScoreError.textContent = 'Dificuldade é obrigatória!';
                 insertScoreError.style.display = 'block';
                 return;
@@ -811,13 +839,26 @@ const supabaseClient = window.supabase.createClient(
                 return;
             }
 
+            const normalizedDifficulty = normalizeDifficulty(difficulty);
+            if (!normalizedDifficulty) {
+                insertScoreError.textContent = 'Dificuldade inválida. Use easy, medium ou hard.';
+                insertScoreError.style.display = 'block';
+                return;
+            }
+
             try {
-                // Verifica se username existe
-                const { data: userExists } = await supabaseClient
+                const { data: userExists, error: userError } = await supabaseClient
                     .from('users')
                     .select('*')
                     .eq('username', username)
                     .single();
+
+                if (userError) {
+                    console.error('Erro ao verificar username:', userError);
+                    insertScoreError.textContent = 'Erro ao verificar usuário. Tente novamente.';
+                    insertScoreError.style.display = 'block';
+                    return;
+                }
 
                 if (!userExists) {
                     insertScoreError.textContent = 'Username não existe!';
@@ -825,32 +866,15 @@ const supabaseClient = window.supabase.createClient(
                     return;
                 }
 
-                // Insere score
-                const { data, error } = await supabaseClient
-                    .from('scores')
-                    .insert([{
-                        username,
-                        subject,
-                        difficulty,
-                        score,
-                        total_questions: totalQuestions
-                    }])
-                    .select();
-
-                if (error) {
-                    console.error('Erro ao inserir score:', error);
+                const result = await saveScore(score, subject, difficulty, totalQuestions, username);
+                if (!result) {
                     insertScoreError.textContent = 'Erro ao inserir score. Tente novamente.';
                     insertScoreError.style.display = 'block';
                     return;
                 }
 
-                // Limpa formulário e mensagens
                 insertScoreError.style.display = 'none';
                 document.getElementById('insert-score-form').reset();
-                
-                // Mostra mensagem de sucesso
-                alert(`Score ${score} inserido com sucesso para ${username}!`);
-                showLogin();
             } catch (err) {
                 console.error('Insert score error:', err);
                 insertScoreError.textContent = 'Erro ao inserir score. Tente novamente.';
