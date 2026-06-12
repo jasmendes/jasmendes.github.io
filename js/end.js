@@ -82,13 +82,17 @@ async function loadCategoryScores() {
   }
 }
 
-// Do not auto-load scores — wait for user action. Provide a button to show them.
+// Navigate to highscores page with current category and difficulty filters
 const showBtn = document.getElementById('showScoresBtn');
 if (showBtn) {
-  showBtn.addEventListener('click', async () => {
-    // ensure categoryScores container is visible
-    categoryScores.style.display = '';
-    await loadCategoryScores();
+  showBtn.addEventListener('click', () => {
+    if (subject && difficulty) {
+      // Redirect to highscores with filters applied
+      window.location.href = `highscores.html?subject=${encodeURIComponent(subject)}&difficulty=${encodeURIComponent(difficulty)}`;
+    } else {
+      // If no category/difficulty, just go to highscores
+      window.location.href = 'highscores.html';
+    }
   });
 }
 

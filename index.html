@@ -200,6 +200,172 @@
         .hidden {
             display: none !important;
         }
+
+        /* Quiz Menu Styles */
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 15px 0;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .menu-header h1 {
+            font-size: 32px;
+            color: #333;
+            margin: 0;
+        }
+
+        .menu-header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .menu-header-actions a,
+        .menu-header-actions button {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .menu-header-actions .btn-scores {
+            background: #667eea;
+            color: white;
+        }
+
+        .menu-header-actions .btn-scores:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        .menu-header-actions .btn-logout {
+            background: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .menu-header-actions .btn-logout:hover {
+            background: #e74c3c;
+            color: white;
+            border: 1px solid #e74c3c;
+        }
+
+        .quiz-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .category-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .difficulty-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .difficulty-btn {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .difficulty-easy {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .difficulty-easy:hover {
+            background: #27ae60;
+            transform: translateX(3px);
+        }
+
+        .difficulty-medium {
+            background: #f39c12;
+            color: white;
+        }
+
+        .difficulty-medium:hover {
+            background: #e67e22;
+            transform: translateX(3px);
+        }
+
+        .difficulty-hard {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .difficulty-hard:hover {
+            background: #c0392b;
+            transform: translateX(3px);
+        }
+
+        .difficulty-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .menu-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .menu-header-actions {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .menu-header-actions a,
+            .menu-header-actions button {
+                width: 100%;
+            }
+
+            .quiz-categories {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -266,19 +432,87 @@
         <div class="container">
         <!-- Página Inicial - ocultada até o login ser feito -->
         <div id="home" class="flex-center flex-column hidden">
-            <h1>Quick Quiz</h1>
+            <div class="menu-header">
+                <h1>🎓 Escolha uma Disciplina</h1>
+                <div class="menu-header-actions">
+                    <a href="highscores.html" class="btn-scores">🏆 Ranking Global</a>
+                    <button onclick="logout()" class="btn-logout">Sair</button>
+                </div>
+            </div>
 
-            <!--a class="btn" href="./game-easy-qi.html">Play QI Easy</a-->
-            <a class="btn" href="./game-5ano1p.html">Play 5 Ano Escolaridade 1º Periodo</a>
-            <a class="btn" href="./game-6ano1p.html">Play 6 Ano Escolaridade 1º Periodo</a>
-            <a class="btn" href="./game-literature.html">Play Portugues 11 Ano</a>
-            <a class="btn" href="./game-philosophy.html">Play Filosofia 11 Ano</a>
-            <a class="btn" href="./game-economia12-hard.html">Play Economia A 12º Ano Hard</a>
-            <a class="btn" href="./game-economia12-medium.html">Play Economia A 12º Ano Medium</a>
-            <a class="btn" href="./game-economia12-easy.html">Play Economia A 12º Ano Easy</a>
-            <!--a class="btn" href="./game-rio.html">Play Rio janeiro - Basic</a-->
-            <a class="btn" href="./highscores.html">High Scores</a>
-            <button onclick="logout()">Logout</button>
+            <div class="quiz-categories">
+                <!-- Categoria: Ensino Básico -->
+                <div class="category-card">
+                    <div class="category-icon">📚</div>
+                    <div class="category-title">Ensino Básico</div>
+                    <div class="difficulty-buttons">
+                        <a href="./game-5ano1p.html" class="difficulty-btn difficulty-medium">
+                            <span class="difficulty-label">Médio</span>
+                            5º Ano - 1º Período
+                        </a>
+                        <a href="./game-6ano1p.html" class="difficulty-btn difficulty-medium">
+                            <span class="difficulty-label">Médio</span>
+                            6º Ano - 1º Período
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoria: Ensino Secundário -->
+                <div class="category-card">
+                    <div class="category-icon">📖</div>
+                    <div class="category-title">Ensino Secundário</div>
+                    <div class="difficulty-buttons">
+                        <a href="./game-literature.html" class="difficulty-btn difficulty-medium">
+                            <span class="difficulty-label">Médio</span>
+                            Português 11º
+                        </a>
+                        <a href="./game-philosophy.html" class="difficulty-btn difficulty-medium">
+                            <span class="difficulty-label">Médio</span>
+                            Filosofia 11º
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoria: Economia -->
+                <div class="category-card">
+                    <div class="category-icon">💼</div>
+                    <div class="category-title">Economia A - 12º</div>
+                    <div class="difficulty-buttons">
+                        <a href="./game-economia12-easy.html" class="difficulty-btn difficulty-easy">
+                            <span class="difficulty-label">Fácil</span>
+                            Nível Básico
+                        </a>
+                        <a href="./game-economia12-medium.html" class="difficulty-btn difficulty-medium">
+                            <span class="difficulty-label">Médio</span>
+                            Nível Intermédio
+                        </a>
+                        <a href="./game-economia12-hard.html" class="difficulty-btn difficulty-hard">
+                            <span class="difficulty-label">Difícil</span>
+                            Nível Avançado
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoria: Especialidades -->
+                <div class="category-card">
+                    <div class="category-icon">⚙️</div>
+                    <div class="category-title">Especialidades</div>
+                    <div class="difficulty-buttons">
+                        <a href="./game-jenkins-beg.html" class="difficulty-btn difficulty-easy">
+                            <span class="difficulty-label">Fácil</span>
+                            Jenkins - Iniciante
+                        </a>
+                        <a href="./game-jenkins-int.html" class="difficulty-btn difficulty-medium">
+                            <span class="difficulty-label">Médio</span>
+                            Jenkins - Intermédio
+                        </a>
+                        <a href="./game-jenkins-adv.html" class="difficulty-btn difficulty-hard">
+                            <span class="difficulty-label">Difícil</span>
+                            Jenkins - Avançado
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Página de Login -->

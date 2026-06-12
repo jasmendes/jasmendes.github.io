@@ -178,6 +178,20 @@ async function populateSubjects() {
     }
 }
 
+// Read URL parameters and auto-apply filters
+function applyUrlFilters() {
+    const params = new URLSearchParams(window.location.search);
+    const subject = params.get('subject');
+    const difficulty = params.get('difficulty');
+
+    if (subject) {
+        document.getElementById('subjectFilter').value = subject;
+    }
+    if (difficulty) {
+        document.getElementById('difficultyFilter').value = difficulty;
+    }
+}
+
 document.getElementById('applyFilter').addEventListener('click', loadScores);
 document.getElementById('resetFilter').addEventListener('click', () => {
     document.getElementById('subjectFilter').value = '';
@@ -185,7 +199,10 @@ document.getElementById('resetFilter').addEventListener('click', () => {
     loadScores();
 });
 
-populateSubjects().then(loadScores);
+populateSubjects().then(() => {
+    applyUrlFilters();
+    loadScores();
+});
 
 </script>
 
