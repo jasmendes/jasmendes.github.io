@@ -43,3 +43,19 @@ window.saveScore = window.saveScore || (async function(score, subject = 'General
     console.error('Save score error:', err);
   }
 });
+
+// Hide logout controls when no user session exists
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const username = sessionStorage.getItem('username') || localStorage.getItem('isLoggedIn');
+    if (!username) {
+      // common logout selectors across pages
+      const selectors = ['.logout-btn', '.btn-logout', '#logoutBtn', '.button-ghost'];
+      selectors.forEach(sel => {
+        document.querySelectorAll(sel).forEach(el => el.style.display = 'none');
+      });
+    }
+  } catch (err) {
+    console.warn('Could not adjust logout visibility:', err);
+  }
+});
