@@ -12,7 +12,7 @@
       <div class="container">
           <div id="loader"></div>
           <div id="game" class="justify-center flex-column hidden">
-              <button type="button" class="close-game-btn" onclick="closeGame()">Close Game</button>
+              
               <div id="hud">
                   <div id="hud-item">
                       <p id="progressText" class="hud-prefix">
@@ -52,49 +52,38 @@
             </div>
           </div>
       </div>
-      <!-- Inside home.html -->
-<button type="button" class="logout-btn" onclick="logout()">Logout</button>
+            <!-- Inside home.html -->
+             <button type="button" class="close-game-btn" align="center" onclick="closeGame()">Close Game</button>
+            <button type="button" class="logout-btn" onclick="logout()">Logout</button>
 
-    <script src="js/supabase-client.js"></script>
-    <script src="js/scores.js"></script>
-    <script>
-        // Delegate to shared saveScore helper with quiz-specific defaults
-        async function saveScore(score) {
-            return window.saveScore(score, 'Economia 5 Ano', 'easy', 10);
-        }
+            <!-- Ensure supabase client and shared scores helper are loaded before the game script -->
+            <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+            <script src="js/supabase-client.js"></script>
+            <script src="js/scores.js"></script>
 
-        function logout() {
-            // Remove login credentials from session
-            sessionStorage.removeItem('username');
-            sessionStorage.removeItem('userId');
+            <script src="js/game-easy-qi.js"></script>
 
-            // Redirect back to the login page
-            window.location.href = "index.html";
-        }
-    </script>
+            <script>
+                // Delegate to shared saveScore helper with quiz-specific defaults
+                async function saveScore(score) {
+                    return window.saveScore ? window.saveScore(score, 'QI', 'easy', 10) : null;
+                }
 
-      <script src="js/game-5ano1p.js"></script>
+                function logout() {
+                    sessionStorage.removeItem('username');
+                    sessionStorage.removeItem('userId');
+                    window.location.href = 'index.html';
+                }
+            </script>
 
-<style>
-    /* Estilo para o botão de logout */
-button {
-    background-color: #08067e; /* Cor de fundo vermelha */
-    text-align: center;
-    color: white; /* Texto branco */
+            <style>
+                /* Estilo para o botão de logout */
+                .logout-btn {
+                    background-color: #08067e;
+                    text-align: center;
+                    color: white;
+                }
+                .logout-btn:hover { background-color: #3547e5; }
+            </style>
 
-}
-
-/* Estilo quando o botão é clicado (hover) */
-.logout-btn:hover {
-    background-color: #3547e5; /* Cor de fundo um pouco mais escura quando passar o mouse */
-}
-
-/* Estilo para o botão quando for pressionado (active) */
-.logout-btn:active {
-    background-color: #4a2fd3; /* Cor de fundo ainda mais escura quando pressionado */
-    transform: scale(0.98); /* Leve diminuição de tamanho para o efeito de clique */
-}
-
-    </style>
 </html>
-
