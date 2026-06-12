@@ -82,4 +82,35 @@ async function loadCategoryScores() {
   }
 }
 
-loadCategoryScores();
+// Do not auto-load scores — wait for user action. Provide a button to show them.
+const showBtn = document.getElementById('showScoresBtn');
+if (showBtn) {
+  showBtn.addEventListener('click', async () => {
+    // ensure categoryScores container is visible
+    categoryScores.style.display = '';
+    await loadCategoryScores();
+  });
+}
+
+// Try to save the score once when arriving to this page if we have subject/difficulty
+async function tryAutoSave() {
+  try {
+    if (!mostRecentScore) return;
+    if (!subject || !difficulty) return;
+    if (sessionStorage.getItem('lastScoreSaved') === '1') return;
+    if (!window.saveScore) {
+      console.warn('saveScore helper not available');
+      return;
+    }
+
+    const res = await window.saveScore(mostRecentScore, subject, difficulty, sessionStorage.getItem('lastScoreTotal'));
+    if (res) {
+      sessionStorage.setItem('lastScoreSaved', '1');
+      console.log('Score auto-saved on end page.');
+    }
+  } catch (err) {
+    console.error('Auto-save error:', err);
+  }
+}
+
+tryAutoSave();
