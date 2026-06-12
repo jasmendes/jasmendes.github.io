@@ -90,14 +90,16 @@ const showBtn = document.getElementById('showScoresBtn');
 if (showBtn) {
   showBtn.addEventListener('click', () => {
     console.log('🎯 Show Scores clicked. Redirecting with:', { subject, difficulty });
-    if (subject && difficulty) {
-      // Redirect to highscores with filters applied
-      const url = `highscores.html?subject=${encodeURIComponent(subject)}&difficulty=${encodeURIComponent(difficulty)}`;
+    if (subject) {
+      const params = new URLSearchParams();
+      params.set('category', subject);
+      params.set('subject', subject); // backward compatible alias
+      if (difficulty) params.set('difficulty', difficulty);
+      const url = `highscores.html?${params.toString()}`;
       console.log('📍 Redirect URL:', url);
       window.location.href = url;
     } else {
-      // If no category/difficulty, just go to highscores
-      console.warn('⚠️ Missing subject or difficulty. Going to highscores without filters.');
+      console.warn('⚠️ Missing subject. Going to highscores without filters.');
       window.location.href = 'highscores.html';
     }
   });
