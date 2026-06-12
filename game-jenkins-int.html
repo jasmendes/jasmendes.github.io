@@ -55,7 +55,7 @@
        
 <div class="container">
     <div class="center">
-        <button onclick="logout()">Logout</button>
+        <button type="button" class="logout-btn" onclick="logout()">Logout</button>
     </div>
 </div>
 
@@ -85,12 +85,12 @@
               transition: transform 0.18s ease, background-color 0.18s ease;
           }
 
-          button:hover {
+          .logout-btn:hover {
               background-color: #3547e5;
               transform: translateY(-1px);
           }
 
-          button:active {
+          .logout-btn:active {
               background-color: #4a2fd3;
               transform: scale(0.98);
           }
@@ -113,15 +113,16 @@ button {
 }
 
 /* Estilo quando o botão é clicado (hover) */
-button:hover {
+.logout-btn:hover {
     background-color: #3547e5; /* Cor de fundo um pouco mais escura quando passar o mouse */
 }
 
 /* Estilo para o botão quando for pressionado (active) */
-button:active {
+.logout-btn:active {
     background-color: #4a2fd3; /* Cor de fundo ainda mais escura quando pressionado */
     transform: scale(0.98); /* Leve diminuição de tamanho para o efeito de clique */
 }
 
     </style>
 </html>
+

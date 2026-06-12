@@ -54,95 +54,37 @@
        
 <div class="container">
     <div class="center">
-        <button onclick="logout()">Logout</button>
+        <button type="button" class="logout-btn" onclick="logout()">Logout</button>
     </div>
 </div>
 
+      <!-- Inside home.html -->
+      <button type="button" class="logout-btn" onclick="logout()">Logout</button>
+
+      <!-- Load Supabase and shared helpers before the game script -->
+      <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+      <script src="js/supabase-client.js"></script>
+      <script src="js/scores.js"></script>
+
       <script src="js/game-phi.js"></script>
-</body>
 
-<script>
-    // Supabase initialization
-
-
-    // Save score to Supabase
-    async function saveScore(score) {
-        const username = sessionStorage.getItem('username');
-
-        if (!username) {
-            console.log('Usuário não autenticado.');
-            return;
+      <script>
+        async function saveScore(score) {
+          return window.saveScore ? window.saveScore(score, 'Filosofia 11 Ano', 'medium', 10) : null;
         }
 
-                    <script src="js/supabase-client.js"></script>
-                    <script src="js/scores.js"></script>
-                    <script>
-                        // Delegate to shared saveScore helper with quiz-specific defaults
-                        async function saveScore(score) {
-                            return window.saveScore(score, 'Philosophy 11 Ano', 'medium', 10);
-                        }
-
-                        function logout() {
-                            // Remove login credentials from session
-                            sessionStorage.removeItem('username');
-                            sessionStorage.removeItem('userId');
-
-                            // Redirect back to the login page
-                            window.location.href = "index.html";
-                        }
-                    </script>
-
-                    <style>
-        try {
-            const { data, error } = await supabaseClient
-                .from('scores')
-                .insert([{
-                    username,
-                    score,
-                    date: new Date().toISOString()
-                }])
-                .select();
-
-            if (error) {
-                console.error('Erro ao salvar score:', error);
-                return;
-            }
-
-            console.log(`Score ${score} salvo para ${username}`);
-        } catch (err) {
-            console.error('Save score error:', err);
+        function logout() {
+          sessionStorage.removeItem('username');
+          sessionStorage.removeItem('userId');
+          window.location.href = 'index.html';
         }
-    }
+      </script>
 
-    function logout() {
-        // Remove login credentials from session
-        sessionStorage.removeItem('username');
-        sessionStorage.removeItem('userId');
+      <style>
+        .logout-btn { background-color: #08067e; text-align: center; color: white; }
+        .logout-btn:hover { background-color: #3547e5; }
+        .logout-btn:active { background-color: #4a2fd3; transform: scale(0.98); }
+      </style>
 
-        // Redirect back to the login page
-        window.location.href = "index.html";
-    }
-</script>
-<style>
-    /* Estilo para o botão de logout */
-button {
-    background-color: #08067e; /* Cor de fundo vermelha */
-    text-align: center;
-    color: white; /* Texto branco */
-    border: none; /* Sem borda */
-  
-}
-
-/* Estilo quando o botão é clicado (hover) */
-button:hover {
-    background-color: #3547e5; /* Cor de fundo um pouco mais escura quando passar o mouse */
-}
-
-/* Estilo para o botão quando for pressionado (active) */
-button:active {
-    background-color: #4a2fd3; /* Cor de fundo ainda mais escura quando pressionado */
-    transform: scale(0.98); /* Leve diminuição de tamanho para o efeito de clique */
-}
-
-    </style>
 </html>
+

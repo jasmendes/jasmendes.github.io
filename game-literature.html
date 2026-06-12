@@ -26,98 +26,36 @@
                     <p class="hud-prefix">
                          Score
                     </p>
-                    <h1 class="hud-main-text" id="score">
-                         0
-                </div>
-              </div>
-              <h2 id="question"></h2> <!--Whatis the answer of this question?-->
-              
-              <div class="choice-container">
-                  <p class="choice-prefix">A</p>
-                  <p class="choice-text" data-number="1"></p> <!--choice1-->
-              </div>
-              <div class="choice-container">
-                <p class="choice-prefix">B</p>
-                <p class="choice-text" data-number="2"></p>
-            </div>
-            <div class="choice-container">
-                <p class="choice-prefix">C</p>
-                <p class="choice-text" data-number="3"></p>
-            </div>
-            <div class="choice-container">
-                <p class="choice-prefix">D</p>
-                <p class="choice-text" data-number="4"></p>
-            </div>
-          </div>
-      </div>
-      <!-- Inside home.html -->
-<button onclick="logout()">Logout</button>
+                      <!-- Inside home.html -->
+                      <button type="button" class="logout-btn" onclick="logout()">Logout</button>
 
+                      <!-- Load Supabase client and shared helpers before the game script -->
+                      <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+                      <script src="js/supabase-client.js"></script>
+                      <script src="js/scores.js"></script>
 
-      <script src="js/game-por.js"></script>
-</body>
+                      <script src="js/game-por.js"></script>
 
-<script>
-    // Supabase initialization
-
-
-    // Save score to Supabase
-    async function saveScore(score) {
-        const username = sessionStorage.getItem('username');
-
-        if (!username) {
-            console.log('Usuário não autenticado.');
-            return;
-        }
-
-        try {
-            const { data, error } = await supabase
-                .from('scores')
-                .insert([{
-                    <script src="js/supabase-client.js"></script>
-                    <script src="js/scores.js"></script>
-                    <script>
+                      <script>
                         // Delegate to shared saveScore helper with quiz-specific defaults
                         async function saveScore(score) {
-                            return window.saveScore(score, 'Portuguese Literature', 'medium', 10);
+                          return window.saveScore ? window.saveScore(score, 'Portuguese Literature', 'medium', 10) : null;
                         }
 
                         function logout() {
-                            // Remove login credentials from session
-                            sessionStorage.removeItem('username');
-                            sessionStorage.removeItem('userId');
-
-                            // Redirect back to the login page
-                            window.location.href = "index.html";
+                          sessionStorage.removeItem('username');
+                          sessionStorage.removeItem('userId');
+                          window.location.href = 'index.html';
                         }
-                    </script>
+                      </script>
 
-                    <style>
-                    username,
-                    score,
-                    date: new Date().toISOString()
-                }])
-                .select();
+                      <style>
+                        /* Estilo para o botão de logout */
+                        .logout-btn { background-color: #08067e; text-align: center; color: white; }
+                        .logout-btn:hover { background-color: #3547e5; }
+                      </style>
 
-            if (error) {
-                console.error('Erro ao salvar score:', error);
-                return;
-            }
-
-            console.log(`Score ${score} salvo para ${username}`);
-        } catch (err) {
-            console.error('Save score error:', err);
-        }
-    }
-
-    function logout() {
-        // Remove login credentials from session
-        sessionStorage.removeItem('username');
-        sessionStorage.removeItem('userId');
-
-        // Redirect back to the login page
-        window.location.href = "index.html";
-    }
+                </html>
 </script>
 
 <style>
@@ -130,15 +68,16 @@ button {
 }
 
 /* Estilo quando o botão é clicado (hover) */
-button:hover {
+.logout-btn:hover {
     background-color: #3547e5; /* Cor de fundo um pouco mais escura quando passar o mouse */
 }
 
 /* Estilo para o botão quando for pressionado (active) */
-button:active {
+.logout-btn:active {
     background-color: #4a2fd3; /* Cor de fundo ainda mais escura quando pressionado */
     transform: scale(0.98); /* Leve diminuição de tamanho para o efeito de clique */
 }
 
     </style>
 </html>
+
