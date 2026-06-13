@@ -149,7 +149,7 @@ getNewQuestions = async () => {
     sessionStorage.setItem('lastScoreTotal', MAX_QUESTIONS);
 
     try {
-      await saveScore(score, 'Economia 12', 'easy');
+      await saveScore(score, 'Economia 12', 'easy',MAX_QUESTIONS);
       console.log('Score saved. Redirecting to end.html...');
     
     } catch (err) {
