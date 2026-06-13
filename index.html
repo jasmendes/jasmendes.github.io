@@ -407,11 +407,15 @@ const supabaseClient = window.supabase.createClient(
                 const {
                     data: { user }
                 } = await supabaseClient.auth.getUser();
-
+                
                 if (!user) {
                     console.error('User not logged in');
                     return;
                 }
+
+                
+    console.log(user);
+      console.log(user.user_metadata);
 
                 const insertObj = {
                     user_id: user.id,
@@ -437,15 +441,7 @@ const supabaseClient = window.supabase.createClient(
         // Função para inserir scores de teste com subject e difficulty
         
 
-        function saveScores(score) {
-            const username = sessionStorage.getItem('username');
-            if (username) {
-                console.log(`Salvando a pontuação de ${score} para o usuário ${username}`);
-                saveScore(score);
-            } else {
-                console.log('Usuário não autenticado.');
-            }
-        }
+   
 
         // Função para fazer logout
          async function logout() {

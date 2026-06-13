@@ -16,20 +16,43 @@ let availableQuestions = [];
 
 let questions = []; //voir json
 
-async function saveScore(score, subject, difficulty) {
-    console.log('saveScore called:', { score, subject, difficulty, username: sessionStorage.getItem('username') });
-    if (!window.supabaseClient) {
-        console.error('supabaseClient not initialized');
+async function saveScore(score, subject, difficulty, totalQuestions) {
+
+    const {
+        data: { user }
+    } = await supabaseClient.auth.getUser();
+    
+    if (!user) {
+        console.error('User not logged in');
         return;
     }
-    if (!window.saveScore) {
-        console.error('window.saveScore not defined');
-        return;
+
+    
+console.log(user);
+console.log(user.user_metadata);
+
+    const insertObj = {
+        user_id: user.id,
+        username: user.user_metadata.username,
+        subject,
+        difficulty,
+        score,
+        total_questions: totalQuestions
+    };
+
+    const { data, error } = await supabaseClient
+        .from('scores')
+        .insert([insertObj])
+        .select();
+
+    if (error) {
+        console.error(error);
+        return null;
     }
-    const result = await window.saveScore(score, subject, difficulty, MAX_QUESTIONS);
-    console.log('saveScore result:', result);
-    return result;
+
+    return data;
 }
+// Função para inserir scores de teste com subject e difficulty
 
 
 //fetch question from .json:
