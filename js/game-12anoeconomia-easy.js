@@ -33,7 +33,10 @@ console.log(user.user_metadata);
 
     const insertObj = {
         user_id: user.id,
-        username: user.user_metadata.username,
+        username:
+            user.user_metadata?.username ||
+            sessionStorage.getItem('username') ||
+            user.email,
         subject,
         difficulty,
         score,
