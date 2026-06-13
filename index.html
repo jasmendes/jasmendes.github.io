@@ -318,10 +318,20 @@ const supabaseClient = window.supabase.createClient(
         password,
         options: {
             data: {
-                username: username
+            username
             }
         }
-    });
+        });
+
+        if (data.user) {
+        await supabaseClient
+            .from('users')
+            .insert({
+            id: data.user.id,
+            username,
+            email
+            });
+        }
 
     if (error) {
         registerError.textContent = error.message;

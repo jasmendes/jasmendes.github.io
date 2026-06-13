@@ -27,19 +27,19 @@ async function saveScore(score, subject, difficulty, totalQuestions) {
         return;
     }
 
-console.log("ID:", data.user.id);
-console.log("EMAIL:", data.user.email);
-console.log("META:", data.user.user_metadata);
+console.log("ID:", user.id);
+console.log("EMAIL:", user.email);
+console.log("META:", user.user_metadata);
 
     const insertObj = {
         user_id: user.id,
         username:
-            user.user_metadata?.username ||
+            user.user_metadata.username ||
             sessionStorage.getItem('username') ||
             user.email,
         subject,
         difficulty,
-        score,
+        score: parseInt(score, 10),
         total_questions: totalQuestions
     };
 
