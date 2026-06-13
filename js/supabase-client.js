@@ -17,7 +17,12 @@ window.saveScore = async function(score, subject = '', difficulty = '', totalQue
     }
     console.log('✅ supabaseClient ready');
 
-    const username = sessionStorage.getItem('username');
+    const {
+      data: { user }
+    } = await window.supabaseClient.auth.getUser();
+
+    const username = user.user_metadata.username;
+
     console.log('👤 username from sessionStorage:', username);
     if (!username) {
       console.log('❌ No username in sessionStorage; cannot save score');
@@ -26,15 +31,13 @@ window.saveScore = async function(score, subject = '', difficulty = '', totalQue
 
     // Verify user exists
     console.log('🔍 Verifying user exists...');
-    const { data: userExists, error: userErr } = await window.supabaseClient
-      .from('users')
-      .select('*')
-      .eq('username', username)
-      .single();
+    const {
+      data: { user },
+      error: authError
+    } = await window.supabaseClient.auth.getUser();
 
-    console.log('✅ User check result:', { userExists, userErr });
-    if (userErr || !userExists) {
-      console.warn('❌ User does not exist or could not be verified:', userErr);
+    if (authError || !user) {
+      console.error('❌ User not authenticated');
       return null;
     }
 
@@ -49,7 +52,8 @@ window.saveScore = async function(score, subject = '', difficulty = '', totalQue
     }
 
     const insertObj = {
-      username,
+      user_id: user.id,
+      username: user.user_metadata.username || username,
       score: parseInt(score, 10) || 0,
       date: new Date().toISOString()
     };

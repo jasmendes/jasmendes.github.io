@@ -407,15 +407,11 @@ const supabaseClient = window.supabase.createClient(
                 const {
                     data: { user }
                 } = await supabaseClient.auth.getUser();
-                
-                if (!user) {
-                    console.error('User not logged in');
-                    return;
-                }
 
-                
-    console.log(user);
-      console.log(user.user_metadata);
+                if (!user) {
+                    console.error('User not authenticated');
+                    return null;
+                }
 
                 const insertObj = {
                     user_id: user.id,
