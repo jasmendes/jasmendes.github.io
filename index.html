@@ -227,6 +227,9 @@ const supabaseClient = window.supabase.createClient(
                     email,
                     password
                 });
+            
+                console.log("Bem vindo:", data.user.user_metadata);
+               
 
             if (error) {
                 document.getElementById('loginError').textContent =

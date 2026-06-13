@@ -27,9 +27,9 @@ async function saveScore(score, subject, difficulty, totalQuestions) {
         return;
     }
 
-    
-console.log(user);
-console.log(user.user_metadata);
+console.log("ID:", data.user.id);
+console.log("EMAIL:", data.user.email);
+console.log("META:", data.user.user_metadata);
 
     const insertObj = {
         user_id: user.id,

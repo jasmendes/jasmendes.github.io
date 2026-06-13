@@ -25,7 +25,8 @@ window.saveScore = async function(score, subject = '', difficulty = '', totalQue
         data: { user },
         error: authError
       } = await window.supabaseClient.auth.getUser();
-
+console.log(data.user);
+console.log(data.user.user_metadata);
     if (authError || !user) {
       console.error('❌ User not authenticated');
       return null;
