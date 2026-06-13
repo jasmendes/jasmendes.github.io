@@ -216,76 +216,69 @@ const supabaseClient = window.supabase.createClient(
 </script>
     <script>
         // ===== USER MANAGEMENT - SUPABASE =====
-        async function login(event) {
-            event.preventDefault();
+       async function login(event) {
+    event.preventDefault();
 
-            const email = document.getElementById('email').value.trim();
-            const password = document.getElementById('password').value.trim();
-            const username = document.getElementById('username').value.trim();
+    const email =
+        document.getElementById('email').value.trim();
 
+    const password =
+        document.getElementById('password').value.trim();
 
-            const { data: existingUsername } = await supabaseClient
-                .from('users')
-                .select('username')
-                .eq('username', username)
-                .maybeSingle();
+    const loginError =
+        document.getElementById('loginError');
 
-            if (existingUsername) {
-                registerError.textContent = 'Username já existe';
-                registerError.style.display = 'block';
-                return;
-            }
+    loginError.style.display = 'none';
 
-            const { data, error } =
-                await supabaseClient.auth.signInWithPassword({
-                    email,
-                    password
-                });
+    const { data, error } =
+        await supabaseClient.auth.signInWithPassword({
+            email,
+            password
+        });
 
-            const { data: profile } = await supabaseClient
-                .from('users')
-                .select('username')
-                .eq('id', data.user.id)
-                .single();
+    if (error) {
+        loginError.textContent = error.message;
+        loginError.style.display = 'block';
+        return;
+    }
 
-            sessionStorage.setItem('username', profile.username);
-            sessionStorage.setItem('userId', data.user.id);
+    const { data: profile } = await supabaseClient
+        .from('users')
+        .select('username')
+        .eq('id', data.user.id)
+        .single();
 
-            console.log("Bem vindo email:", data.user.id);
-            console.log("Bem vindo user:", profile.username);
-            
+    sessionStorage.setItem(
+        'userId',
+        data.user.id
+    );
 
-            if (error) {
-                document.getElementById('loginError').textContent =
-                    error.message;
-                document.getElementById('loginError').style.display = 'block';
-                return;
-            }
+    sessionStorage.setItem(
+        'username',
+        profile.username
+    );
 
-            sessionStorage.setItem(
-                'userId',
-                data.user.id
-            );
-
-            sessionStorage.setItem(
-                'username',
-                username
-            );
-
-            showHomePage();
-        }
-        // Função de login com Supabase
-   
-
-        // ===== REGISTRATION FUNCTIONS - SUPABASE =====
+    showHomePage();
+}
 
        async function registerUser(event) {
     event.preventDefault();
 
-    const username = document.getElementById('reg-username').value.trim();
+    const uncleanUsername = document.getElementById('reg-username').value.trim();
     const email = document.getElementById('reg-email').value.trim();
     const password = document.getElementById('reg-password').value.trim();
     const passwordConfirm = document.getElementById('reg-password-confirm').value.trim();
+
+    const username = uncleanUsername.replace(/[^a-zA-Z0-9_]/g, '');
+    
+
+
+    if (password.length < 8) {
+        registerError.textContent =
+            'A password deve ter pelo menos 8 caracteres';
+        registerError.style.display = 'block';
+        return;
+    }
 
     const registerError = document.getElementById('registerError');
 
@@ -303,6 +296,19 @@ const supabaseClient = window.supabase.createClient(
         return;
     }
 
+    
+    const { data: existingUser } = await supabaseClient
+        .from('users')
+        .select('username')
+        .eq('username', username)
+        .maybeSingle();
+
+    if (existingUser) {
+        registerError.textContent = 'Username já existe';
+        registerError.style.display = 'block';
+        return;
+    }
+    
     const { data, error } = await supabaseClient.auth.signUp({
         email,
         password,
@@ -329,7 +335,7 @@ const supabaseClient = window.supabase.createClient(
         return;
     }
 
-    alert('Conta criada com sucesso!');
+    alert('Conta criada com sucesso! Verifique a sua conta de email.');
 
     document.getElementById('register-form').reset();
 
