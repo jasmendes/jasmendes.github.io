@@ -515,8 +515,11 @@ const supabaseClient = window.supabase.createClient(
 
                 const insertObj = {
                     username,
-                    score: parseInt(score, 10) || 0,
-                    date: new Date().toISOString()
+                    subject,
+                    difficulty: normalizedDifficulty,
+                    score: parseInt(score, 10),
+                    total_questions: totalQuestions,
+                    created_at: new Date().toISOString()
                 };
 
                 if (subject) insertObj.subject = subject;
@@ -525,7 +528,7 @@ const supabaseClient = window.supabase.createClient(
                 if (totalQuestions) insertObj.total_questions = totalQuestions;
                 
                 console.log("INSERT OBJECT", insertObj);
-                
+
                 const { data, error } = await supabaseClient
                     .from('scores')
                     .insert([insertObj])
