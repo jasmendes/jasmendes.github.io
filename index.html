@@ -493,7 +493,7 @@ const supabaseClient = window.supabase.createClient(
             return 'medium';
         }
 
-        async function saveScore(score, subject = null, difficulty = null, totalQuestions = null, username = null) {
+       /*** async function saveScore(score, subject = null, difficulty = null, totalQuestions = null, username = null) {
             username = username || sessionStorage.getItem('username');
 
             if (!username) {
@@ -502,6 +502,7 @@ const supabaseClient = window.supabase.createClient(
             }
 
             try {
+                /*
                 const { data: userExists, error: userError } = await supabaseClient
                     .from('users')
                     .select('*')
@@ -511,7 +512,22 @@ const supabaseClient = window.supabase.createClient(
                 if (userError || !userExists) {
                     console.error('Erro ao verificar usuário para salvar score:', userError);
                     return null;
+                }*/
+/*
+                const {
+                    data: { user }
+                } = await supabaseClient.auth.getUser();
+
+                if (!user) {
+                    console.error('Utilizador não autenticado');
+                    return null;
                 }
+
+                if (subject) insertObj.subject = subject;
+                const normalizedDifficulty = normalizeDifficulty(difficulty);
+                if (normalizedDifficulty) insertObj.difficulty = normalizedDifficulty;
+                if (totalQuestions) insertObj.total_questions = totalQuestions;
+                
 
                 const insertObj = {
                     username,
@@ -522,10 +538,7 @@ const supabaseClient = window.supabase.createClient(
                     created_at: new Date().toISOString()
                 };
 
-                if (subject) insertObj.subject = subject;
-                const normalizedDifficulty = normalizeDifficulty(difficulty);
-                if (normalizedDifficulty) insertObj.difficulty = normalizedDifficulty;
-                if (totalQuestions) insertObj.total_questions = totalQuestions;
+               
                 
                 console.log("INSERT OBJECT", insertObj);
 
@@ -547,8 +560,39 @@ const supabaseClient = window.supabase.createClient(
                 console.error('Save score error:', err);
                 return null;
             }
-        }
+        }***/
+            async function saveScore(score, subject, difficulty, totalQuestions) {
 
+                const {
+                    data: { user }
+                } = await supabaseClient.auth.getUser();
+
+                if (!user) {
+                    console.error('User not logged in');
+                    return;
+                }
+
+                const insertObj = {
+                    user_id: user.id,
+                    username: user.user_metadata.username,
+                    subject,
+                    difficulty,
+                    score,
+                    total_questions: totalQuestions
+                };
+
+                const { data, error } = await supabaseClient
+                    .from('scores')
+                    .insert([insertObj])
+                    .select();
+
+                if (error) {
+                    console.error(error);
+                    return null;
+                }
+
+                return data;
+            }
         // Função para inserir scores de teste com subject e difficulty
         async function insertTestScore(event) {
             event.preventDefault();
@@ -557,8 +601,6 @@ const supabaseClient = window.supabase.createClient(
                 await supabaseClient.auth.getUser()
             ).data.user;
 
-            insertObj.user_id = user.id;
-            insertObj.username = user.user_metadata.username;
 
             const username = document.getElementById('score-username').value.trim();
             const subject = document.getElementById('score-subject').value.trim();
@@ -665,7 +707,7 @@ const supabaseClient = window.supabase.createClient(
             document.getElementById('auth-container')
                 .classList.add('hidden');
 }
-        }
+        
     </script>
 
 </body>
