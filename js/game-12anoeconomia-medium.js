@@ -16,19 +16,24 @@ let availableQuestions = [];
 
 let questions = []; //voir json
 
-async function saveScore(score, subject, difficulty) {
-    console.log('saveScore called:', { score, subject, difficulty, username: sessionStorage.getItem('username') });
-    if (!window.supabaseClient) {
-        console.error('supabaseClient not initialized');
-        return;
-    }
-    if (!window.saveScore) {
-        console.error('window.saveScore not defined');
-        return;
-    }
-    const result = await window.saveScore(score, subject, difficulty, MAX_QUESTIONS);
-    console.log('saveScore result:', result);
-    return result;
+async function saveScore(score, subject, difficulty, totalQuestions) {
+
+    const username = sessionStorage.getItem('username');
+
+    const insertObj = {
+        username,
+        subject,
+        difficulty,
+        score,
+        total_questions: totalQuestions
+    };
+
+    const { data, error } = await supabaseClient
+        .from('scores')
+        .insert([insertObj])
+        .select();
+
+    return error ? null : data;
 }
 
 //fetch question from .json:

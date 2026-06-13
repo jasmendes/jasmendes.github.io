@@ -221,15 +221,39 @@ const supabaseClient = window.supabase.createClient(
 
             const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value.trim();
+            const username = document.getElementById('username').value.trim();
+
+
+            const { data: existingUsername } = await supabaseClient
+                .from('users')
+                .select('username')
+                .eq('username', username)
+                .maybeSingle();
+
+            if (existingUsername) {
+                registerError.textContent = 'Username já existe';
+                registerError.style.display = 'block';
+                return;
+            }
 
             const { data, error } =
                 await supabaseClient.auth.signInWithPassword({
                     email,
                     password
                 });
+
+            const { data: profile } = await supabaseClient
+                .from('users')
+                .select('username')
+                .eq('id', data.user.id)
+                .single();
+
+            sessionStorage.setItem('username', profile.username);
+            sessionStorage.setItem('userId', data.user.id);
+
+            console.log("Bem vindo email:", data.user.id);
+            console.log("Bem vindo user:", profile.username);
             
-                console.log("Bem vindo:", data.user.user_metadata);
-               
 
             if (error) {
                 document.getElementById('loginError').textContent =
@@ -245,47 +269,13 @@ const supabaseClient = window.supabase.createClient(
 
             sessionStorage.setItem(
                 'username',
-                data.user.user_metadata.username
+                username
             );
 
             showHomePage();
         }
         // Função de login com Supabase
-        async function loginx(event) {
-            event.preventDefault();
-
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value.trim();
-            const loginError = document.getElementById('loginError');
-
-            try {
-                // Query users table
-                const { data, error } = await supabaseClient
-                    .from('users')
-                    .select('*')
-                    .eq('username', username)
-                    .eq('password', password)
-                    .single();
-
-                if (error || !data) {
-                    // Login falhou
-                    loginError.textContent = 'Credenciais inválidas!';
-                    loginError.style.display = 'block';
-                    return;
-                }
-
-                // Login bem-sucedido
-                sessionStorage.setItem('username', username);
-                sessionStorage.setItem('userId', data.id);
-                loginError.style.display = 'none';
-                document.getElementById('login-form').reset();
-                showHomePage();
-            } catch (err) {
-                console.error('Login error:', err);
-                loginError.textContent = 'Erro ao fazer login. Tente novamente.';
-                loginError.style.display = 'block';
-            }
-        }
+   
 
         // ===== REGISTRATION FUNCTIONS - SUPABASE =====
 
