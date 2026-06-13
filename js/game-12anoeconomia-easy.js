@@ -125,6 +125,7 @@ getNewQuestions = async () => {
     try {
       await saveScore(score, 'Economia 12', 'easy');
       console.log('Score saved. Redirecting to end.html...');
+    
     } catch (err) {
       console.error('Error during save:', err);
     }
