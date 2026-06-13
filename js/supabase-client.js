@@ -16,25 +16,15 @@ window.saveScore = async function(score, subject = '', difficulty = '', totalQue
       throw new Error('supabaseClient not initialized');
     }
     console.log('✅ supabaseClient ready');
-
-    const {
-      data: { user }
-    } = await window.supabaseClient.auth.getUser();
-
-    const username = user.user_metadata.username;
-
-    console.log('👤 username from sessionStorage:', username);
-    if (!username) {
-      console.log('❌ No username in sessionStorage; cannot save score');
-      return null;
-    }
-
-    // Verify user exists
+  // Verify user exists
     console.log('🔍 Verifying user exists...');
+  
+
+  
     const {
-      data: { user },
-      error: authError
-    } = await window.supabaseClient.auth.getUser();
+        data: { user },
+        error: authError
+      } = await window.supabaseClient.auth.getUser();
 
     if (authError || !user) {
       console.error('❌ User not authenticated');
