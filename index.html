@@ -261,6 +261,33 @@ const supabaseClient = window.supabase.createClient(
     showHomePage();
 }
 
+async function registerUserx(event) {
+    event.preventDefault();
+
+    const registerError =
+        document.getElementById('registerError');
+
+    const uncleanUsername =
+        document.getElementById('reg-username').value.trim();
+
+    const email =
+        document.getElementById('reg-email').value.trim();
+
+    const password =
+        document.getElementById('reg-password').value.trim();
+
+    const passwordConfirm =
+        document.getElementById('reg-password-confirm').value.trim();
+
+    registerError.style.display = 'none';
+
+    if (password.length < 8) {
+        registerError.textContent =
+            'A password deve ter pelo menos 8 caracteres';
+        registerError.style.display = 'block';
+        return;
+    }
+
        async function registerUser(event) {
     event.preventDefault();
 
@@ -320,7 +347,7 @@ const supabaseClient = window.supabase.createClient(
         });
 
         if (data.user) {
-        await supabaseClient
+        const { error: profileError } = await supabaseClient
             .from('users')
             .insert({
             id: data.user.id,
@@ -328,9 +355,12 @@ const supabaseClient = window.supabase.createClient(
             email
             });
         }
+    }
 
-    if (error) {
-        registerError.textContent = error.message;
+    
+    if (profileError) {
+        registerError.textContent =
+            'Erro ao criar perfil';
         registerError.style.display = 'block';
         return;
     }
@@ -359,53 +389,59 @@ const supabaseClient = window.supabase.createClient(
 
         // Função para mostrar a página inicial
         function showHomePage() {
-            const homeElement = document.getElementById('home');
-            const loginElement = document.getElementById('login');
+    document.getElementById('login')
+        .classList.add('hidden');
 
-            if (homeElement && loginElement) {
-                // Esconde a página de login
-                loginElement.classList.add('hidden');
-                // Mostra a página inicial
-                homeElement.classList.remove('hidden');
-            }
-        }
+    document.getElementById('register')
+        .classList.add('hidden');
+
+    document.getElementById('home')
+        .classList.remove('hidden');
+}
 
         // Se o utilizador já estiver autenticado na sessão, mostra a home automaticamente
         window.addEventListener('DOMContentLoaded', async () => {
 
-    const {
-        data: { session }
-    } = await supabaseClient.auth.getSession();
+    try {
+        const {
+            data: { session }
+        } = await supabaseClient.auth.getSession();
 
-    if (session) {
+        if (session) {
 
-        sessionStorage.setItem(
-            'userId',
-            session.user.id
-        );
+                sessionStorage.setItem(
+                    'userId',
+                    session.user.id
+                );
 
-        sessionStorage.setItem(
-            'username',
-            session.user.user_metadata.username
-        );
+                sessionStorage.setItem(
+                    'username',
+                    profile?.username || 'vazio'
+                );
 
-        document.getElementById('landing')
-            .classList.add('hidden');
+                document.getElementById('landing')
+                    .classList.add('hidden');
 
-        document.getElementById('auth-container')
-            .classList.remove('hidden');
+                document.getElementById('auth-container')
+                    .classList.remove('hidden');
 
-        showHomePage();
+                showHomePage();
 
-    } else {
+            } else {
 
-        document.getElementById('landing')
-            .classList.remove('hidden');
+                document.getElementById('landing')
+                    .classList.remove('hidden');
 
-        document.getElementById('auth-container')
-            .classList.add('hidden');
-    }
-});
+                document.getElementById('auth-container')
+                    .classList.add('hidden');
+            }
+
+            
+        }
+        catch (err) {
+            console.error(err);
+        }
+    });
 
         // ===== SCORE MANAGEMENT - SUPABASE =====
 
