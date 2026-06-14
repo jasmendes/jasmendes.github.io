@@ -29,13 +29,12 @@ async function saveScore(score, subject, difficulty, totalQuestions) {
 
 console.log("ID:", user.id);
 console.log("EMAIL:", user.email);
-console.log("META:", user.raw_user_meta_data.username);
+console.log("META:", user.username);
 
     const insertObj = {
         user_id: user.id,
         username:
-            user.raw_user_meta_data.username ||
-            sessionStorage.getItem('username') ||
+            user.username ||
             user.email,
         subject,
         difficulty,
