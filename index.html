@@ -252,15 +252,15 @@ const supabaseClient = window.supabase.createClient(
         .eq('id', data.user.id)
         .single();
 
-    sessionStorage.setItem(
+    /*sessionStorage.setItem(
         'userId',
         data.user.id
     );
 
     sessionStorage.setItem(
         'username',
-        profile.username
-    );
+        data.username
+    );*/
 
     showHomePage();
 }
