@@ -204,7 +204,7 @@
         function backToLanding() {
             document.getElementById('landing').classList.remove('hidden');
             document.getElementById('auth-container').classList.add('hidden');
-            showLogin();
+            //showLogin();
         }
     </script>
     <script>
@@ -236,6 +236,10 @@ const supabaseClient = window.supabase.createClient(
             password
         });
 
+    console.log("LOGIN DATA:", data);
+    console.log("LOGIN ERROR:", error);
+
+
     if (error) {
         loginError.textContent = error.message;
         loginError.style.display = 'block';
@@ -261,7 +265,7 @@ const supabaseClient = window.supabase.createClient(
     showHomePage();
 }
 
-async function registerUserx(event) {
+async function registerUserc(event) {
     event.preventDefault();
 
     const registerError =
