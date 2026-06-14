@@ -76,7 +76,10 @@
         <div id="home" class="flex-center flex-column hidden">
             <div class="menu-header">
                 <h1>🎓 Escolha uma Disciplina</h1>
-                
+                <div class="menu-header-actions">
+                    <a href="highscores.html" class="btn-scores">🏆 Ranking Global</a>
+                    <button onclick="logout()" class="btn-logout">Sair</button>
+                </div>
             </div>
 
             <div class="quiz-categories">
@@ -131,11 +134,26 @@
                         </a>
                     </div>
                 </div>
-                <div class="menu-header-actions">
-                    <a href="highscores.html" class="btn-scores">🏆 Ranking Global</a>
-                    <button onclick="logout()" class="btn-logout">Sair</button>
+
+                <!-- Categoria: Jenkins -->
+                <div class="category-card">
+                    <div class="category-icon">⚙️</div>
+                    <div class="category-title">Jenkins</div>
+                    <div class="difficulty-buttons">
+                        <a href="./game-jenkins-beg.html" class="difficulty-btn difficulty-easy">
+                            <span class="difficulty-label">Easy</span>
+                            Jenkins Beginner
+                        </a>
+                        <a href="./game-jenkins-int.html" class="difficulty-btn difficulty-medium">
+                            <span class="difficulty-label">Medium</span>
+                            Jenkins Intermediate
+                        </a>
+                        <a href="./game-jenkins-adv.html" class="difficulty-btn difficulty-hard">
+                            <span class="difficulty-label">Hard</span>
+                            Jenkins Advanced
+                        </a>
+                    </div>
                 </div>
-               
             </div>
         </div>
 

@@ -16,7 +16,48 @@ let availableQuestions = [];
 
 let questions = []; //voir json
 
-async function saveScore(score, subject, difficulty) {
+
+async function saveScore(score, subject, difficulty, totalQuestions) {
+
+    const {
+        data: { user }
+    } = await supabaseClient.auth.getUser();
+    
+    if (!user) {
+        console.error('User not logged in');
+        return;
+    }
+
+console.log("ID:", user.id);
+console.log("EMAIL:", user.email);
+console.log("META:", user.raw_user_meta_data.username);
+
+    const insertObj = {
+        user_id: user.id,
+        username:
+            user.raw_user_meta_data.username ||
+            sessionStorage.getItem('username') ||
+            user.email,
+        subject,
+        difficulty,
+        score: parseInt(score, 10),
+        total_questions: totalQuestions
+    };
+
+    const { data, error } = await supabaseClient
+        .from('scores')
+        .insert([insertObj])
+        .select();
+
+    if (error) {
+        console.error(error);
+        return null;
+    }
+
+    return data;
+}
+
+async function saveScorex(score, subject, difficulty) {
     console.log('saveScore called:', { score, subject, difficulty, username: sessionStorage.getItem('username') });
     if (!window.supabaseClient) {
         console.error('supabaseClient not initialized');
@@ -122,9 +163,9 @@ getNewQuestions = async () => {
     sessionStorage.setItem('lastScoreTotal', MAX_QUESTIONS);
 
     try {
-      await saveScore(score, 'Economia 12', 'hard');
+      await saveScore(score, 'Economia 12', 'hard' , MAX_QUESTIONS);
       console.log('Score saved. Redirecting to end.html...');
-      
+
         } catch (err) {
             console.error('Error during save:', err);
         }

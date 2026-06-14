@@ -298,6 +298,10 @@ async function loadScores(){
 
         const { data, error } = await query.order('score', { ascending: false }).limit(500);
 
+
+        console.log('Scores:', data);
+        console.log('Error:', error);
+
         if(error){
             console.error(error);
 
@@ -412,11 +416,17 @@ document.getElementById('logoutBtn').addEventListener('click', () => {
     window.location.href = 'index.html';
 });
 
-populateSubjects().then(() => {
-    applyUrlFilters();
-    loadScores();
-});
+window.addEventListener('DOMContentLoaded', async () => {
 
+    try {
+        await populateSubjects();
+    } catch (err) {
+        console.error('populateSubjects:', err);
+    }
+
+    applyUrlFilters();
+    await loadScores();
+});
 </script>
 
 </body>
