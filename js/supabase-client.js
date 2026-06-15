@@ -31,10 +31,10 @@ window.saveScore = async function(
 
     const insertObj = {
         user_id: userId,
-        username: username,        
+        username: username,     
+        subject: subject,        
+        difficulty: difficulty,
         score: Number(score) || 0,
-        subject,
-        difficulty,
         total_questions: totalQuestions,
         created_at: new Date().toISOString(),
         email: email

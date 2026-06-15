@@ -227,7 +227,7 @@ tbody td:nth-child(5) {
         <p style="color: var(--muted); margin: 8px 0 0;">Filtre por disciplina e dificuldade para ver o ranking exato da sua categoria.</p>
     </div>
     <div class="page-header-actions">
-        <a href="#" id="playMoreBtn" class="button-secondary">
+        <a href="#" onsubmit="jogarMais()" class="button-secondary">
             🎮 Jogar Mais
         </a>
         <button id="logoutBtn" class="button-ghost">Logout</button>
@@ -288,7 +288,7 @@ const supabaseClient = window.supabase.createClient(
 <script>
 
     function jogarMais() {
-    sessionStorage.setItem('goToMenu', 'true');
+     document.getElementById('login').classList.add('hidden');
     window.location.href = 'index.html';
 }
    
