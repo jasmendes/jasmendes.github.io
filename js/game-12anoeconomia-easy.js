@@ -27,25 +27,15 @@ async function saveScore(score, subject, difficulty, totalQuestions) {
         return;
     }
 
-    const { data: profile, error: profileError } =
-        await supabaseClient
-            .from('users')
-            .select('username')
-            .eq('id', user.id)
-            .single();
-
-    if (profileError) {
-        console.error(profileError);
-        return;
-    }
-
-const usernamex = sessionStorage.getItem('username');
-    console.log(usernamex);
-    consolse.log(profile.username)  
+    console.log("ID:", user.id);
+    console.log("EMAIL:", user.email);
+    console.log("META:", user.username);
       
     const insertObj = {
         user_id: user.id,
-        username: profile.username,
+        username:
+            user.username ||
+            user.email,
         subject,
         difficulty,
         score: parseInt(score, 10),
@@ -65,8 +55,6 @@ const usernamex = sessionStorage.getItem('username');
 
     return data;
 }
-// Função para inserir scores de teste com subject e difficulty
-
 
 //fetch question from .json:
 fetch(
