@@ -1,4 +1,3 @@
-import { saveScore } from './supabase-client.js';
 
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName("choice-text"));
@@ -18,7 +17,7 @@ let availableQuestions = [];
 
 let questions = []; //voir json
 
-async function saveScorex(score, subject, difficulty, totalQuestions) {
+async function saveScore(score, subject, difficulty, totalQuestions) {
 
     const {
         data: { user }
@@ -32,17 +31,17 @@ async function saveScorex(score, subject, difficulty, totalQuestions) {
     console.log("ID:", user.id);
     console.log("EMAIL:", user.email);
     console.log("META:", user.username);
-
-    const username = storage.getItem('username')  
+ 
       
     const insertObj = {
         user_id: user.id,
         username:
-            username, // Use username if available, otherwise fallback to email
+            user.username, // Use username if available, otherwise fallback to email
         subject,
         difficulty,
         score: parseInt(score, 10),
-        total_questions: totalQuestions
+        total_questions: totalQuestions,
+        email: user.email
     };
 
     const { data, error } =

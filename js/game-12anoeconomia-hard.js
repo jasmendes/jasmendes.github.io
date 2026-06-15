@@ -1,4 +1,3 @@
-import { saveScore } from './supabase-client.js';
 
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName("choice-text"));
@@ -18,40 +17,43 @@ let availableQuestions = [];
 
 let questions = []; //voir json
 
-async function saveScorex(score, subject, difficulty, totalQuestions) {
+async function saveScore(score, subject, difficulty, totalQuestions) {
 
+   
     const {
         data: { user }
     } = await supabaseClient.auth.getUser();
-    
+
     if (!user) {
         console.error('User not logged in');
         return;
     }
 
-console.log("ID:", user.id);
-console.log("EMAIL:", user.email);
-console.log("META:", user.username);
-
+    console.log("ID:", user.id);
+    console.log("EMAIL:", user.email);
+    console.log("META:", user.username);
+ 
+      
     const insertObj = {
         user_id: user.id,
         username:
-            user.username ||
-            user.email,
+            user.username, // Use username if available, otherwise fallback to email
         subject,
         difficulty,
         score: parseInt(score, 10),
-        total_questions: totalQuestions
+        total_questions: totalQuestions,
+        email: user.email
     };
 
-    const { data, error } = await supabaseClient
-        .from('scores')
-        .insert([insertObj])
-        .select();
+    const { data, error } =
+        await supabaseClient
+            .from('scores')
+            .insert([insertObj])
+            .select();
 
     if (error) {
         console.error(error);
-        return null;
+        return;
     }
 
     return data;
