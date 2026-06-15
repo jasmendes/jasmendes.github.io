@@ -187,188 +187,162 @@ const supabaseClient = window.supabase.createClient(
     <script>
         // ===== USER MANAGEMENT - SUPABASE =====
        async function login(event) {
-    event.preventDefault();
+        event.preventDefault();
 
-    const email =
-        document.getElementById('email').value.trim();
+        const email =
+            document.getElementById('email').value.trim();
 
-    const password =
-        document.getElementById('password').value.trim();
+        const password =
+            document.getElementById('password').value.trim();
 
-    const loginError =
-        document.getElementById('loginError');
+        const loginError =
+            document.getElementById('loginError');
 
-    loginError.style.display = 'none';
+        loginError.style.display = 'none';
 
-    const { data, error } =
-        await supabaseClient.auth.signInWithPassword({
-            email,
-            password
-        });
-
-    console.log("LOGIN DATA:", data);
-    console.log("LOGIN ERROR:", error);
-
-
-    if (error) {
-        loginError.textContent = error.message;
-        loginError.style.display = 'block';
-        return;
-    }
-
-    const { data: profile } = await supabaseClient
-        .from('users')
-        .select('username')
-        .eq('id', data.user.id)
-        .single();
-
-    sessionStorage.setItem(
-        'userId',
-        data.user.id
-    );
-
-    sessionStorage.setItem(
-        'username',
-        profile?.username || 'perfil'
-    );
-
-
-    showHomePage();
-}
-
-async function registerUserc(event) {
-    event.preventDefault();
-
-    const registerError =
-        document.getElementById('registerError');
-
-    const uncleanUsername =
-        document.getElementById('reg-username').value.trim();
-
-    const email =
-        document.getElementById('reg-email').value.trim();
-
-    const password =
-        document.getElementById('reg-password').value.trim();
-
-    const passwordConfirm =
-        document.getElementById('reg-password-confirm').value.trim();
-
-    registerError.style.display = 'none';
-
-    if (password.length < 8) {
-        registerError.textContent =
-            'A password deve ter pelo menos 8 caracteres';
-        registerError.style.display = 'block';
-        return;
-    }
-
-    async function registerUser(event) {
-    event.preventDefault();
-
-    const registerError =
-        document.getElementById('registerError');
-
-    registerError.style.display = 'none';
-
-    const uncleanUsername =
-        document.getElementById('reg-username').value.trim();
-
-    const email =
-        document.getElementById('reg-email').value.trim();
-
-    const password =
-        document.getElementById('reg-password').value.trim();
-
-    const passwordConfirm =
-        document.getElementById('reg-password-confirm').value.trim();
-
-    const username =
-        uncleanUsername.replace(/[^a-zA-Z0-9_]/g, '');
-
-    if (username.length < 3) {
-        registerError.textContent =
-            'Username deve ter pelo menos 3 caracteres';
-        registerError.style.display = 'block';
-        return;
-    }
-
-    if (password.length < 8) {
-        registerError.textContent =
-            'A password deve ter pelo menos 8 caracteres';
-        registerError.style.display = 'block';
-        return;
-    }
-
-    if (password !== passwordConfirm) {
-        registerError.textContent =
-            'Passwords não correspondem';
-        registerError.style.display = 'block';
-        return;
-    }
-
-    const { data: existingUser } = await supabaseClient
-        .from('users')
-        .select('username')
-        .eq('username', username)
-        .maybeSingle();
-
-    if (existingUser) {
-        registerError.textContent =
-            'Username já existe';
-        registerError.style.display = 'block';
-        return;
-    }
-
-    const { data, error } =
-        await supabaseClient.auth.signUp({
-            email,
-            password,
-            options: {
-                data: {
-                    username
-                }
-            }
-        });
-
-    if (error) {
-        registerError.textContent = error.message;
-        registerError.style.display = 'block';
-        return;
-    }
-
-    let profileError = null;
-
-    if (data.user) {
-        const result = await supabaseClient
-            .from('users')
-            .insert({
-                id: data.user.id,
-                username,
-                email
+        const { data, error } =
+            await supabaseClient.auth.signInWithPassword({
+                email,
+                password
             });
 
-        profileError = result.error;
+        console.log("LOGIN DATA:", data);
+        console.log("LOGIN ERROR:", error);
+
+
+        if (error) {
+            loginError.textContent = error.message;
+            loginError.style.display = 'block';
+            return;
+        }
+
+        const { data: profile } = await supabaseClient
+            .from('users')
+            .select('username')
+            .eq('id', data.user.id)
+            .single();
+
+        sessionStorage.setItem(
+            'userId',
+            data.user.id
+        );
+
+        sessionStorage.setItem(
+            'username',
+            profile?.username || 'perfil'
+        );
+
+
+        showHomePage();
     }
 
-    if (profileError) {
-        registerError.textContent =
-            'Erro ao criar perfil';
-        registerError.style.display = 'block';
-        return;
+
+    async function registerUser(event) {
+        event.preventDefault();
+
+        const registerError =
+            document.getElementById('registerError');
+
+        registerError.style.display = 'none';
+
+        const uncleanUsername =
+            document.getElementById('reg-username').value.trim();
+
+        const email =
+            document.getElementById('reg-email').value.trim();
+
+        const password =
+            document.getElementById('reg-password').value.trim();
+
+        const passwordConfirm =
+            document.getElementById('reg-password-confirm').value.trim();
+
+        const username =
+            uncleanUsername.replace(/[^a-zA-Z0-9_]/g, '');
+
+        if (username.length < 3) {
+            registerError.textContent =
+                'Username deve ter pelo menos 3 caracteres';
+            registerError.style.display = 'block';
+            return;
+        }
+
+        if (password.length < 8) {
+            registerError.textContent =
+                'A password deve ter pelo menos 8 caracteres';
+            registerError.style.display = 'block';
+            return;
+        }
+
+        if (password !== passwordConfirm) {
+            registerError.textContent =
+                'Passwords não correspondem';
+            registerError.style.display = 'block';
+            return;
+        }
+
+        const { data: existingUser } = await supabaseClient
+            .from('users')
+            .select('username')
+            .eq('username', username)
+            .maybeSingle();
+
+        if (existingUser) {
+            registerError.textContent =
+                'Username já existe';
+            registerError.style.display = 'block';
+            return;
+        }
+
+        const { data, error } =
+            await supabaseClient.auth.signUp({
+                email,
+                password,
+                options: {
+                    data: {
+                        username
+                    }
+                }
+            });
+
+        if (error) {
+            registerError.textContent = error.message;
+            registerError.style.display = 'block';
+            return;
+        }
+
+        let profileError = null;
+
+        if (data.user) {
+            const result = await supabaseClient
+                .from('users')
+                .insert({
+                    id: data.user.id,
+                    username,
+                    email
+                });
+
+            profileError = result.error;
+        }
+
+        if (profileError) {
+            registerError.textContent =
+                'Erro ao criar perfil';
+            registerError.style.display = 'block';
+            return;
+        }
+
+        alert(
+            `Conta criada com sucesso, ${username}! Verifique o seu email.`
+        );
+
+        document
+            .getElementById('register-form')
+            .reset();
+
+        showLogin();
+
     }
-
-    alert(
-        `Conta criada com sucesso, ${username}! Verifique o seu email.`
-    );
-
-    document
-        .getElementById('register-form')
-        .reset();
-
-    showLogin();
-
-}
         // ===== VIEW SWITCHING =====
 
         function showLogin() {
@@ -386,96 +360,86 @@ async function registerUserc(event) {
     
 
         // Função para mostrar a página inicial
-        function showHomePage() {
-    document.getElementById('login')
-        .classList.add('hidden');
+    function showHomePage() {
+        document.getElementById('login')
+            .classList.add('hidden');
 
-    document.getElementById('register')
-        .classList.add('hidden');
+        document.getElementById('register')
+            .classList.add('hidden');
 
-    document.getElementById('home')
-        .classList.remove('hidden');
-}
-
-        // Se o utilizador já estiver autenticado na sessão, mostra a home automaticamente
-        window.addEventListener('DOMContentLoaded', async () => {
-
-    try {
-
-        const {
-            data: { session }
-        } = await supabaseClient.auth.getSession();
-
-        if (session) {
-
-            const { data: profile } = await supabaseClient
-                .from('users')
-                .select('username')
-                .eq('id', session.user.id)
-                .single();
-
-            sessionStorage.setItem(
-                'userId',
-                session.user.id
-            );
-
-            sessionStorage.setItem(
-                'username',
-                profile?.username || ''
-            );
-
-            document.getElementById('landing')
-                .classList.add('hidden');
-
-            document.getElementById('auth-container')
-                .classList.remove('hidden');
-
-            showHomePage();
-
-        } else {
-
-            document.getElementById('landing')
-                .classList.remove('hidden');
-
-            document.getElementById('auth-container')
-                .classList.add('hidden');
-        }
-
-    } catch (err) {
-        console.error(err);
+        document.getElementById('home')
+            .classList.remove('hidden');
     }
 
-});
+        // Se o utilizador já estiver autenticado na sessão, mostra a home automaticamente
+    window.addEventListener('DOMContentLoaded', async () => {
 
-        // ===== SCORE MANAGEMENT - SUPABASE =====
+        try {
 
-      
+            const {
+                data: { session }
+            } = await supabaseClient.auth.getSession();
 
-        // Função para inserir scores de teste com subject e difficulty
+            if (session) {
+
+                const { data: profile } = await supabaseClient
+                    .from('users')
+                    .select('username')
+                    .eq('id', session.user.id)
+                    .single();
+
+                sessionStorage.setItem(
+                    'userId',
+                    session.user.id
+                );
+
+                sessionStorage.setItem(
+                    'username',
+                    profile?.username || ''
+                );
+
+                document.getElementById('landing')
+                    .classList.add('hidden');
+
+                document.getElementById('auth-container')
+                    .classList.remove('hidden');
+
+                showHomePage();
+
+            } else {
+
+                document.getElementById('landing')
+                    .classList.remove('hidden');
+
+                document.getElementById('auth-container')
+                    .classList.add('hidden');
+            }
+
+        } catch (err) {
+            console.error(err);
+        }
+    });  
+
+    // Função para fazer logout
+    async function logout() {
+        // Remove credenciais da sessão
+        sessionStorage.removeItem('username');
+        sessionStorage.removeItem('userId');
+        localStorage.removeItem('isLoggedIn');
+
+        // Show landing page and hide auth container
         
 
-   
+        await supabaseClient.auth.signOut();
 
-        // Função para fazer logout
-         async function logout() {
-            // Remove credenciais da sessão
-            sessionStorage.removeItem('username');
-            sessionStorage.removeItem('userId');
-            localStorage.removeItem('isLoggedIn');
+        sessionStorage.clear();
 
-            // Show landing page and hide auth container
-           
+        document.getElementById('landing')
+            .classList.remove('hidden');
 
-            await supabaseClient.auth.signOut();
-
-            sessionStorage.clear();
-
-            document.getElementById('landing')
-                .classList.remove('hidden');
-
-            document.getElementById('auth-container')
-                .classList.add('hidden');
-}
+        document.getElementById('auth-container')
+            .classList.add('hidden');
+    }
         
     </script>
 
