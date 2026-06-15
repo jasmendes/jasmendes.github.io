@@ -227,7 +227,9 @@ tbody td:nth-child(5) {
         <p style="color: var(--muted); margin: 8px 0 0;">Filtre por disciplina e dificuldade para ver o ranking exato da sua categoria.</p>
     </div>
     <div class="page-header-actions">
-        <a href="index.html" class="button-secondary">Jogar de Novo</a>
+        <a href="#" id="playMoreBtn" class="button-secondary">
+            🎮 Jogar Mais
+        </a>
         <button id="logoutBtn" class="button-ghost">Logout</button>
     </div>
 </div>
@@ -414,6 +416,21 @@ document.getElementById('logoutBtn').addEventListener('click', () => {
         console.warn('Logout cleanup failed:', err);
     }
     window.location.href = 'index.html';
+});
+
+document
+.getElementById('playMoreBtn')
+.addEventListener('click', async () => {
+
+    const {
+        data: { session }
+    } = await supabaseClient.auth.getSession();
+
+    if (session) {
+        window.location.href = 'index.html?menu=true';
+    } else {
+        window.location.href = 'index.html';
+    }
 });
 
 window.addEventListener('DOMContentLoaded', async () => {
