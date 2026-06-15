@@ -8,77 +8,105 @@
   );
 
 // Global helper to save a score reusing the same checks as insertTestScore in index.html
-window.saveScore = async function(score, subject = '', difficulty = '', totalQuestions = null) {
-  try {
-    console.log('🎮 saveScore called:', { score, subject, difficulty, totalQuestions });
-    if (!window.supabaseClient) {
-      console.error('❌ supabaseClient not initialized');
-      throw new Error('supabaseClient not initialized');
-    }
-    console.log('✅ supabaseClient ready');
-  // Verify user exists
-    console.log('🔍 Verifying user exists...');
-  
+window.saveScore = async function(
+    score,
+    subject = '',
+    difficulty = '',
+    totalQuestions = null
+  ) {
+    try {
 
-  
-    const {
+      const {
         data: { user },
         error: authError
       } = await window.supabaseClient.auth.getUser();
-console.log(user);
-console.log(user.email);
-    if (authError || !user) {
-      console.error('❌ User not authenticated');
+
+      if (authError || !user) {
+        console.error('Utilizador não autenticado');
+        return null;
+      }
+
+      // Buscar username e email da tabela users
+      const {
+        data: userProfile,
+        error: profileError
+      } = await window.supabaseClient
+        .from('users')
+        .select('username, email')
+        .eq('id', user.id)
+        .single();
+
+      if (profileError) {
+        console.error('Erro ao obter perfil:', profileError);
+        return null;
+      }
+
+      function normalizeDifficulty(d) {
+        if (!d) return null;
+
+        const s = String(d).toLowerCase();
+
+        if (
+          s.includes('easy') ||
+          s === 'e' ||
+          s.includes('begin')
+        ) {
+          return 'easy';
+        }
+
+        if (
+          s.includes('hard') ||
+          s === 'h' ||
+          s.includes('adv')
+        ) {
+          return 'hard';
+        }
+
+        return 'medium';
+      }
+
+      const insertObj = {
+        user_id: user.id,
+        username: userProfile.username,
+        email: userProfile.email,
+        score: Number(score) || 0,
+        date: new Date().toISOString()
+      };
+
+      if (subject) {
+        insertObj.subject = subject;
+      }
+
+      const normDiff = normalizeDifficulty(difficulty);
+
+      if (normDiff) {
+        insertObj.difficulty = normDiff;
+      }
+
+      if (totalQuestions) {
+        insertObj.total_questions = totalQuestions;
+      }
+
+      console.log('A inserir score:', insertObj);
+
+      const { data, error } =
+        await window.supabaseClient
+          .from('scores')
+          .insert([insertObj])
+          .select();
+
+      if (error) {
+        console.error('Erro ao inserir score:', error);
+        return null;
+      }
+
+      console.log('Score guardado:', data);
+
+      return data;
+
+    } catch (err) {
+      console.error('saveScore error:', err);
       return null;
     }
-
-    // Normalize difficulty to one of: easy, medium, hard
-    function normalizeDifficulty(d) {
-      if (!d) return null;
-      const s = String(d).toLowerCase();
-      if (s.includes('easy') || s === 'e' || s === 'beg' || s.includes('begin')) return 'easy';
-      if (s.includes('hard') || s === 'h' || s.includes('adv') || s.includes('int')) return 'hard';
-      // default and others ('standard', 'normal', '') -> medium
-      return 'medium';
-    }
-console.log('User:', user);
-console.log('Metadata:', user.user_metadata);
-console.log('Username:', user.user_metadata?.username);
-    const username =
-    user.user_metadata?.username ||
-    sessionStorage.getItem('username') ||
-    'Anónimo';
-
-    const insertObj = {
-      user_id: user.id,
-      username,
-      score: parseInt(score, 10) || 0,
-      date: new Date().toISOString()
-    };
-
-    if (subject) insertObj.subject = subject;
-    const normDiff = normalizeDifficulty(difficulty);
-    if (normDiff) insertObj.difficulty = normDiff;
-    if (totalQuestions) insertObj.total_questions = totalQuestions;
-
-    console.log('📝 Inserting score object:', insertObj);
-
-    const { data, error } = await window.supabaseClient
-      .from('scores')
-      .insert([insertObj])
-      .select();
-
-    console.log('📊 Insert result:', { data, error });
-    if (error) {
-      console.error('❌ Error inserting score:', error);
-      return null;
-    }
-
-    console.log('Score inserted:', data);
-    return data;
-  } catch (err) {
-    console.error('saveScore helper error:', err);
-    return null;
-  }
-};
+  };
 })();

@@ -140,3 +140,18 @@ Resources
 Thank you so much for reading this Project. I truly hope that you enjoyed it and that you have improved your core Web Dev skills!!.
 
 Any advice or comment please..
+
+- NEW FLOW 
+Landing
+   │
+   └── Começar Agora
+           │
+           ├── Utilizador autenticado
+           │       ↓
+           │    Menu (Disciplinas)
+           │
+           └── Utilizador não autenticado
+                   ↓
+                 Login
+                   ↓
+                Menu

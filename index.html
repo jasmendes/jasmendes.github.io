@@ -150,11 +150,21 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
         // Landing page navigation functions
-        function goToLogin() {
-            document.getElementById('landing').classList.add('hidden');
-            document.getElementById('auth-container').classList.remove('hidden');
-            showLogin();
+        async function goToLogin() {
+
+        const {
+            data: { session }
+        } = await supabaseClient.auth.getSession();
+
+        document.getElementById('landing').classList.add('hidden');
+        document.getElementById('auth-container').classList.remove('hidden');
+
+        if (session) {
+            showHomePage(); // Menu das disciplinas
+        } else {
+            showLogin(); // Página de login
         }
+    }
 
         function goToScores() {
             window.location.href = 'highscores_off.html';
