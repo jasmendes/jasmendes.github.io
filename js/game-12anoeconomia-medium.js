@@ -55,25 +55,6 @@ console.log("META:", user.username);
     return data;
 }
 
-async function saveScorex(score, subject, difficulty, totalQuestions) {
-
-    const username = sessionStorage.getItem('username');
-
-    const insertObj = {
-        username,
-        subject,
-        difficulty,
-        score,
-        total_questions: totalQuestions
-    };
-
-    const { data, error } = await supabaseClient
-        .from('scores')
-        .insert([insertObj])
-        .select();
-
-    return error ? null : data;
-}
 
 //fetch question from .json:
 fetch(
@@ -166,7 +147,7 @@ getNewQuestions = async () => {
     sessionStorage.setItem('lastScoreTotal', MAX_QUESTIONS);
     
     try {
-      await saveScorex(score, 'Economia 12', 'medium', MAX_QUESTIONS);
+      await saveScore(score, 'Economia 12', 'medium', MAX_QUESTIONS);
       console.log('Score saved. Redirecting to end.html...');
  
         } catch (err) {

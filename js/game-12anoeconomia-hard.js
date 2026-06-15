@@ -55,20 +55,6 @@ console.log("META:", user.username);
     return data;
 }
 
-async function saveScorex(score, subject, difficulty) {
-    console.log('saveScore called:', { score, subject, difficulty, username: sessionStorage.getItem('username') });
-    if (!window.supabaseClient) {
-        console.error('supabaseClient not initialized');
-        return;
-    }
-    if (!window.saveScore) {
-        console.error('window.saveScore not defined');
-        return;
-    }
-    const result = await window.saveScore(score, subject, difficulty, MAX_QUESTIONS);
-    console.log('saveScore result:', result);
-    return result;
-}
 
 //fetch question from .json:
 fetch(
