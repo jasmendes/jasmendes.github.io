@@ -240,7 +240,7 @@ const supabaseClient = window.supabase.createClient(
         const { data: profile } = await supabaseClient
             .from('users')
             .select('*')
-            .eq('id', data.user.id)
+            .eq('email', email)
             .single();
 
         sessionStorage.setItem('userId', data.user.id);
