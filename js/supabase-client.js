@@ -31,13 +31,13 @@ window.saveScore = async function(
 
     const insertObj = {
         user_id: userId,
-        username: username,        
-        score,
+        username: username,
+        email: email,
+        score: Number(score) || 0,
         subject,
         difficulty,
         total_questions: totalQuestions,
-        created_at: new Date().toISOString(),
-        email: email
+        created_at: new Date().toISOString()
     };
 
     const { data, error } =
@@ -47,10 +47,14 @@ window.saveScore = async function(
             .select();
 
     if (error) {
-        console.error(error);
+        console.error('Erro ao guardar score:', error);
         return null;
     }
 
+    console.log('Score guardado:', data);
+
     return data;
 };
+
 })();
+
