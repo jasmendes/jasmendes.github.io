@@ -21,35 +21,46 @@ async function saveScore(score, subject, difficulty, totalQuestions) {
     const {
         data: { user }
     } = await supabaseClient.auth.getUser();
-    
+
     if (!user) {
         console.error('User not logged in');
         return;
     }
 
-console.log("ID:", user.id);
-console.log("EMAIL:", user.email);
-console.log("META:", user.username);
+    const { data: profile, error: profileError } =
+        await supabaseClient
+            .from('users')
+            .select('username')
+            .eq('id', user.id)
+            .single();
 
+    if (profileError) {
+        console.error(profileError);
+        return;
+    }
+
+const usernamex = sessionStorage.getItem('username');
+    console.log(usernamex);
+    consolse.log(profile.username)  
+      
     const insertObj = {
         user_id: user.id,
-        username:
-            user.username ||
-            user.email,
+        username: profile.username,
         subject,
         difficulty,
         score: parseInt(score, 10),
         total_questions: totalQuestions
     };
 
-    const { data, error } = await supabaseClient
-        .from('scores')
-        .insert([insertObj])
-        .select();
+    const { data, error } =
+        await supabaseClient
+            .from('scores')
+            .insert([insertObj])
+            .select();
 
     if (error) {
         console.error(error);
-        return null;
+        return;
     }
 
     return data;

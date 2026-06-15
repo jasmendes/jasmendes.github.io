@@ -234,15 +234,6 @@ const supabaseClient = window.supabase.createClient(
         .eq('id', data.user.id)
         .single();
 
-    /*sessionStorage.setItem(
-        'userId',
-        data.user.id
-    );
-
-    sessionStorage.setItem(
-        'username',
-        data.username
-    );*/
     sessionStorage.setItem(
         'userId',
         data.user.id
@@ -284,17 +275,35 @@ async function registerUserc(event) {
         return;
     }
 
-       async function registerUser(event) {
+    async function registerUser(event) {
     event.preventDefault();
 
-    const uncleanUsername = document.getElementById('reg-username').value.trim();
-    const email = document.getElementById('reg-email').value.trim();
-    const password = document.getElementById('reg-password').value.trim();
-    const passwordConfirm = document.getElementById('reg-password-confirm').value.trim();
+    const registerError =
+        document.getElementById('registerError');
 
-    const username = uncleanUsername.replace(/[^a-zA-Z0-9_]/g, '');
-    
+    registerError.style.display = 'none';
 
+    const uncleanUsername =
+        document.getElementById('reg-username').value.trim();
+
+    const email =
+        document.getElementById('reg-email').value.trim();
+
+    const password =
+        document.getElementById('reg-password').value.trim();
+
+    const passwordConfirm =
+        document.getElementById('reg-password-confirm').value.trim();
+
+    const username =
+        uncleanUsername.replace(/[^a-zA-Z0-9_]/g, '');
+
+    if (username.length < 3) {
+        registerError.textContent =
+            'Username deve ter pelo menos 3 caracteres';
+        registerError.style.display = 'block';
+        return;
+    }
 
     if (password.length < 8) {
         registerError.textContent =
@@ -303,23 +312,13 @@ async function registerUserc(event) {
         return;
     }
 
-    const registerError = document.getElementById('registerError');
-
-    registerError.style.display = 'none';
-
-    if (username.length < 3) {
-        registerError.textContent = 'Username deve ter pelo menos 3 caracteres';
-        registerError.style.display = 'block';
-        return;
-    }
-
     if (password !== passwordConfirm) {
-        registerError.textContent = 'Passwords não correspondem';
+        registerError.textContent =
+            'Passwords não correspondem';
         registerError.style.display = 'block';
         return;
     }
 
-    
     const { data: existingUser } = await supabaseClient
         .from('users')
         .select('username')
@@ -327,33 +326,43 @@ async function registerUserc(event) {
         .maybeSingle();
 
     if (existingUser) {
-        registerError.textContent = 'Username já existe';
+        registerError.textContent =
+            'Username já existe';
         registerError.style.display = 'block';
         return;
     }
-    
-    const { data, error } = await supabaseClient.auth.signUp({
-        email,
-        password,
-        options: {
-            data: {
-            username
+
+    const { data, error } =
+        await supabaseClient.auth.signUp({
+            email,
+            password,
+            options: {
+                data: {
+                    username
+                }
             }
-        }
         });
 
-        if (data.user) {
-        const { error: profileError } = await supabaseClient
-            .from('users')
-            .insert({
-            id: data.user.id,
-            username,
-            email
-            });
-        }
+    if (error) {
+        registerError.textContent = error.message;
+        registerError.style.display = 'block';
+        return;
     }
 
-    
+    let profileError = null;
+
+    if (data.user) {
+        const result = await supabaseClient
+            .from('users')
+            .insert({
+                id: data.user.id,
+                username,
+                email
+            });
+
+        profileError = result.error;
+    }
+
     if (profileError) {
         registerError.textContent =
             'Erro ao criar perfil';
@@ -361,7 +370,21 @@ async function registerUserc(event) {
         return;
     }
 
-    alert('Conta criada com sucesso! Verifique a sua conta de email.');
+    alert(
+        'Conta criada com sucesso! Verifique o seu email.'
+    );
+
+    document
+        .getElementById('register-form')
+        .reset();
+
+    showLogin();
+}
+
+    
+    
+
+    alert(`Conta criada com sucesso, ${username}! Verifique a sua conta de email.`);
 
     document.getElementById('register-form').reset();
 
