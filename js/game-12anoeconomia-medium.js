@@ -1,3 +1,5 @@
+import { saveScore } from './supabase-client.js';
+
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const progressText = document.getElementById('progressText');
@@ -16,7 +18,7 @@ let availableQuestions = [];
 
 let questions = []; //voir json
 
-async function saveScore(score, subject, difficulty, totalQuestions) {
+async function saveScorex(score, subject, difficulty, totalQuestions) {
 
     const {
         data: { user }
