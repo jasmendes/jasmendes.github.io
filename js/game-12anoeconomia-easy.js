@@ -30,12 +30,13 @@ async function saveScore(score, subject, difficulty, totalQuestions) {
     console.log("ID:", user.id);
     console.log("EMAIL:", user.email);
     console.log("META:", user.username);
+
+    const username = storage.getItem('username')  
       
     const insertObj = {
         user_id: user.id,
         username:
-            user.username ||
-            user.email,
+            username, // Use username if available, otherwise fallback to email
         subject,
         difficulty,
         score: parseInt(score, 10),

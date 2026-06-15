@@ -367,6 +367,8 @@ const supabaseClient = window.supabase.createClient(
             `Conta criada com sucesso, ${username}! Verifique o seu email.`
         );
 
+        sessionStorage.setItem('username', username);
+
         document
             .getElementById('register-form')
             .reset();
