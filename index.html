@@ -24,7 +24,28 @@
             <div class="landing-description">
                 Bem-vindo ao Diagnostika do Saber! Uma plataforma inovadora de quizzes que permite avaliar e melhorar seu conhecimento em diferentes disciplinas através de desafios educativos e interativos.
             </div>
-
+            <div class="landing-features">
+                <div class="landing-feature">
+                    <div class="landing-feature-icon">📚</div>
+                    <h3>Múltiplas Disciplinas</h3>
+                    <p>Quizzes sobre Economia, Filosofia, Literatura, e muito mais.</p>
+                </div>
+                <div class="landing-feature">
+                    <div class="landing-feature-icon">⚡</div>
+                    <h3>Diferentes Níveis</h3>
+                    <p>Easy, Medium e Hard para todos os níveis de conhecimento.</p>
+                </div>
+                <div class="landing-feature">
+                    <div class="landing-feature-icon">🏆</div>
+                    <h3>Rankings Globais</h3>
+                    <p>Compete com outros utilizadores e suba na classificação.</p>
+                </div>
+                <div class="landing-feature">
+                    <div class="landing-feature-icon">📊</div>
+                    <h3>Histórico de Scores</h3>
+                    <p>Acompanhe seu progresso e evolução ao longo do tempo.</p>
+                </div>
+            </div>
 
             <div class="landing-btn-group">
                 <button class="landing-btn landing-btn-primary" onclick="goToLogin()">Começar Agora</button>
@@ -350,7 +371,7 @@ const supabaseClient = window.supabase.createClient(
             .getElementById('register-form')
             .reset();
 
-        showLogin();
+        showMenu();
 
     }
         // ===== VIEW SWITCHING =====
@@ -359,6 +380,18 @@ const supabaseClient = window.supabase.createClient(
             document.getElementById('login').classList.remove('hidden');
             document.getElementById('register').classList.add('hidden');
             document.getElementById('loginError').style.display = 'none';
+        }
+
+        function showMenu() {
+            document.getElementById('login').classList.add('hidden');
+            document.getElementById('register').classList.add('hidden');
+            document.getElementById('home').classList.remove('hidden');
+        }
+
+        function showLandingPage() {
+            document.getElementById('login').classList.add('hidden');
+            document.getElementById('register').classList.add('hidden');
+            document.getElementById('home').classList.remove('hidden');
         }
 
         function showRegister() {
@@ -438,7 +471,7 @@ const supabaseClient = window.supabase.createClient(
         localStorage.removeItem('isLoggedIn');
 
         // Show landing page and hide auth container
-        
+        showLandingPage();
 
         await supabaseClient.auth.signOut();
 
