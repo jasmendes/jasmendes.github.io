@@ -422,21 +422,6 @@ document.getElementById('logoutBtn').addEventListener('click', () => {
     window.location.href = 'index.html';
 });
 
-document
-.getElementById('playMoreBtn')
-.addEventListener('click', async () => {
-
-    const {
-        data: { session }
-    } = await supabaseClient.auth.getSession();
-
-    if (session) {
-        window.location.href = 'index.html?menu=true';
-    } else {
-        window.location.href = 'index.html';
-    }
-});
-
 window.addEventListener('DOMContentLoaded', async () => {
 
     try {

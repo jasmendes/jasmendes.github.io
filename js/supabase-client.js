@@ -7,37 +7,33 @@
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJkYWN0eHdtcXF4b2duZmlsdGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExODY5MzcsImV4cCI6MjA5Njc2MjkzN30.gpukeBC44WRNmzBVhTg1_nB756DbWRzpX88rDdzO-Eo"
   );
 
+
 // Global helper to save a score reusing the same checks as insertTestScore in index.html
-window.saveScore = async function(
-    score,
-    subject,
-    difficulty,
-    totalQuestions
-) {
+window.saveScore = async (score, subject, difficulty, totalQuestions) => {
 
-    const userId =
-        sessionStorage.getItem('userId');
+    const {
+        data: { user }
+    } = await supabaseClient.auth.getUser();
 
-    const username =
-        sessionStorage.getItem('username');
-
-    const email =
-        sessionStorage.getItem('email');
-
-    if (!userId) {
-        console.error('Sessão não encontrada');
+    if (!user) {
+        console.error('User not logged in');
         return;
     }
 
+    console.log("ID:", user.id);
+    console.log("EMAIL:", user.email);
+    console.log("META:", user.username);
+ 
+      
     const insertObj = {
-        user_id: userId,
-        username: username,     
-        subject: subject,        
-        difficulty: difficulty,
-        score: Number(score) || 0,
+        user_id: user.id,
+        username:
+            user.username, // Use username if available, otherwise fallback to email
+        subject,
+        difficulty,
+        score: parseInt(score, 10),
         total_questions: totalQuestions,
-        created_at: new Date().toISOString(),
-        email: email
+        email: user.email
     };
 
     const { data, error } =
@@ -47,14 +43,11 @@ window.saveScore = async function(
             .select();
 
     if (error) {
-        console.error('Erro ao guardar score:', error);
-        return null;
+        console.error(error);
+        return;
     }
-
-    console.log('Score guardado:', data);
 
     return data;
 };
 
-})();
-
+});
