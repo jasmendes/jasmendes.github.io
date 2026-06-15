@@ -243,7 +243,7 @@ const supabaseClient = window.supabase.createClient(
         'username',
         data.username
     );*/
-    
+
 
     showHomePage();
 }
@@ -434,38 +434,6 @@ async function registerUserc(event) {
 
       
 
-            async function saveScore(score, subject, difficulty, totalQuestions) {
-
-                const {
-                    data: { user }
-                } = await supabaseClient.auth.getUser();
-
-                if (!user) {
-                    console.error('User not authenticated');
-                    return null;
-                }
-
-                const insertObj = {
-                    user_id: user.id,
-                    username: user.user_metadata.username,
-                    subject,
-                    difficulty,
-                    score,
-                    total_questions: totalQuestions
-                };
-
-                const { data, error } = await supabaseClient
-                    .from('scores')
-                    .insert([insertObj])
-                    .select();
-
-                if (error) {
-                    console.error(error);
-                    return null;
-                }
-
-                return data;
-            }
         // Função para inserir scores de teste com subject e difficulty
         
 
