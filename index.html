@@ -218,20 +218,30 @@ const supabaseClient = window.supabase.createClient(
 
         const { data: profile } = await supabaseClient
             .from('users')
-            .select('username')
+            .select('*')
             .eq('id', data.user.id)
             .single();
 
-        sessionStorage.setItem(
-            'userId',
-            data.user.id
-        );
+        sessionStorage.setItem('userId', data.user.id);
+        sessionStorage.setItem('username', profile.username);
+        sessionStorage.setItem('email', profile.email);
+
+        window.currentUser = {
+            id: data.user.id,
+            username: profile.username,
+            email: profile.email
+        };
+        
+        const userSession = {
+            id: data.user.id,
+            username: profile.username,
+            email: profile.email
+        };
 
         sessionStorage.setItem(
-            'username',
-            profile?.username || 'perfil'
+            'userSession',
+            JSON.stringify(userSession)
         );
-
 
         showHomePage();
     }
@@ -384,19 +394,19 @@ const supabaseClient = window.supabase.createClient(
 
                 const { data: profile } = await supabaseClient
                     .from('users')
-                    .select('username')
+                    .select('*')
                     .eq('id', session.user.id)
                     .single();
 
-                sessionStorage.setItem(
-                    'userId',
-                    session.user.id
-                );
+                sessionStorage.setItem('userId', session.user.id);
+                sessionStorage.setItem('username', profile.username);
+                sessionStorage.setItem('email', profile.email);
 
-                sessionStorage.setItem(
-                    'username',
-                    profile?.username || ''
-                );
+                window.currentUser = {
+                    id: session.user.id,
+                    username: profile.username,
+                    email: profile.email
+                };
 
                 document.getElementById('landing')
                     .classList.add('hidden');
