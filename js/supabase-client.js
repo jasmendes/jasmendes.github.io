@@ -25,8 +25,8 @@ window.saveScore = async function(score, subject = '', difficulty = '', totalQue
         data: { user },
         error: authError
       } = await window.supabaseClient.auth.getUser();
-console.log(data.user);
-console.log(data.user.user_metadata);
+console.log(user);
+console.log(user.email);
     if (authError || !user) {
       console.error('❌ User not authenticated');
       return null;
@@ -41,10 +41,17 @@ console.log(data.user.user_metadata);
       // default and others ('standard', 'normal', '') -> medium
       return 'medium';
     }
+console.log('User:', user);
+console.log('Metadata:', user.user_metadata);
+console.log('Username:', user.user_metadata?.username);
+    const username =
+    user.user_metadata?.username ||
+    sessionStorage.getItem('username') ||
+    'Anónimo';
 
     const insertObj = {
       user_id: user.id,
-      username: user.user_metadata.username || username,
+      username,
       score: parseInt(score, 10) || 0,
       date: new Date().toISOString()
     };
@@ -55,6 +62,7 @@ console.log(data.user.user_metadata);
     if (totalQuestions) insertObj.total_questions = totalQuestions;
 
     console.log('📝 Inserting score object:', insertObj);
+
     const { data, error } = await window.supabaseClient
       .from('scores')
       .insert([insertObj])
