@@ -419,6 +419,23 @@ const supabaseClient = window.supabase.createClient(
         // Se o utilizador já estiver autenticado na sessão, mostra a home automaticamente
     window.addEventListener('DOMContentLoaded', async () => {
 
+        const goToMenu = sessionStorage.getItem('goToMenu');
+
+if (goToMenu === 'true') {
+
+    sessionStorage.removeItem('goToMenu');
+
+    document.getElementById('landing')
+        .classList.add('hidden');
+
+    document.getElementById('auth-container')
+        .classList.remove('hidden');
+
+    showHomePage();
+
+    return;
+}
+
         try {
 
             const {

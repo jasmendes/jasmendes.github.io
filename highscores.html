@@ -286,6 +286,11 @@ const supabaseClient = window.supabase.createClient(
 );
 </script>
 <script>
+
+    function jogarMais() {
+    sessionStorage.setItem('goToMenu', 'true');
+    window.location.href = 'index.html';
+}
    
 async function loadScores(){
     const ranking = document.getElementById("ranking");
