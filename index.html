@@ -359,7 +359,7 @@ async function registerUserc(event) {
     }
 
     alert(
-        'Conta criada com sucesso! Verifique o seu email.'
+        `Conta criada com sucesso, ${username}! Verifique o seu email.`
     );
 
     document
@@ -367,16 +367,7 @@ async function registerUserc(event) {
         .reset();
 
     showLogin();
-}
 
-    
-    
-
-    alert(`Conta criada com sucesso, ${username}! Verifique a sua conta de email.`);
-
-    document.getElementById('register-form').reset();
-
-    showLogin();
 }
         // ===== VIEW SWITCHING =====
 
