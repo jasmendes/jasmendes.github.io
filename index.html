@@ -170,6 +170,60 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
+
+        async function loginx(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    const loginError = document.getElementById('loginError');
+    loginError.style.display = 'none';
+
+    // Login Supabase Auth
+    const { data, error } =
+        await supabaseClient.auth.signInWithPassword({
+            email,
+            password
+        });
+
+    if (error) {
+        loginError.textContent = error.message;
+        loginError.style.display = 'block';
+        return;
+    }
+
+    // Buscar username na tabela users
+    const { data: profile, error: profileError } =
+        await supabaseClient
+            .from('users')
+            .select('username,email')
+            .eq('id', data.user.id)
+            .single();
+
+    if (profileError) {
+        loginError.textContent = 'Perfil não encontrado';
+        loginError.style.display = 'block';
+        return;
+    }
+
+    // Guardar sessão
+    sessionStorage.setItem('userId', data.user.id);
+    sessionStorage.setItem('username', profile.username);
+    sessionStorage.setItem('email', profile.email);
+
+    sessionStorage.setItem(
+        'userSession',
+        JSON.stringify({
+            id: data.user.id,
+            username: profile.username,
+            email: profile.email
+        })
+    );
+
+    // Ir para menu de disciplinas
+    showHomePage();
+}
         // Landing page navigation functions
         async function goToLogin() {
 

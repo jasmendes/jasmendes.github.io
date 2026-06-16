@@ -20,6 +20,19 @@ window.saveScore = async (score, subject, difficulty, totalQuestions) => {
         return;
     }
 
+     const { data: existingUser } = await supabaseClient
+            .from('users')
+            .select('username')
+            .eq('email', user.email)
+            .maybeSingle();
+
+        if (existingUser) {
+            registerError.textContent =
+                'Username já existe';
+            registerError.style.display = 'block';
+            return;
+        }
+
     console.log("ID:", user.id);
     console.log("EMAIL:", user.email);
     console.log("META:", user.username);
