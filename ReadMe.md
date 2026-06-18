@@ -155,3 +155,134 @@ Landing
                  Login
                    ↓
                 Menu
+
+a
+    
+
+
+    -- Users table for authentication with simple username/password
+create table users (
+    id uuid primary key default gen_random_uuid(),
+    username text unique not null,
+    password text not null,
+    created_at timestamp default now()
+);
+
+-- Enable RLS (Row Level Security)
+alter table users enable row level security;
+
+-- Create policy to allow anonymous users to read users table for login
+create policy "Allow public read access for login"
+on users for select
+using (true);
+
+-- Create policy to allow anonymous users to insert new users for registration
+create policy "Allow public insert for registration"
+on users for insert
+with check (true);
+
+insert into users (username, password)
+ values ( 'admin','1234');
+
+ select * from users;
+
+ alter table users enable row level security;
+alter table scores enable row level security;
+
+create policy "public users select"
+on users
+for select
+using (true);
+
+create policy "public users insert"
+on users
+for insert
+with check (true);
+
+create policy "public scores select"
+on scores
+for select
+using (true);
+
+create policy "public scores insert"
+on scores
+for insert
+with check (true);
+
+
+select * from users;
+select * from scores;
+select * from profiles;
+
+select * from users;
+insert into scores ( username ,subject, difficulty, score, total_questions)
+ values ( 'toto','Matemática 6 ano' ,'easy',17,10);
+
+update users
+set email = 'joao@bigodes.pt' where email is null;
+ ALTER TABLE users
+ADD COLUMN email text;
+
+
+ ALTER TABLE scores
+ADD COLUMN profile_id uuid;
+
+ALTER TABLE scores
+ADD CONSTRAINT scores_profile_id_fkey
+FOREIGN KEY (profile_id)
+REFERENCES profiles(id)
+ON DELETE CASCADE;
+
+
+update scores
+set profile_id = 1
+where username = 'toto';
+
+
+drop table  users ;
+
+create table public.users (
+  id uuid primary key references auth.users(id),
+  username text unique not null,
+  email text,
+  created_at timestamp default now()
+);
+
+delete from scores where username = 'toto';
+
+alter table scores
+alter column profile_id set not null;
+
+
+insert into scores
+(
+    username,
+    subject,
+    difficulty,
+    score,
+    total_questions
+)
+values
+(
+    'Toto',
+    'Economia 12',
+    'medium',
+    80,
+    10
+);
+
+select * from users;
+select * from auth.users;
+alter table auth.users 
+add COLUMN username text;
+select 
+*
+from scores;
+ALTER TABLE scores
+ADD COLUMN email text;
+DELETE FROM SCORES WHERE SCORE >0 ;
+CREATE POLICY "Users can insert own profile"
+ON users
+FOR INSERT
+TO authenticated
+WITH CHECK (auth.uid() = id);
